@@ -1,0 +1,75 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Olivier Fourdan">
+   <META NAME="Description" CONTENT="XFCE Help System">
+   <META NAME="Keywords" CONTENT="XFCE,toolbar,X11,window manager,linux,icons,xforms">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (X11; I; Linux 2.0.32 i586) [Netscape]">
+   <TITLE>XFCE Help System - La distribution compil&eacute;e</TITLE>
+</HEAD>
+<BODY BACKGROUND="../images/backgr.gif" NOSAVE>
+
+<UL>
+<UL>
+<UL>
+<UL><A NAME="TOP"></A>&nbsp;<IMG SRC="../images/XFCE_logo.gif" NOSAVE HEIGHT=50 WIDTH=125>&nbsp;<IMG SRC="../images/bouncing.gif" NOSAVE HEIGHT=32 WIDTH=32>
+<BR>
+<HR WIDTH="100%">
+<BR>&nbsp;
+<DT>
+<IMG SRC="../images/distribution_precompilee.gif" ALT="La distribution précompilée" NOSAVE HEIGHT=33 WIDTH=259></DT>
+
+<BR>&nbsp;
+<BR><B><FONT COLOR="#CC0000">Si vous ne vous sentez pas &agrave; l'aise
+pour compiler XFCE vous-m&ecirc;me, une distribution d&eacute;j&agrave;
+compil&eacute;e est disponible.</FONT></B>
+
+<P><B><U>1) T&eacute;l&eacute;charger la distribution</U></B>
+<BR>&nbsp;
+
+<P>La distribution pr&eacute;compil&eacute;e de XFCE est un fichier tar
+compr&eacute;ss&eacute; avec gzip. L'application est compil&eacute;e avec
+la librairie XForms en statique, ce qui fait qu'il n'est m&ecirc;me pas
+n&eacute;cessaire d'avoir XForm install&eacute; sur le syst&egrave;me pour
+pouvoir utiliser cette distribution.
+
+<P><B><U>2) Installer la distribution</U></B>
+
+<P>L'archive contient d&eacute;j&agrave; les chemins d'acc&egrave;s corrects,
+il suffit donc de la d&eacute;compr&eacute;sser depuis la racine de l'arborescence
+du syst&egrave;me :
+<BR>&nbsp;
+<UL><TT>$ tar -xvzf xfce-2.0.0.static.bin.tar.gz -C /</TT>
+<BR>&nbsp;</UL>
+&nbsp;<B><U>3) Pour les utilisateurs de RPM (le format d'archives de Red
+Hat)</U></B>
+
+<P>Quelques rappels des commandes de bases de rpm (pour plus d'information
+sur RPM, utilisez <TT>man rpm </TT>ou r<TT>pm --help</TT>) :
+<BR>&nbsp;
+<UL>
+<LI>
+<TT>rpm -ivh &lt;archive>.i386.rpm</TT></LI>
+
+<BR>Installe l'archive
+<LI>
+<TT>rpm -U&nbsp;&lt;archive>.i386.rpm</TT></LI>
+
+<BR>Mise a jour d'une archive
+<LI>
+<TT>rpm -e &lt;archive></TT></LI>
+
+<BR>Supprime l'archive et ses fichiers
+<LI>
+<TT>rpm -ba &lt;spec></TT></LI>
+
+<BR>Reconstruit enti&egrave;rement l'archive &agrave; partir d'un fichier
+spec
+<BR>&nbsp;</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+
+</BODY>
+</HTML>

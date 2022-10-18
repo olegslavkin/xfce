@@ -1,0 +1,873 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Olivier Fourdan">
+   <META NAME="Description" CONTENT="XFCE Help System">
+   <META NAME="Keywords" CONTENT="XFCE,toolbar,X11,window manager,linux,icons,xforms">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (X11; I; Linux 2.0.32 i586) [Netscape]">
+   <TITLE>XFCE Help System - XFwm, le gestionnaire de fen&ecirc;tres de XFCE</TITLE>
+</HEAD>
+<BODY BACKGROUND="../images/backgr.gif" NOSAVE>
+
+<UL>
+<UL>
+<UL>
+<UL><A NAME="TOP"></A>&nbsp;<IMG SRC="../images/XFCE_logo.gif" NOSAVE HEIGHT=50 WIDTH=125>&nbsp;<IMG SRC="../images/bouncing.gif" NOSAVE HEIGHT=32 WIDTH=32>
+<BR>
+<HR WIDTH="100%">
+<BR>&nbsp;
+<DT>
+<IMG SRC="../images/gestionnaire_fenetres.gif" ALT="XFwm, le gestionnaire de fenêtres" NOSAVE HEIGHT=33 WIDTH=374></DT>
+
+
+<P><B><FONT COLOR="#CC0000">XFce poss&egrave;de d&eacute;sormais son propre
+gestionnaire de fen&ecirc;tres ! L&eacute;ger et efficace, tout comme XFce,
+XFwm est un puissant gestionnaire de fen&ecirc;tres configur&eacute; depuis
+la barre principale de XFce !</FONT></B>
+
+<P><B><U>1) Introduction</U></B>
+<BR>&nbsp;
+<BR>XFwm est bas&eacute; sur FVWM2, de Robert Nation et Charles Hines.
+Historiquement, XFCE &eacute;tait pr&eacute;vu pour fonctionner avec FVWM,
+si bien que, lorsque j'ai d&eacute;cid&eacute; de doter XFCE de son propre
+gestonnaire de fen&ecirc;tres, j'ai d&eacute;but&eacute; a partir de FVWM...
+Le code de FVWM a &eacute;t&eacute; profond&eacute;ment modifi&eacute;
+et rendu plus simple, chaque fonctionnailt&eacute; superflue pour XFCE
+supprim&eacute;e et m&ecirc;me quelques bugs ont &eacute;t&eacute; arrang&eacute;s.
+
+<P>Maintenant, XFwm est disponible, et il est exactement comme je le voulais
+: Joli, l&eacute;ger et efficace !
+<BR>&nbsp;
+<CENTER><TABLE BORDER COLS=1 BACKGROUND="../images/Backleft.gif" NOSAVE >
+<TR NOSAVE>
+<TD NOSAVE><B><FONT COLOR="#000000">XFwm supporte dor&eacute;navant une
+large vari&eacute;t&eacute; de "hints" d'autres Gestionnaires de Fen&ecirc;tres
+:</FONT></B><FONT COLOR="#000000">&nbsp;</FONT>
+<UL>
+<LI>
+<B><FONT COLOR="#000000">Open Look Window Manager</FONT></B></LI>
+
+<LI>
+<B><FONT COLOR="#000000">Motif Window Manager</FONT></B></LI>
+
+<LI>
+<B><FONT COLOR="#000000">GNOME hints</FONT></B></LI>
+
+<LI>
+<B><FONT COLOR="#000000">KDE Hints</FONT></B></LI>
+</UL>
+<I><FONT COLOR="#000000"><U>Note :</U> J'ignore comment traduire le mot
+"hints" en fran&ccedil;ais. A la base, cela signifie que les applications
+peuvent donner des instructions au Gestionnaire de Fen&ecirc;tres concernant
+leur aspect et leur comportement.</FONT></I></TD>
+</TR>
+</TABLE></CENTER>
+
+<UL><B><U></U></B>&nbsp;</UL>
+<B><U>2) Anatomie d'une fen&ecirc;tre</U></B>
+<CENTER>&nbsp;</CENTER>
+
+<CENTER><IMG SRC="../images/XFWM_window.gif" NOSAVE HEIGHT=275 WIDTH=512></CENTER>
+
+
+<P>Dans XFwm, chaque fen&ecirc;tre poss&egrave;de une barre de titre et
+4 boutons situ&eacute;s de chaque cot&eacute;.
+
+<P><B><U>Note :</U></B> L'aspect d&eacute;grad&eacute; des barres de titre
+n'est disponible uniquement que sur un &eacute;cran de plus de 256 couleurs.
+A 256 couleurs ou moins, la barre de titre appara&icirc;t unie.
+<BR>&nbsp;
+<CENTER><TABLE BORDER NOSAVE >
+<TR NOSAVE>
+<TD><IMG SRC="../images/XFWM_menuclose.gif" NOSAVE HEIGHT=20 WIDTH=21></TD>
+
+<TD NOSAVE>Ce bouton ouvre un petit menu qui permet d'appliquer des operations
+de base sur une fen&ecirc;tre, comme le d&eacute;placement, la fermeture,
+le redimensionnement, l'ic&ocirc;nification, etc.&nbsp;
+<BR>Un double click sur ce bouton ferme la fen&ecirc;tre</TD>
+</TR>
+
+<TR NOSAVE>
+<TD><IMG SRC="../images/XFWM_sticky.gif" NOSAVE HEIGHT=23 WIDTH=23></TD>
+
+<TD NOSAVE>Ce bouton fonctionne comme une bascule. Il permet de "coller"
+la fen&ecirc;tre a l'&eacute;cran. Une fen&ecirc;tre ainsi coll&eacute;e
+restera visible sur tous les &eacute;crans virtuels.</TD>
+</TR>
+
+<TR NOSAVE>
+<TD><IMG SRC="../images/XFWM_iconify.gif" NOSAVE HEIGHT=23 WIDTH=23></TD>
+
+<TD NOSAVE>Ce petit bouton permet d'ic&ocirc;nifier une fen&ecirc;tre.
+Si l'application a sa propre ic&ocirc;ne, celle-ci sera utilis&eacute;e
+pour la repr&eacute;sentation ic&ocirc;nifi&eacute;e. Sinon, une ic&ocirc;ne
+par d&eacute;faut sera affich&eacute;e.</TD>
+</TR>
+
+<TR>
+<TD><IMG SRC="../images/XFWM_maximize.gif" NOSAVE HEIGHT=23 WIDTH=24></TD>
+
+<TD>Ce bouton agrandit la fen&ecirc;tre a la taille de l'&eacute;cran de
+mani&egrave;re &agrave; ce qu'elle occupe la totalit&eacute; de la surface
+visible..</TD>
+</TR>
+</TABLE></CENTER>
+&nbsp;
+<BR>N'importe quel bord de la fen&ecirc;tre peut &ecirc;tre utilis&eacute;
+pour agrandir ou redimensionner la fen&ecirc;tre.
+
+<P>La fen&ecirc;tre "active" est celle qui poss&egrave;de le focus. Les
+autres fen&ecirc;tres sont cosid&eacute;r&eacute;es comme inactives.
+
+<P>On peut facilement distiguer la fen&ecirc;tre active des autres par
+la couleur de sa barre de titre.
+<BR>&nbsp;
+<TABLE BORDER NOSAVE >
+<TR NOSAVE>
+<TD NOSAVE><IMG SRC="../images/XFWM_activetitlebar.gif" NOSAVE HEIGHT=23 WIDTH=238></TD>
+
+<TD>Correspond a la fen&ecirc;tre active (avec la palette de couleur par
+d&eacute;faut)</TD>
+</TR>
+
+<TR NOSAVE>
+<TD><IMG SRC="../images/XFWM_inactivetitlebar.gif" NOSAVE HEIGHT=23 WIDTH=237></TD>
+
+<TD NOSAVE>Correspond a une fen&ecirc;tre inactive</TD>
+</TR>
+</TABLE>
+&nbsp;
+<BR><B><U>3) Les couleurs</U></B>
+
+<P>Les palettes de couleurs utilis&eacute;es dans XFwm sont celles de XFCE.
+Chaque fois que vous modifiez les couleurs dans XFCE, toutes les fen&ecirc;tres
+h&eacute;ritent de la m&ecirc;me palette.
+
+<P>Cette possibilit&eacute; permet d'arranger votre gestionnaire de fen&ecirc;tre
+a votre go&ucirc;t tr&egrave;s facilement, sans avoir a &eacute;diter la
+moindre ligne d'un fichier de configuration !
+
+<P>Selectionnez&nbsp; le <A HREF="setup.html#TOP">panneau de configuration</A>,
+puis chargez ou d&eacute;finissez votre propre palette :
+<CENTER>&nbsp;</CENTER>
+
+<CENTER><IMG SRC="../images/XFWM_colors.gif" NOSAVE HEIGHT=126 WIDTH=364></CENTER>
+&nbsp;
+<CENTER><TABLE NOSAVE >
+<TR NOSAVE>
+<TD NOSAVE><B>1</B></TD>
+
+<TD>Couleur du pointeur de souris</TD>
+</TR>
+
+<TR NOSAVE>
+<TD><B>2</B></TD>
+
+<TD NOSAVE>Couleur des &eacute;l&eacute;ments s&eacute;lectionn&eacute;s
+dans les menus de XFwm</TD>
+</TR>
+
+<TR>
+<TD><B>4</B></TD>
+
+<TD>Couleur de fen&ecirc;tre inactive</TD>
+</TR>
+
+<TR>
+<TD><B>7</B></TD>
+
+<TD>Couleur de fen&ecirc;tre active</TD>
+</TR>
+
+<TR>
+<TD><B>8</B></TD>
+
+<TD>Couleur pour les bordures de fen&ecirc;tres et menus</TD>
+</TR>
+</TABLE></CENTER>
+&nbsp;
+<BR>Gr&acirc;ce a ces param&egrave;tres, vous pourrez facilement changer
+l'aspect des fen&ecirc;tres dans XFwm :
+<BR>&nbsp;
+<BR>&nbsp;
+<CENTER><TABLE NOSAVE >
+<TR>
+<TD><IMG SRC="../images/XFWM_pal1.gif" NOSAVE HEIGHT=135 WIDTH=362></TD>
+
+<TD><IMG SRC="../images/XFWM_pal2.gif" NOSAVE HEIGHT=135 WIDTH=362></TD>
+</TR>
+
+<TR NOSAVE>
+<TD NOSAVE><IMG SRC="../images/XFWM_pal3.gif" NOSAVE HEIGHT=135 WIDTH=362></TD>
+
+<TD><IMG SRC="../images/XFWM_pal4.gif" NOSAVE HEIGHT=135 WIDTH=362></TD>
+</TR>
+</TABLE></CENTER>
+&nbsp;
+<BR>&nbsp;
+
+<P><B><U>4) Le fichier de configuration de XFwm</U></B>
+
+<P>XFwm est d&eacute;j&agrave; pr&eacute;configur&eacute;. Cependant, la
+plupart des param&egrave;tes peuvent &ecirc;tre modifi&eacute;s en cr&eacute;ant
+ou en modifiant votre propre fichier de configuration.
+
+<P>Poue &ecirc;tre reconnu comme tel, un fichier de configuration doit
+avoir l'un des noms suivants :
+<BR>&nbsp;
+<UL>
+<LI>
+<TT>.xfwmrc</TT></LI>
+
+<LI>
+<TT>system.xfwmrc</TT></LI>
+
+<LI>
+<TT>sample.xfwmrc</TT></LI>
+</UL>
+Ils sont recherch&eacute;s dan sle r&eacute;pertoire courant en premier,
+puis le repertoire "home" de l'utilisateur et enfin le r&eacute;pertoire
+de XFCE, &agrave; savoir <TT>/var/XFCE/</TT> (si ce param&egrave;tre n'a
+pas &eacute;t&eacute; chang&eacute; lors de la compilation).
+
+<P>XFwm accepte les mots cl&eacute;s suivants dans ses fichiers de configuration
+:
+<BR>&nbsp;
+<BR>&nbsp;
+<TABLE BORDER COLS=3 WIDTH="100%" NOSAVE >
+<TR>
+<TD>ActiveColor &lt;c1> &lt;c2></TD>
+
+<TD>D&eacute;finit la couleur des fen&ecirc;tres actives (*)</TD>
+
+<TD>ActiveColor #c0c0c0 #ffffff</TD>
+</TR>
+
+<TR>
+<TD>AddToFunc &lt;fn></TD>
+
+<TD>Commence ou augmente une d&eacute;finition de fonction</TD>
+
+<TD>AddToFunc Move-or-Raise "I" Raise&nbsp;
+<BR>+ "M" Move&nbsp;
+<BR>+ "D" Lower</TD>
+</TR>
+
+<TR>
+<TD>AddToMenu &lt;mn></TD>
+
+<TD>Commence ou augmente une d&eacute;finition de menu</TD>
+
+<TD>AddToMenu "Utilities"&nbsp;
+<BR>+ "Xterm"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Exec&nbsp;
+xterm -e tcsh</TD>
+</TR>
+
+<TR>
+<TD>Beep</TD>
+
+<TD>Emet un beep</TD>
+
+<TD>Beep</TD>
+</TR>
+
+<TR>
+<TD>ClickTime &lt;ct></TD>
+
+<TD>Sp&eacute;cifie le d&eacute;lai maximum (en millisecondes) entre l'appuis
+et la relache d'un bouton de souris</TD>
+
+<TD>ClickTime 150</TD>
+</TR>
+
+<TR>
+<TD>Close</TD>
+
+<TD>Ferme la fen&ecirc;tre courante</TD>
+
+<TD>Close</TD>
+</TR>
+
+<TR>
+<TD>ColormapFocus</TD>
+
+<TD>La table des couleurs est associ&eacute;e &agrave; la fen&ecirc;tre
+ayant le focus</TD>
+
+<TD>ColormapFocus</TD>
+</TR>
+
+<TR>
+<TD>CursorColor &lt;c1> &lt;c2></TD>
+
+<TD>D&eacute;finit la couleur du pointeur de souris (*)</TD>
+
+<TD>CursorColor red white</TD>
+</TR>
+
+<TR>
+<TD>CursorMove &lt;n1> &lt;n2></TD>
+
+<TD>D&eacute;place le curseur de souris de n1% d'&eacute;cran verticallement
+et n2% d'&eacute;cran horizontalement</TD>
+
+<TD>CursorMove 10 10</TD>
+</TR>
+
+<TR>
+<TD>Delete</TD>
+
+<TD>Envoie un message &agrave; une fen&ecirc;tre lui demandant de se fermer.</TD>
+
+<TD>Delete&nbsp;</TD>
+</TR>
+
+<TR>
+<TD>Desk &lt;d1> [&lt;d2>]</TD>
+
+<TD>Change de bureau virtuel (*)</TD>
+
+<TD>Desk &lt;0></TD>
+</TR>
+
+<TR>
+<TD>DesktopSize &lt;Hor>x&lt;Ver></TD>
+
+<TD>D&eacute;finit la taille virtuelle de l'&eacute;cran physique</TD>
+
+<TD>DesktopSize 4x1</TD>
+</TR>
+
+<TR>
+<TD>Destroy</TD>
+
+<TD>D&eacute;truit la fen&ecirc;tre d'une application</TD>
+
+<TD>Destroy</TD>
+</TR>
+
+<TR>
+<TD>DestroyFunc &lt;fn></TD>
+
+<TD>Supprime une fonction</TD>
+
+<TD>DestroyFunc "Move-or-Raise"</TD>
+</TR>
+
+<TR>
+<TD>DestroyMenu &lt;mn></TD>
+
+<TD>Supprime un menu</TD>
+
+<TD>DestroyMenu "Utilities"</TD>
+</TR>
+
+<TR>
+<TD>Echo &lt;s></TD>
+
+<TD>Envoie une cha&icirc;ne vers "stderr"</TD>
+
+<TD>Echo "Done"</TD>
+</TR>
+
+<TR>
+<TD>Exec &lt;c></TD>
+
+<TD>Execute une commande</TD>
+
+<TD>exec xedit</TD>
+</TR>
+
+<TR>
+<TD>ExecUseSHELL &lt;c></TD>
+
+<TD>D&eacute;finit le shell par d&eacute;faut utilis&eacute; par Exec</TD>
+
+<TD>ExecUseSHELL bash</TD>
+</TR>
+
+<TR>
+<TD>FlipFocus</TD>
+
+<TD>Echange de focus entre les fen&ecirc;tre qui avaient le focus pr&eacute;c&eacute;demment</TD>
+
+<TD>FlipFocus</TD>
+</TR>
+
+<TR>
+<TD>Focus</TD>
+
+<TD>Donne le focus &agrave; une fen&ecirc;tre</TD>
+
+<TD>Focus</TD>
+</TR>
+
+<TR>
+<TD>Function &lt;fn></TD>
+
+<TD>Associe une fonction &agrave; une touche ou &agrave; la souris</TD>
+
+<TD>Mouse 1 T A Function Move-or-Raise</TD>
+</TR>
+
+<TR>
+<TD>GotoPage &lt;x> &lt;y></TD>
+
+<TD>D&eacute;place le point de vue &agrave; la&nbsp; page (x,y)</TD>
+
+<TD>GotoPage 3 2</TD>
+</TR>
+
+<TR>
+<TD>IconFont &lt;font></TD>
+
+<TD>D&eacute;finit la fonte utilis&eacute;e pour les ic&ocirc;nes</TD>
+
+<TD>IconFont -*-helvetica-medium-r-*-*-12-*-*-*-*-*-*-*</TD>
+</TR>
+
+<TR>
+<TD>Iconify</TD>
+
+<TD>Iconifie/Deiconifie une fen&ecirc;tre</TD>
+
+<TD>Iconify</TD>
+</TR>
+
+<TR>
+<TD>InactiveColor &lt;c1> &lt;c2></TD>
+
+<TD>D&eacute;finit les couleurs pour les feb&ecirc;tres inactives(*)&nbsp;</TD>
+
+<TD>InactiveColors grey77 black</TD>
+</TR>
+
+<TR>
+<TD>Key &lt;key> &lt;context> &lt;modif> &lt;fn></TD>
+
+<TD>Associe une touche clavier &agrave; une fonction sp&eacute;cifique</TD>
+
+<TD>Key F11&nbsp; A&nbsp; SCM&nbsp; WindowList</TD>
+</TR>
+
+<TR>
+<TD>KillModule &lt;m></TD>
+
+<TD>Supprime un module</TD>
+
+<TD>KillModule xfce</TD>
+</TR>
+
+<TR>
+<TD>Lower</TD>
+
+<TD>Passe une fen&ecirc;tre en arri&egrave;re plan</TD>
+
+<TD>Lower</TD>
+</TR>
+
+<TR>
+<TD>Maximize</TD>
+
+<TD>Agrandit une fen&ecirc;tre &agrave; la taille de l'&eacute;cran</TD>
+
+<TD>Maximize</TD>
+</TR>
+
+<TR>
+<TD>Menu &lt;m> &lt;dbl-click-action></TD>
+
+<TD>Affiche le menu &lt;m> ou d&eacute;clenche une action si l'utilisateur
+a double-cliqu&eacute;</TD>
+
+<TD>Menu "Utilities" Close</TD>
+</TR>
+
+<TR>
+<TD>MenuColor &lt;c1> &lt;c2> &lt;c3> &lt;c4></TD>
+
+<TD>D&eacute;finit les couleurs de menu (*)</TD>
+
+<TD>MenuColor red blue yellow green</TD>
+</TR>
+
+<TR>
+<TD>MenuFont &lt;font></TD>
+
+<TD>D&eacute;finit la fonte utilis&eacute;e pour les menus</TD>
+
+<TD>MenuFont&nbsp;
+<BR>-*-helvetica-medium-r-*-*-12-*-*-*-*-*-*-*</TD>
+</TR>
+
+<TR>
+<TD>Module &lt;m></TD>
+
+<TD>Execute un module</TD>
+
+<TD>Module xfce</TD>
+</TR>
+
+<TR>
+<TD>ModulePath</TD>
+
+<TD>D&eacute;finit le chemin d'acc&egrave;s aux modules</TD>
+
+<TD>ModulePath $PATH</TD>
+</TR>
+
+<TR>
+<TD>Mouse &lt;mouse> &lt;context> &lt;modif> &lt;fn></TD>
+
+<TD>Associe un bouton de la souris &agrave; une fonction sp&eacute;cifique</TD>
+
+<TD>Mouse 1&nbsp;&nbsp; R&nbsp;&nbsp;&nbsp; A&nbsp;&nbsp; Menu "Root" Nop</TD>
+</TR>
+
+<TR>
+<TD>Move [&lt;x> &lt;y>]</TD>
+
+<TD>D&eacute;place une fen&ecirc;tre</TD>
+
+<TD>Move</TD>
+</TR>
+
+<TR>
+<TD>Nop</TD>
+
+<TD>Ne fait rien !</TD>
+
+<TD>Nop</TD>
+</TR>
+
+<TR>
+<TD>PopUp</TD>
+
+<TD>Ouvre un menu ou un sous-menu</TD>
+
+<TD>Popup "Quit"</TD>
+</TR>
+
+<TR>
+<TD>Quit</TD>
+
+<TD>Termine XFwm</TD>
+
+<TD>Quit</TD>
+</TR>
+
+<TR>
+<TD>Raise</TD>
+
+<TD>Am&egrave;ne une fen&ecirc;tre au premier plan</TD>
+
+<TD>Raise</TD>
+</TR>
+
+<TR>
+<TD>RaiseLower</TD>
+
+<TD>Am&egrave;ne une fen&ecirc;tre au premier plan ou la renvoie au second
+plan</TD>
+
+<TD>RaiseLower</TD>
+</TR>
+
+<TR>
+<TD>Recapture</TD>
+
+<TD>Recapture toutes les fen&ecirc;tres</TD>
+
+<TD>Recapture</TD>
+</TR>
+
+<TR>
+<TD>Refresh</TD>
+
+<TD>Rafra&icirc;chit l'&eacute;cran</TD>
+
+<TD>Refresh</TD>
+</TR>
+
+<TR>
+<TD>Resize [&lt;x> &lt;y>]</TD>
+
+<TD>Redimensionne une fen&ecirc;tre</TD>
+
+<TD>Resize</TD>
+</TR>
+
+<TR>
+<TD>Restart</TD>
+
+<TD>Relance XFwm</TD>
+
+<TD>Restart</TD>
+</TR>
+
+<TR>
+<TD>Stick</TD>
+
+<TD>Rend une fen&ecirc;tre "collante"</TD>
+
+<TD>Stick</TD>
+</TR>
+
+<TR>
+<TD>Style &lt;win> &lt;s1> [,&lt;s2> [,&lt;s3> [&lt;s4>]...]]</TD>
+
+<TD>Asocie un style a une ou plusiers fen&ecirc;tres</TD>
+
+<TD>Style "XFce*" Sticky</TD>
+</TR>
+
+<TR>
+<TD>TitleStyle &lt;type> Gradient &lt;c1> &lt;c2>&nbsp;
+<BR>TitleStyle &lt;type> Solid &lt;c></TD>
+
+<TD>D&eacute;finit un style de barre de titre (*)</TD>
+
+<TD>TitleStyle Active Gradient blue grey77&nbsp;
+<BR>TitleStyle Inactive Solid grey60</TD>
+</TR>
+
+<TR>
+<TD>Wait &lt;nom></TD>
+
+<TD>Attends jusqu'&agrave; l'apparition de la fen&ecirc;tre &lt;nom></TD>
+
+<TD>Waiit xterm</TD>
+</TR>
+
+<TR>
+<TD>WindowFont</TD>
+
+<TD>D&eacute;finit la fonte utlis&eacute;e pour les fen&ecirc;tres</TD>
+
+<TD>indowFont -*-helvetica-bold-r-*-*-12-*-*-*-*-*-*-*</TD>
+</TR>
+
+<TR>
+<TD>WindowList</TD>
+
+<TD>Donne la liste de toutes les fen&ecirc;tres affich&eacute;es &agrave;
+l'&eacute;cran</TD>
+
+<TD>Windowlist</TD>
+</TR>
+
+<TR>
+<TD>XORvalue &lt;n></TD>
+
+<TD>Change la valeur XOR pour l'affichage du pourtour des fen&ecirc;tres
+lors de leur redimensionnement</TD>
+
+<TD></TD>
+</TR>
+</TABLE>
+&nbsp;
+<BR><B><U>Note :</U></B> (*) indique les param&egrave;tres pris en charge
+par XFce lors du d&eacute;marrage
+
+<P><U>Liste des Modifieurs :</U>
+<BR>&nbsp;
+<TABLE NOSAVE >
+<TR NOSAVE>
+<TD NOSAVE><B>N</B></TD>
+
+<TD>Pas de&nbsp; modifieur</TD>
+</TR>
+
+<TR>
+<TD><B>S</B></TD>
+
+<TD>Shift</TD>
+</TR>
+
+<TR NOSAVE>
+<TD NOSAVE><B>M</B></TD>
+
+<TD>M&eacute;ta</TD>
+</TR>
+
+<TR>
+<TD><B>A</B></TD>
+
+<TD>N'importe quel modifieur</TD>
+</TR>
+</TABLE>
+<U>Liste des contextes :</U>
+<BR>&nbsp;
+<TABLE NOSAVE >
+<TR>
+<TD><B>R</B></TD>
+
+<TD>Fen&ecirc;tre de fond d'&eacute;cran</TD>
+</TR>
+
+<TR>
+<TD><B>W</B></TD>
+
+<TD>Fen&ecirc;tre applicative</TD>
+</TR>
+
+<TR>
+<TD><B>T</B></TD>
+
+<TD>Titre</TD>
+</TR>
+
+<TR NOSAVE>
+<TD><B>S</B></TD>
+
+<TD NOSAVE>Cot&eacute;s</TD>
+</TR>
+
+<TR>
+<TD><B>F</B></TD>
+
+<TD>Cadre</TD>
+</TR>
+
+<TR>
+<TD><B>I</B></TD>
+
+<TD>Ic&ocirc;ne</TD>
+</TR>
+
+<TR>
+<TD><B>1-4</B></TD>
+
+<TD>Boutons de barre de titre</TD>
+</TR>
+
+<TR>
+<TD><B>A</B></TD>
+
+<TD>N'importe quel contexte</TD>
+</TR>
+</TABLE>
+&nbsp;
+<BR><B><U>5) Fichier sample.xfwmrc par d&eacute;faut</U></B>
+
+<P><TT>MenuFont&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+-*-helvetica-medium-r-*-*-12-*-*-*-*-*-*-*</TT>
+<BR><TT>WindowFont&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+-*-helvetica-bold-r-*-*-12-*-*-*-*-*-*-*</TT>
+<BR><TT>IconFont&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+-*-helvetica-medium-r-*-*-12-*-*-*-*-*-*-*</TT>
+
+<P><TT>CursorColor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; red
+white</TT>
+
+<P><TT>Style "*"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+RandomPlacement</TT>
+<BR><TT>Style "*"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ClickToFocus</TT>
+<BR><TT>Style "*"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+DecorateTransient</TT>
+<BR><TT>Style "*"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+BorderWidth 5</TT>
+
+<P><TT>Style "Fvwm*"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NoTitle, Sticky</TT>
+<BR><TT>Style "XFce*"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NoTitle, Sticky</TT>
+<BR><TT>Style "XFbd*"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sticky</TT>
+<BR><TT>Style "Popup menu*" Sticky</TT>
+<BR><TT>Style "Alert*"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sticky</TT>
+<BR><TT>Style "Question*"&nbsp;&nbsp; Sticky</TT>
+
+<P><TT>AddToMenu "Exit"</TT>
+<BR><TT>+ "&amp;Restart "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Restart xfwm</TT>
+<BR><TT>+ "&amp;Quit "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Quit</TT>
+<BR><TT>+ ""&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Nop</TT>
+<BR><TT>+ "&amp;Cancel "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nop</TT>
+
+<P><TT>AddToMenu "Window"</TT>
+<BR><TT>+ "&amp;Move"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Move</TT>
+<BR><TT>+ "&amp;Resize"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Resize</TT>
+<BR><TT>+ "(De)&amp;Iconify"&nbsp;&nbsp;&nbsp; Iconify</TT>
+<BR><TT>+ "(Un)&amp;Stick"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Stick</TT>
+<BR><TT>+ "(Un)Ma&amp;ximize"&nbsp;&nbsp; Maximize 100 100</TT>
+<BR><TT>+ ""&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Nop</TT>
+<BR><TT>+ "&amp;Close"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Delete</TT>
+<BR><TT>+ ""&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Nop</TT>
+<BR><TT>+ "S&amp;witch to..."&nbsp;&nbsp; WindowList</TT>
+
+<P><TT>AddToMenu "Root"</TT>
+<BR><TT>+ "New window"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Exec xterm</TT>
+<BR><TT>+ "Shuffle Up"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Next [*] focus</TT>
+<BR><TT>+ "Shuffle Down"&nbsp;&nbsp;&nbsp; Prev [*] focus</TT>
+<BR><TT>+ "Refresh"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Refresh</TT>
+<BR><TT>+ ""&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Nop</TT>
+<BR><TT>+ "&amp;Backdrop..."&nbsp;&nbsp;&nbsp; Exec xfbd -i</TT>
+<BR><TT>+ ""&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Nop</TT>
+<BR><TT>+ "&amp;Quit XFWM"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Popup "Exit"</TT>
+
+<P><TT># This defines the most common window operations</TT>
+
+<P><TT>AddToFunc "windowops-or-die"</TT>
+<BR><TT>+ "M" PopUp "Window"</TT>
+<BR><TT>+ "C" PopUp "Window"</TT>
+<BR><TT>+ "D" Close</TT>
+
+<P><TT>#&nbsp;&nbsp;&nbsp;&nbsp; But Cont Mod Function</TT>
+<BR><TT>Mouse 1&nbsp;&nbsp; R&nbsp;&nbsp;&nbsp; A&nbsp;&nbsp; Menu "Root"
+Nop</TT>
+<BR><TT>Mouse 2&nbsp;&nbsp; R&nbsp;&nbsp;&nbsp; A&nbsp;&nbsp; Menu "Window"
+Nop</TT>
+
+<P><TT>#&nbsp;&nbsp;&nbsp;&nbsp; But Cont Mod Function</TT>
+<BR><TT>Mouse 0&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp; A&nbsp;&nbsp; Function
+"windowops-or-die"</TT>
+
+<P><TT>Mouse 2&nbsp;&nbsp; I&nbsp;&nbsp;&nbsp; A&nbsp;&nbsp; Menu "Window"
+Nop</TT>
+
+<P><TT>Key Left&nbsp; A&nbsp;&nbsp;&nbsp; SC&nbsp; CursorMove -1&nbsp;
+0</TT>
+<BR><TT>Key Right A&nbsp;&nbsp;&nbsp; SC&nbsp; CursorMove +1 +0</TT>
+<BR><TT>Key Up&nbsp;&nbsp;&nbsp; A&nbsp;&nbsp;&nbsp; SC&nbsp; CursorMove
++0 -1</TT>
+<BR><TT>Key Down&nbsp; A&nbsp;&nbsp;&nbsp; SC&nbsp; CursorMove +0 +1</TT>
+
+<P><TT>Key Left&nbsp; A&nbsp;&nbsp;&nbsp; SM&nbsp; CursorMove -10 +0</TT>
+<BR><TT>Key Right A&nbsp;&nbsp;&nbsp; SM&nbsp; CursorMove +10 +0</TT>
+<BR><TT>Key Up&nbsp;&nbsp;&nbsp; A&nbsp;&nbsp;&nbsp; SM&nbsp; CursorMove
++0 -10</TT>
+<BR><TT>Key Down&nbsp; A&nbsp;&nbsp;&nbsp; SM&nbsp; CursorMove +0 +10</TT>
+
+<P><TT>Key F1&nbsp;&nbsp;&nbsp; A&nbsp;&nbsp;&nbsp; M&nbsp;&nbsp; Popup
+"Window"</TT>
+<BR><TT>Key F2&nbsp;&nbsp;&nbsp; A&nbsp;&nbsp;&nbsp; M&nbsp;&nbsp; Popup
+"Root"</TT>
+<BR><TT>Key F3&nbsp;&nbsp;&nbsp; A&nbsp;&nbsp;&nbsp; M&nbsp;&nbsp; Lower</TT>
+<BR><TT>Key F4&nbsp;&nbsp;&nbsp; A&nbsp;&nbsp;&nbsp; M&nbsp;&nbsp; Destroy</TT>
+<BR><TT>Key F5&nbsp;&nbsp;&nbsp; A&nbsp;&nbsp;&nbsp; M&nbsp;&nbsp; Next
+[*] focus</TT>
+<BR><TT>Key F6&nbsp;&nbsp;&nbsp; A&nbsp;&nbsp;&nbsp; M&nbsp;&nbsp; Prev
+[*] focus</TT>
+<BR><TT>Key F7&nbsp;&nbsp;&nbsp; A&nbsp;&nbsp;&nbsp; M&nbsp;&nbsp; Move</TT>
+<BR><TT>Key F8&nbsp;&nbsp;&nbsp; A&nbsp;&nbsp;&nbsp; M&nbsp;&nbsp; Resize</TT>
+<BR><TT>Key F9&nbsp;&nbsp;&nbsp; A&nbsp;&nbsp;&nbsp; M&nbsp;&nbsp; Iconify</TT>
+<BR><TT>Key F10&nbsp;&nbsp; A&nbsp;&nbsp;&nbsp; M&nbsp;&nbsp; Maximize</TT>
+
+<P><TT>Key L5&nbsp;&nbsp;&nbsp; IW&nbsp;&nbsp; N&nbsp;&nbsp; RaiseLower</TT>
+<BR><TT>Key L5&nbsp;&nbsp;&nbsp; IW&nbsp;&nbsp; S&nbsp;&nbsp; Lower</TT>
+<BR><TT>Key L5&nbsp;&nbsp;&nbsp; IW&nbsp;&nbsp; C&nbsp;&nbsp; Raise</TT>
+<BR><TT>Key L7&nbsp;&nbsp;&nbsp; IW&nbsp;&nbsp; A&nbsp;&nbsp; Iconify</TT>
+<BR>&nbsp;</UL>
+</UL>
+</UL>
+</UL>
+
+</BODY>
+</HTML>

@@ -1,0 +1,91 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Olivier Fourdan">
+   <META NAME="Description" CONTENT="XFCE Help System">
+   <META NAME="Keywords" CONTENT="XFCE,toolbar,X11,window manager,linux,icons,xforms">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (X11; I; Linux 2.0.32 i586) [Netscape]">
+   <TITLE>XFCE Help System - Compiler et installer &agrave; partir des sources</TITLE>
+</HEAD>
+<BODY BACKGROUND="../images/backgr.gif" NOSAVE>
+
+<UL>
+<UL>
+<UL>
+<UL><A NAME="TOP"></A>&nbsp;<IMG SRC="../images/XFCE_logo.gif" NOSAVE HEIGHT=50 WIDTH=125>&nbsp;<IMG SRC="../images/bouncing.gif" NOSAVE HEIGHT=32 WIDTH=32>
+<BR>
+<HR WIDTH="100%">
+<BR>&nbsp;
+<DT>
+<IMG SRC="../images/compiler_xfce.gif" ALT="Compiler XFce" NOSAVE HEIGHT=33 WIDTH=164></DT>
+
+
+<P><B><FONT COLOR="#CC0000">IMPORTANT: IL EST NECESSAIRE D'AVOIR UN ACCES
+ROOT POUR POUVOIR INSTALLER XFCE CORRECTEMENT.</FONT></B>
+
+<P><B><U>1) Installer &agrave; partir de l'achive tar</U></B>
+
+<P>Une fois r&eacute;cup&eacute;r&eacute;e l'achive, c'est a dire un fichier
+qui ressemble &agrave; xfce-1.2.?.tar.gz,
+
+<P>D&eacute;compresser le fichier source :
+<BR>&nbsp;
+<UL><TT>$ tar xvzf XFCE-2.0.?.tar.gz; cd XFCE-2.0.?</TT></UL>
+<I>(Bien s&ucirc;r, il faut remplacer le point d'interrogtion par le num&eacute;ro
+de version)</I>
+<BR>&nbsp;
+<BR><B><U>2) Editer le fichier Imakefile pour qu'il corresponde &agrave;
+votre syst&egrave;me (si n&eacute;cessaire)</U></B>
+<BR>&nbsp;
+<BR>Ce point est optionnel. Si vous &ecirc;tes nouveaux sous UNIX, essayez
+de compiler sans changer Imakefile.
+<BR>&nbsp;
+<UL><TT>$ vi Imakefile</TT></UL>
+&nbsp;
+<BR><B><U>3) Cr&eacute;er le Makefile</U></B>
+<BR>&nbsp;
+<UL><TT>$ xmkmf</TT></UL>
+&nbsp;
+<BR>Si vous n'avez pas Imake install&eacute;, vous pouvez toujours essayer
+avec le fichier Makefile livr&eacute; avec XFCE, o&ugrave; utiliser le
+Makefile de quelqu'un d'autre qui utilise le m&ecirc;me type de plateforme,
+ou m&ecirc;me encore mieux, t&eacute;l&eacute;chargez Imake sur <A HREF="ftp://ftp.x.org">ftp.x.org</A>
+!
+<BR>&nbsp;
+<BR><B><U>4) Cr&eacute;er les fichiers de compilation</U></B>
+<BR>&nbsp;
+<UL><TT>$ make Makefiles</TT></UL>
+&nbsp;
+<BR><B><U>5) Compiler et Installer</U></B>
+<BR>&nbsp;
+<BR>Pour compiler et installer la XFce, tapez :
+<BR>&nbsp;
+<UL><TT>$ make install</TT></UL>
+
+
+<P>Cela permet d&eacute;j&agrave; de pouvoir lancer XFCE, XFwm ou XFbd
+depuis la ligne de commande.
+
+<P><B><U>6) Choisir la langue par d&eacute;faut</U></B>
+
+<P>Placez-vous dans le&nbsp; r&eacute;pertoire des sources de xfce et tapez
+l'une des commandes suivantes :
+<BR>&nbsp;
+<UL><TT>$ cd xfce</TT></UL>
+puis
+<UL><TT>$ make english</TT></UL>
+ou
+<UL><TT>$ make francais</TT></UL>
+ou
+<UL><TT>$ make italiano</TT></UL>
+ou
+<UL><TT>$ make deutsch</TT></UL>
+ou
+<UL><TT>$ make espanol</TT></UL>
+&nbsp;</UL>
+</UL>
+</UL>
+</UL>
+&nbsp;
+</BODY>
+</HTML>

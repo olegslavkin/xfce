@@ -1,0 +1,70 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Olivier Fourdan">
+   <META NAME="Description" CONTENT="XFCE Help System">
+   <META NAME="Keywords" CONTENT="XFCE,toolbar,X11,window manager,linux,icons,xforms">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (X11; I; Linux 2.0.32 i586) [Netscape]">
+   <TITLE>XFCE Help System - Preparing the XForms Library</TITLE>
+</HEAD>
+<BODY BACKGROUND="../images/backgr.gif" NOSAVE>
+
+<UL>
+<UL>
+<UL>
+<UL><A NAME="TOP"></A>&nbsp;<IMG SRC="../images/XFCE_logo.gif" NOSAVE HEIGHT=50 WIDTH=125>&nbsp;<IMG SRC="../images/bouncing.gif" NOSAVE HEIGHT=32 WIDTH=32>
+<BR>
+<HR WIDTH="100%">
+<BR>&nbsp;
+<DT>
+<IMG SRC="../images/xforms_library.gif" ALT="The XForms library" NOSAVE HEIGHT=33 WIDTH=209></DT>
+
+<BR>&nbsp;
+<BR><B><FONT COLOR="#CC0000">XFCE requires the XForms library version 0.81
+or above. You need to install this library BEFORE compiling or using XFCE.</FONT></B>
+<BR>&nbsp;
+<BR><B><U>1) Where to get the XForms library</U></B>
+<BR>&nbsp;
+<BR>&nbsp;Visit <A HREF="http://bragg.phys.uwm.edu/xforms">http://bragg.phys.uwm.edu/xforms</A>
+<BR>&nbsp;
+
+<P><B><U>2) Download the version of the library for your platform</U></B>.
+
+<P>For example, if you download the version for Linux, you'll get a file
+that looks like that (depending on which version you download, of course
+!)
+<BR>&nbsp;
+<UL><TT>bxform-linuxELF.tgz</TT></UL>
+This file is a tar archive compressed with GNU Zip, just like XFCE distribution.
+
+<P><B><U>3) Decompress this archive in a base directory of your choice
+(/usr/src, for example)</U></B>
+<BR>&nbsp;
+<BR>&nbsp;
+<UL><TT>$ tar -xvzf bxform-linuxELF.tgz -C /usr/src</TT></UL>
+That should create a subdirectory /usr/src/xforms
+
+<P><B><U>4) Install the library and the C headers</U></B>
+
+<P>Copy the libraries to /usr/X11/lib :
+<UL><TT>$ cp -ivd /usr/src/xforms/FORMS/libforms* /usr/X11/lib</TT></UL>
+Copy the C headers to /usr/X11/include/X11 :
+<BR>&nbsp;
+<UL><TT>$ cp -ivd /usr/src/xforms/FORMS/forms.h /usr/X11/include/X11</TT></UL>
+Please note that the /usr/X11 directory could be system dependent. On some
+system, it could be <TT>/usr/X11R6</TT> or <TT>/usr/X386</TT>. Of course,
+in this case, replace X11 by whatever suits your system.
+
+<P><B><U>5) Reconfigure ld (Linux dynamic library loader)</U></B>
+
+<P>As root, type :
+<BR>&nbsp;
+<UL><TT>$ ldconfig -v</TT></UL>
+you should see libforms in the list of known libraries.
+<BR>&nbsp;</UL>
+</UL>
+</UL>
+</UL>
+&nbsp;
+</BODY>
+</HTML>

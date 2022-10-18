@@ -1,0 +1,91 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Olivier Fourdan">
+   <META NAME="Description" CONTENT="XFCE Help System">
+   <META NAME="Keywords" CONTENT="XFCE,toolbar,X11,window managerlinux,icons,xforms">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (X11; I; Linux 2.0.32 i586) [Netscape]">
+   <TITLE>XFCE Help System - Define Front Panel commands</TITLE>
+</HEAD>
+<BODY BACKGROUND="../images/backgr.gif" NOSAVE>
+
+<UL>
+<UL>
+<UL>
+<UL><A NAME="TOP"></A>&nbsp;<IMG SRC="../images/XFCE_logo.gif" NOSAVE HEIGHT=50 WIDTH=125>&nbsp;<IMG SRC="../images/bouncing.gif" NOSAVE HEIGHT=32 WIDTH=32>
+<BR>
+<HR WIDTH="100%">
+<BR>&nbsp;
+<DT>
+<IMG SRC="../images/define_front_panel_commands.gif" ALT="Defining front panel commands" NOSAVE HEIGHT=33 WIDTH=372></DT>
+
+<BR>&nbsp;
+<BR><B><FONT COLOR="#CC0000">You can associate a UNIX command to every
+icon on the Front Panel. You can even change the icons displayed, to suit
+your needs.</FONT></B>
+
+<P><B><U>1) The dialog box</U></B>
+<BR>&nbsp;
+<CENTER><IMG SRC="../images/XFCE_define.gif" NOSAVE HEIGHT=201 WIDTH=454></CENTER>
+
+
+<P>Enter the UNIX command to be executed when you click on the associated
+icon in the field "<B>Command line</B>".
+
+<P>You can use :
+<BR>&nbsp;
+<UL>
+<LI>
+Any UNIX command. XFCE starts a shell script before executing your command.</LI>
+
+<LI>
+If your command begins with the keyword <B>module</B>, it will spawned
+to FVWM. Therefore, you can start any FVWM module from XFCE.</LI>
+
+
+<P><B><U>Example :</U></B>&nbsp; To start the module FvwmPager whenever
+you click on the button, use the following syntax :
+
+<P><TT>module FvwmPager 0 3</TT>
+<BR>&nbsp;</UL>
+You can also "<B>browse</B>" the commands or the icons by clicking on the
+corresponding button, and choose the command from the file selector :
+<BR>&nbsp;
+<CENTER><IMG SRC="../images/XFCE_selexec.gif" NOSAVE HEIGHT=361 WIDTH=319></CENTER>
+
+
+<P><B><U>2) Modifying the icons</U></B>
+
+<P>You can modify the icons displayed on the front Panel by using one of
+the pre-defined "I<B>con styles</B>" or any other external icons :
+<BR>&nbsp;
+<UL>
+<LI>
+The use the pre-definied icons, just select one of the types listed in
+the pulldown menu :</LI>
+</UL>
+
+<CENTER>&nbsp;</CENTER>
+
+<UL>
+<CENTER>&nbsp;<IMG SRC="../images/XFCE_iconmenu.gif" NOSAVE HEIGHT=292 WIDTH=155></CENTER>
+&nbsp;
+<LI>
+If you wish to use an external icon, you'll have to choose the icon file
+by using the "Browse..." button, and then select "External..." from the
+list of icons :</LI>
+
+<CENTER><IMG SRC="../images/XFCE_iconmenu2.gif" NOSAVE HEIGHT=292 WIDTH=155></CENTER>
+
+
+<P><B><U>Note : </U></B>The type "External..." is automatically selected
+as soon as an icon is loaded thru the "Browse..." button.
+<BR>&nbsp;
+<BR>&nbsp;</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+
+</BODY>
+</HTML>

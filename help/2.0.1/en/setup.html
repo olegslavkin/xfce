@@ -1,0 +1,90 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Olivier Fourdan">
+   <META NAME="Description" CONTENT="XFCE Help System">
+   <META NAME="Keywords" CONTENT="XFCE,toolbar,X11,window managerlinux,icons,xforms">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (X11; I; Linux 2.0.32 i586) [Netscape]">
+   <TITLE>XFCE Help System - Compiling and Installing from the Sources</TITLE>
+</HEAD>
+<BODY BACKGROUND="../images/backgr.gif" NOSAVE>
+
+<UL>
+<UL>
+<UL>
+<UL><A NAME="TOP"></A>&nbsp;<IMG SRC="../images/XFCE_logo.gif" NOSAVE HEIGHT=50 WIDTH=125>&nbsp;<IMG SRC="../images/bouncing.gif" NOSAVE HEIGHT=32 WIDTH=32>
+<BR>
+<HR WIDTH="100%">
+<BR>&nbsp;
+<DT>
+<IMG SRC="../images/compiling_sources.gif" ALT="Compiling the sources" NOSAVE HEIGHT=33 WIDTH=240></DT>
+
+
+<P><B><FONT COLOR="#CC0000">IMPORTANT : YOU NEED TO HAVE A ROOT ACCESS
+TO INSTALL XFCE PROPERLY.</FONT></B>
+<BR>&nbsp;
+
+<BR><B><U>1) Installing from a tar archive</U></B>
+
+<P>Once you've retrieved the archive, ie a file that sounds like xfce-2.0.?.tar.gz,
+
+<P>Untar the source file :
+<BR>&nbsp;
+<UL><TT>$ tar xvzf XFCE-2.0.?.tar.gz; cd XFCE-2.0.?</TT>
+<BR>&nbsp;</UL>
+<I>(Of course, replace the question tag by the release version)</I>
+<BR>&nbsp;
+<BR><B><U>2) Edit Imakefile to suit your system (if needed)</U></B>
+<BR>&nbsp;
+<BR>This point could be optional.. If you are new to Unix, first try without
+editing the Imakefile
+<BR>&nbsp;
+<UL><TT>$ vi Imakefile</TT></UL>
+&nbsp;
+<BR><B><U>3) Create Makefile</U></B>
+<BR>&nbsp;
+<UL><TT>$ xmkmf</TT></UL>
+&nbsp;
+<BR>If you don't have Imake installed, then you can try with the one shipped
+in the package or get the makefile that someone else used for your platform,
+or even better, get Imake from <A HREF="ftp://ftp.x.org">ftp.x.org</A>
+!
+<BR>&nbsp;
+<BR><B><U>4) Create other Makefiles</U></B>
+<BR>&nbsp;
+<UL><TT>$ make Makefiles</TT></UL>
+&nbsp;
+<BR><B><U>5) Compile and install</U></B>
+
+<P>To compile and install XFCE, just type
+<BR>&nbsp;
+<UL><TT>$ make install</TT></UL>
+&nbsp;
+<BR>This would install XFCE, XFwm and XFbd so it can be run from the command
+line.
+
+<P><B><U>6) Choose your default language</U></B>
+
+<P>From within XFce's source directory, type the one of the following lines
+:
+<BR>&nbsp;
+<UL><TT>$ cd xfce</TT></UL>
+then
+<UL><TT>$ make english</TT></UL>
+or
+<UL><TT>$ make francais</TT></UL>
+or
+<UL><TT>$ make italiano</TT></UL>
+or
+<UL><TT>$ make deutsch</TT></UL>
+or
+<UL><TT>$ make espanol</TT></UL>
+
+
+<P>&nbsp;</UL>
+</UL>
+</UL>
+</UL>
+&nbsp;
+</BODY>
+</HTML>
