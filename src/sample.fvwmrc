@@ -1,0 +1,233 @@
+HiForeColor 		White
+HiBackColor 		#b24d7a
+StickyForeColor		Black
+StickyBackColor		#a2b2c3
+MenuForeColor           Black
+MenuBackColor           #aeb2c3
+MenuStippleColor        grey40
+Font			-adobe-helvetica-bold-r-*-*-14-*-*-*-*-*-*-*
+WindowFont		-adobe-helvetica-bold-r-*-*-14-*-*-*-*-*-*-*
+
+MWMBorders
+MWMButtons
+MWMMenus
+MWMDecorHints
+MWMFunctionHints
+DecorateTransients
+ClickToFocus
+
+ButtonStyle 1 50x22
+ButtonStyle 2 50x50
+ButtonStyle 4 22x22
+
+Cursor	0	68
+Cursor	1	68
+Cursor	2	68
+Cursor	6	68
+
+ModulePath 		/usr/lib/X11/fvwm
+PixmapPath	     	/usr/include/X11/pixmaps
+IconPath	     	/usr/include/X11/bitmaps
+
+DeskTopSize 1x1
+DeskTopScale 32
+
+RandomPlacement
+
+Style "*" Color Black/#a3a0a0,Icon unknown1.xpm,HandleWidth 8,BorderWidth 4
+
+Style "Fvwm*"      NoTitle, NoHandles, Sticky, WindowListSkip,BorderWidth 0
+Style "XFCE*"     NoTitle, NoHandles, Sticky, BorderWidth 6 
+Style "Fvwm Pager" StaysOnTop
+Style "FvwmPager"  StaysOnTop
+Style "FvwmBanner" StaysOnTop
+Style "FvwmFileMgr" Title, Handles, Icon folder2.xpm
+
+Function "InitFunction"
+	Exec	"I"	xsetroot -cursor_name left_ptr
+	Module	"I"	XFCE -shared
+	Module  "I"	FvwmBacker
+	Desk	"I"	0 4
+EndFunction
+
+Function "RestartFunction"
+EndFunction
+
+Popup "Quit-Verify"
+	Title	"Really Quit Fvwm?	"
+	Quit	"Yes, Really Quit	"
+	Nop	""
+	Nop	"No, Don't Quit	"
+EndPopup
+
+Popup "Module-Popup"
+	Title	"Modules"
+	Module  "XFCE"		XFCE -shared
+	Module	"FvwmIdentify"	FvwmIdent
+	Module  "SaveDesktop"   FvwmSave
+	Module  "FvwmWinList"   FvwmWinList
+EndPopup
+
+
+# This menu will fire up some very common utilities
+Popup "Main menu"
+	Title 		"Main menu"
+	Exec    	"New window"	exec xterm &
+	CirculateUp	"Shuffle Up"
+	CirculateDown	"Shuffle Down"	
+	Refresh		"Refresh"	
+	Nop		""
+	Popup		"Modules"	Module-Popup
+	Nop		""
+	Popup		"Exit Fvwm"	Quit-Verify
+EndPopup
+
+Popup "Window Ops"
+	Title	"Window Ops	"
+	Move    "&Move	Alt+F7"
+	Resize  "&Size	Alt+F8" 
+	Lower   "&Lower	Alt+F3"
+	Raise   "Raise	"
+	Stick	"(Un)Stick	"
+	Iconify "(Un)Mi&nimize	Alt+F9"
+	Maximize "(Un)Ma&ximize	Alt+F10"
+	Maximize "(Un)Maximize Vertical	"	0 100
+	Nop     ""
+	Close   "&Close	Alt+F4"
+EndPopup
+
+Popup "Window Ops2"
+	Move    "&Move	Alt+F7"
+	Resize  "&Size	Alt+F8" 
+	Iconify "(Un)Mi&nimize	Alt+F9"
+	Maximize "(Un)Ma&ximize	Alt+F10"
+	Lower   "&Lower	Alt+F3"
+	Nop     ""
+	Close   "&Close	Alt+F4"
+	Nop 	""
+	Module	"&ScrollBar" 	FvwmScroll 2 2
+EndPopup
+
+Function "Iconify-and-Raise"
+	Iconify	"Motion"
+	Raise "Motion"
+EndPopup
+
+Function "Move-or-Lower"
+	Move 		"Motion"
+	Lower		"Motion"
+	Lower		"Click"
+	RaiseLower	"DoubleClick"
+EndFunction
+
+Function "Move-or-Iconify"
+	Move 		"Motion"
+	PopUp		"Click" Window Ops2
+	Iconify		"DoubleClick"
+EndFunction
+
+Function "windowops-or-die"
+	PopUp		"Motion" Window Ops2
+	PopUp		"Click" Window Ops2
+	Close 	 	"DoubleClick"
+EndFunction
+
+Function "Move-or-Raise"
+	Move            "Motion"
+	Raise           "Motion"
+	Raise           "Click"
+	Iconify      	"DoubleClick" 
+EndFunction
+
+Function "Move-or-Lower"
+	Move            "Motion"
+	Lower           "Click"
+	RaiseLower      "DoubleClick"
+EndFunction
+
+Function "Resize-or-Raise"
+	Resize          "Motion"
+	Raise           "Motion"
+	Raise           "Click"
+	RaiseLower      "DoubleClick"
+EndFunction
+
+Function "Resize-or-Lower"
+	Resize          "Motion"
+	Lower           "Click"
+	RaiseLower      "DoubleClick"
+EndFunction
+
+#     Button	Context Modifi 	Function
+Mouse 1		R   	A       PopUp "Main menu"
+Mouse 2		R    	A      	PopUp "Window Ops"
+Mouse 3		R    	A      	WindowList
+
+#     Button	Context Modifi 	Function
+Mouse 0		1    	A      	Function "windowops-or-die"
+Mouse 0		2    	A     	Maximize
+Mouse 0		4    	A     	Iconify
+
+Mouse 1         FS      A       Function "Resize-or-Raise"
+Mouse 2         FS      A       Function "Resize-or-Lower"
+Mouse 1         T       A       Function "Move-or-Raise"
+Mouse 2         T       A       Function "Move-or-Lower"
+
+Mouse 1		I	A	Function "Move-or-Iconify"
+Mouse 2		I	A	Function "Move-or-Iconify"
+Mouse 3		I	A	PopUp 	 "Window Ops2"
+Mouse 3		FST    	A      	Function "windowops-or-die"
+
+Key Left	A	C	Scroll -100 0
+Key Right	A	C	Scroll +100 +0
+Key Up		A	C	Scroll +0   -100
+Key Down	A	C	Scroll +0   +100
+
+Key Left	A	M	Scroll -10 +0
+Key Right	A	M	Scroll +10 +0
+Key Up		A	M	Scroll +0   -10
+Key Down	A	M	Scroll +0   +10
+
+Key Left	A	SC	CursorMove -1 0
+Key Right	A	SC	CursorMove +1 +0
+Key Up		A	SC	CursorMove +0   -1
+Key Down	A	SC	CursorMove +0   +1
+
+Key Left	A	SM	CursorMove -10 +0
+Key Right	A	SM	CursorMove +10 +0
+Key Up		A	SM	CursorMove +0   -10
+Key Down	A	SM	CursorMove +0   +10
+
+Key F1		A	M	Popup "Window Ops"
+Key F2		A	M	Popup "Main menu"
+Key F3		A	M	Lower
+Key F4		A	M	Destroy
+Key F5		A	M	CirculateUp
+Key F6		A	M	CirculateDown
+Key F7		A	M	Move
+Key F8		A	M	Resize
+Key F9		A	M	Iconify
+Key F10		A	M	Maximize
+
+Key L5                IW      N       RaiseLower
+Key L5                IW      S       Lower
+Key L5                IW      C       Raise
+Key L7                IW      A       Iconify
+
+*FvwmBackerDesk 0 -solid #266294
+*FvwmBackerDesk 1 -solid #4992A7
+*FvwmBackerDesk 2 -solid #C6A288
+*FvwmBackerDesk 3 -solid #B7878D
+
+*FvwmIdentBack MidnightBlue
+*FvwmIdentFore Yellow
+*FvwmIdentFont -adobe-helvetica-medium-r-*-*-12-*-*-*-*-*-*-*
+
+*FvwmWinListBack #908090
+*FvwmWinListFore Black
+*FvwmWinListFont -adobe-helvetica-bold-r-*-*-10-*-*-*-*-*-*-*
+*FvwmWinListAction Click1 Iconify -1,Raise
+*FvwmWinListAction Click2 Iconify 1
+*FvwmWinListAction Click3 Module "FvwmIdent" FvwmIdent
+*FvwmWinListUseSkipList
+*FvwmWinListGeometry +0-1
