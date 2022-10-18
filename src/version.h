@@ -23,5 +23,5 @@
 
 
 #ifndef XFCE_VERNUM
-#define XFCE_VERNUM "v 1.10 - 03/25/97"
+#define XFCE_VERNUM "v 1.11 - 03/30/97"
 #endif

@@ -29,6 +29,7 @@
 #include "fileutil.h"
 #include "pulldown.h"
 #include "constant.h"
+#include "configfile.h"
 #include "extern.h"
 
 extern FD_addiconform *fd_addiconform;
@@ -117,12 +118,12 @@ void update_pixfile(FL_OBJECT *ob, long data)
 
 void ai_ok_cb(FL_OBJECT *ob, long data)
 {
-  const char * s1, * s2;
+  char * s1, * s2;
   int x1, x2;
   
-  s1 = (char *) skiphead(fl_get_input(fd_addiconform->comline_input));
+  s1 = skiphead((char *) fl_get_input(fd_addiconform->comline_input));
   if (strlen(s1)) skiptail(s1);
-  s2 = (char *) skiphead(fl_get_input(fd_addiconform->label_input));
+  s2 = skiphead((char *) fl_get_input(fd_addiconform->label_input));
   if (strlen(s2)) skiptail(s2);
   x1 = strlen(s1);
   x2 = strlen(s2);
@@ -134,6 +135,9 @@ void ai_ok_cb(FL_OBJECT *ob, long data)
       				        data % NBMAXITEMS); }
       fl_activate_all_forms();
       fl_hide_form((FL_FORM *)fd_addiconform->addiconform);
+      #ifdef ALLWAYS_SAVE
+          writetoconfig();
+      #endif
   } else {
       fl_show_alert("Please fill out command \nand label fields...","","",1);
   }
@@ -149,7 +153,7 @@ void ai_remove_cb(FL_OBJECT *ob, long data)
 {
   if(data >= 0)
 #if FL_REVISION>=84
-    if(fl_show_question("Are you sure you want to remove\nthis entry ?",1) == 1) {
+    if(fl_show_question("Are you sure you want to remove\nthis entry ?",0) == 1) {
 #else
     if(fl_show_question("Are you sure you want to remove", 
     			"this entry ?",
@@ -157,7 +161,11 @@ void ai_remove_cb(FL_OBJECT *ob, long data)
 #endif
 
         remove_icondata(fd_addiconform, data / NBMAXITEMS, 
-  			                data % NBMAXITEMS); }
+  			                data % NBMAXITEMS); 
+        #ifdef ALLWAYS_SAVE
+            writetoconfig();
+        #endif
+        }
     fl_activate_all_forms();
     fl_hide_form((FL_FORM *)fd_addiconform->addiconform);
 }

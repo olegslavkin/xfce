@@ -23,6 +23,7 @@
 
 
 #include <signal.h>
+#include <sys/wait.h>
 #include "forms.h"
 #include "XFCE.h"
 #include "startup.h"
@@ -59,7 +60,14 @@ void initmenus(void)
    for(i=0; i<NBMENUS; i++) menus[i] = create_form_menu(i);
 }
 
-void handlesignal(int dummy)
+void reap(int sig)
+{
+   /* This avoid those ugly zombies */
+   signal(SIGCHLD, reap);
+   while((wait3(NULL, WNOHANG, NULL)) > 0);
+}
+
+void handlesignal(int sig)
 {
   writetoconfig();
   exit(0);
@@ -145,6 +153,7 @@ int main(int argc, char *argv[])
    signal(SIGBUS , handlesignal);  
    signal(SIGUSR1, handlesignal);  
    signal(SIGUSR2, handlesignal);  
+   signal(SIGCHLD, reap);  
    fl_set_form_atclose(fd_XFCE->XFCE, 		    Atclose_cb, NULL);
    fl_set_form_atclose(fd_addiconform->addiconform, Atclose_cb, NULL);
    fl_set_form_atclose(fd_info->info, 		    Atclose_cb, NULL);

@@ -1,6 +1,6 @@
 /*
 
- ORIGINAL FILE NAME : pulldown.h
+ ORIGINAL FILE NAME : select.h
 
  ********************************************************************
  *                                                                  *
@@ -22,42 +22,13 @@
 
 
 
-#ifndef FD_pullmenu_h_
-#define FD_pullmenu_h_
+#ifndef __SELECT_H__
+#define __SELECT_H__
 
 #include "forms.h"
-#include "constant.h"
 
+extern void select_cb(FL_OBJECT *, long);
+extern void screen_cb(FL_OBJECT *, long);
+extern void press(FL_OBJECT *, unsigned);
 
-extern void pullmenu_cb(FL_OBJECT *, long);
-extern void addicon_cb(FL_OBJECT *, long);
-
-typedef struct {
-	FL_OBJECT * button;
-	FL_OBJECT * icon;
-	char 	  * label;
-	char      * pixfile;
-	char      * command;
-} ST_item;
-
-typedef struct {
-	FL_FORM *pullmenu;
-	ST_item    *menuitem[NBMAXITEMS];
-	FL_OBJECT * botframe;
-	FL_OBJECT * addbutton;
-	FL_OBJECT * addicon;
-	void *vdata;
-	long ldata;
-	int nbitems;
-} FD_pullmenu;
-
-typedef struct {
-	char *command;
-} ST_select;
-
-extern FD_pullmenu *create_form_menu(int no_menu);
-extern void set_item_menu(FD_pullmenu *, int, char *, char *, char *);
-extern void add_item_menu(FD_pullmenu *, char *, char *, char *);
-extern void popup_pulldown(FD_pullmenu *, FL_Coord, FL_Coord);
-
-#endif /* FD_pullmenu_h_ */
+#endif

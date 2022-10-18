@@ -24,6 +24,7 @@
 
 #include "forms.h"
 #include "fileutil.h"
+#include "configfile.h"
 #include "extern.h"
 
 void DM_com_cb(FL_OBJECT *ob, long data)
@@ -33,8 +34,8 @@ void DM_com_cb(FL_OBJECT *ob, long data)
 
 void br_com_cb(FL_OBJECT *ob, long data)
 {
-  const char * fselect;
-  fselect=(char *) skiphead(fl_show_fselector("Choose command :",
+  char * fselect;
+  fselect=skiphead((char *) fl_show_fselector("Choose command :",
   			    XBINDIR, "*",""));
   if (fselect) {
     if (strlen(fselect)) skiptail(fselect);
@@ -49,9 +50,9 @@ void br_com_cb(FL_OBJECT *ob, long data)
 
 void OK_defcom_cb(FL_OBJECT *ob, long data)
 {
-    const char *s;
+    char *s;
 
-    s = (char *) skiphead(fl_get_input(fd_def_command->command_input));
+    s = skiphead((char *) fl_get_input(fd_def_command->command_input));
     if (strlen(s)) skiptail(s);
     if (!strlen(s) || !strncasecmp(s, "None", strlen("None"))) {
       strcpy(selects[data].command, "None"); }
@@ -59,6 +60,9 @@ void OK_defcom_cb(FL_OBJECT *ob, long data)
       strcpy(selects[data].command, s); }
     fl_activate_all_forms();
     fl_hide_form(fd_def_command->defcom);
+    #ifdef ALLWAYS_SAVE
+        writetoconfig();
+    #endif
 }
 
 void CANCEL_defcom_cb(FL_OBJECT *ob, long data)

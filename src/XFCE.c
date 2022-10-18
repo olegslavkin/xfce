@@ -39,15 +39,16 @@
 #include "minbutdn.h"
 #include "minipnt.h"
 #include "mininf.h"
+#include "select.h"
 
-void ToggleButtonUp(FD_XFCE *fdui,   FL_OBJECT *obj)
+void ToggleButtonUp(FL_OBJECT *obj)
 {
   fl_set_pixmap_data(obj, minbutup);
   fl_set_button(obj, 0);
   fl_redraw_object(obj);
 }
 
-void ToggleButtonDn(FD_XFCE * fdui,   FL_OBJECT *obj)
+void ToggleButtonDn(FL_OBJECT *obj)
 {
   fl_set_pixmap_data(obj, minbutdn);
   fl_set_button(obj, 1);
@@ -80,54 +81,83 @@ FD_XFCE *create_form_XFCE(void)
 
 
   fdui->select[0] = obj = fl_add_pixmapbutton(FL_NORMAL_BUTTON,73,19,54,54,"");
-    fl_set_object_boxtype(obj,FL_FLAT_BOX);
-    fl_set_object_color(obj,XFCE_COL8,XFCE_COL1);
+    ToggleSelectUp(obj);
     fl_set_object_callback(obj, select_cb, 0);
+#if FL_REVISION>=86
+    fl_set_pixmapbutton_focus_outline(obj, 1);
+#endif
   fdui->select[1] = obj = fl_add_pixmapbutton(FL_NORMAL_BUTTON,133,19,54,54,"");
-    fl_set_object_boxtype(obj,FL_FLAT_BOX);
-    fl_set_object_color(obj,XFCE_COL8,XFCE_COL1);
+    ToggleSelectUp(obj);
     fl_set_object_callback(obj, select_cb, 1);
+#if FL_REVISION>=86
+    fl_set_pixmapbutton_focus_outline(obj, 1);
+#endif
   fdui->select[2] = obj = fl_add_pixmapbutton(FL_NORMAL_BUTTON,193,19,54,54,"");
-    fl_set_object_boxtype(obj,FL_FLAT_BOX);
-    fl_set_object_color(obj,XFCE_COL8,XFCE_COL1);
+    ToggleSelectUp(obj);
     fl_set_object_callback(obj, select_cb, 2);
+#if FL_REVISION>=86
+    fl_set_pixmapbutton_focus_outline(obj, 1);
+#endif
   fdui->select[3] = obj = fl_add_pixmapbutton(FL_NORMAL_BUTTON,537,19,54,54,"");
-    fl_set_object_boxtype(obj,FL_FLAT_BOX);
-    fl_set_object_color(obj,XFCE_COL8,XFCE_COL1);
+    ToggleSelectUp(obj);
     fl_set_object_callback(obj, select_cb, 3);
+#if FL_REVISION>=86
+    fl_set_pixmapbutton_focus_outline(obj, 1);
+#endif
   fdui->select[4] = obj = fl_add_pixmapbutton(FL_NORMAL_BUTTON,597,19,54,54,"");
-    fl_set_object_boxtype(obj,FL_FLAT_BOX);
-    fl_set_object_color(obj,XFCE_COL8,XFCE_COL1);
+    ToggleSelectUp(obj);
     fl_set_object_callback(obj, select_cb, 4);
+#if FL_REVISION>=86
+    fl_set_pixmapbutton_focus_outline(obj, 1);
+#endif
   fdui->select[5] = obj = fl_add_pixmapbutton(FL_NORMAL_BUTTON,657,19,54,54,"");
-    fl_set_object_boxtype(obj,FL_FLAT_BOX);
-    fl_set_object_color(obj,XFCE_COL8,XFCE_COL1);
+    ToggleSelectUp(obj);
     fl_set_object_callback(obj, select_cb, 5);
+#if FL_REVISION>=86
+    fl_set_pixmapbutton_focus_outline(obj, 1);
+#endif
   fdui->select[6] = obj = fl_add_pixmapbutton(FL_NORMAL_BUTTON,717,19,54,54,"");
-    fl_set_object_boxtype(obj,FL_FLAT_BOX);
-    fl_set_object_color(obj,XFCE_COL8,XFCE_COL1);
+    ToggleSelectUp(obj);
     fl_set_object_callback(obj, select_cb, 6);
+#if FL_REVISION>=86
+    fl_set_pixmapbutton_focus_outline(obj, 1);
+#endif
 
   fdui->popup[0] = obj = fl_add_pixmapbutton(FL_PUSH_BUTTON,70,0,60,16,"");
     fl_set_object_boxtype(obj,FL_UP_BOX);
     fl_set_object_color(obj,XFCE_COL2,XFCE_COL1);
     fl_set_object_callback(obj, popup_cb, 0);
+#if FL_REVISION>=86
+    fl_set_pixmapbutton_focus_outline(obj, 1);
+#endif
   fdui->popup[1] = obj = fl_add_pixmapbutton(FL_PUSH_BUTTON,130,0,60,16,"");
     fl_set_object_boxtype(obj,FL_UP_BOX);
     fl_set_object_color(obj,XFCE_COL2,XFCE_COL1);
     fl_set_object_callback(obj, popup_cb, 1);
+#if FL_REVISION>=86
+    fl_set_pixmapbutton_focus_outline(obj, 1);
+#endif
   fdui->popup[2] = obj = fl_add_pixmapbutton(FL_PUSH_BUTTON,190,0,60,16,"");
     fl_set_object_boxtype(obj,FL_UP_BOX);
     fl_set_object_color(obj,XFCE_COL2,XFCE_COL1);
     fl_set_object_callback(obj, popup_cb, 2);
+#if FL_REVISION>=86
+    fl_set_pixmapbutton_focus_outline(obj, 1);
+#endif
   fdui->popup[3] = obj = fl_add_pixmapbutton(FL_PUSH_BUTTON,534,0,60,16,"");
     fl_set_object_boxtype(obj,FL_UP_BOX);
     fl_set_object_color(obj,XFCE_COL2,XFCE_COL1);
     fl_set_object_callback(obj, popup_cb, 3);
+#if FL_REVISION>=86
+    fl_set_pixmapbutton_focus_outline(obj, 1);
+#endif
   fdui->popup[4] = obj = fl_add_pixmapbutton(FL_PUSH_BUTTON,594,0,60,16,"");
     fl_set_object_boxtype(obj,FL_UP_BOX);
     fl_set_object_color(obj,XFCE_COL2,XFCE_COL1);
     fl_set_object_callback(obj, popup_cb, 4);
+#if FL_REVISION>=86
+    fl_set_pixmapbutton_focus_outline(obj, 1);
+#endif
   fdui->popup[5] = obj = fl_add_pixmapbutton(FL_PUSH_BUTTON,654,0,60,16,"");
     fl_set_object_boxtype(obj,FL_UP_BOX);
     fl_set_object_color(obj,XFCE_COL2,XFCE_COL1);
@@ -141,7 +171,7 @@ FD_XFCE *create_form_XFCE(void)
     fl_set_object_color(obj,XFCE_COL3,XFCE_COL3);
     fl_set_object_lcol(obj,FL_WHITE);
     fl_set_object_lsize(obj,XFCE_NORMAL_SIZE);
-    fl_set_object_lstyle(obj,XFREG+FL_SHADOW_STYLE);
+    fl_set_object_lstyle(obj,XFBOLD+FL_SHADOW_STYLE);
     fl_set_object_lalign(obj,FL_ALIGN_CENTER|FL_ALIGN_INSIDE);
     fl_set_object_callback(obj, screen_cb, 0);
     fl_set_button(obj, 1);
@@ -151,7 +181,7 @@ FD_XFCE *create_form_XFCE(void)
     fl_set_object_color(obj,XFCE_COL6,XFCE_COL6);
     fl_set_object_lcol(obj,FL_WHITE);
     fl_set_object_lsize(obj,XFCE_NORMAL_SIZE);
-    fl_set_object_lstyle(obj,XFREG+FL_SHADOW_STYLE);
+    fl_set_object_lstyle(obj,XFBOLD+FL_SHADOW_STYLE);
     fl_set_object_lalign(obj,FL_ALIGN_CENTER|FL_ALIGN_INSIDE);
     fl_set_object_callback(obj, screen_cb, 1);
   obj = fl_add_box(FL_DOWN_BOX,295,42,94,24,"");
@@ -160,7 +190,7 @@ FD_XFCE *create_form_XFCE(void)
     fl_set_object_color(obj,XFCE_COL5,XFCE_COL5);
     fl_set_object_lcol(obj,FL_WHITE);
     fl_set_object_lsize(obj,XFCE_NORMAL_SIZE);
-    fl_set_object_lstyle(obj,XFREG+FL_SHADOW_STYLE);
+    fl_set_object_lstyle(obj,XFBOLD+FL_SHADOW_STYLE);
     fl_set_object_lalign(obj,FL_ALIGN_CENTER|FL_ALIGN_INSIDE);
     fl_set_object_callback(obj, screen_cb, 2);
   obj = fl_add_box(FL_DOWN_BOX,395,42,94,24,"");
@@ -169,7 +199,7 @@ FD_XFCE *create_form_XFCE(void)
     fl_set_object_color(obj,XFCE_COL7,XFCE_COL7);
     fl_set_object_lcol(obj,FL_WHITE);
     fl_set_object_lsize(obj,XFCE_NORMAL_SIZE);
-    fl_set_object_lstyle(obj,XFREG+FL_SHADOW_STYLE);
+    fl_set_object_lstyle(obj,XFBOLD+FL_SHADOW_STYLE);
     fl_set_object_lalign(obj,FL_ALIGN_CENTER|FL_ALIGN_INSIDE);
     fl_set_object_callback(obj, screen_cb, 3);
   fdui->INFO = obj = fl_add_pixmapbutton(FL_NORMAL_BUTTON,257,8,35,28,"");
@@ -178,6 +208,9 @@ FD_XFCE *create_form_XFCE(void)
     fl_set_object_lsize(obj,XFCE_TINY_SIZE);
     fl_set_object_lstyle(obj,XFTINY);
     fl_set_object_callback(obj, info_cb, 0);
+#if FL_REVISION>=86
+    fl_set_pixmapbutton_focus_outline(obj, 1);
+#endif
   fdui->SAVE = obj = fl_add_button(FL_NORMAL_BUTTON,257,44,35,20,"SAVE");
     fl_set_object_boxtype(obj,FL_FRAME_BOX);
     fl_set_object_color(obj,XFCE_COL8,XFCE_COL3);
@@ -190,6 +223,9 @@ FD_XFCE *create_form_XFCE(void)
     fl_set_object_lsize(obj,XFCE_TINY_SIZE);
     fl_set_object_lstyle(obj,XFTINY);
     fl_set_object_callback(obj, setup_cb, 0);
+#if FL_REVISION>=86
+    fl_set_pixmapbutton_focus_outline(obj, 1);
+#endif
   fdui->QUIT = obj = fl_add_button(FL_NORMAL_BUTTON,492,44,35,20,"QUIT");
     fl_set_object_boxtype(obj,FL_FRAME_BOX);
     fl_set_object_color(obj,XFCE_COL8,XFCE_COL3);
@@ -210,7 +246,7 @@ FD_XFCE *create_form_XFCE(void)
   fl_set_pixmap_data(fdui->SETUP, minipnt);
 
   for(i = 0; i< NBMENUS; i++) {
-    ToggleButtonUp(fdui, fdui->popup[i]);
+    ToggleButtonUp(fdui->popup[i]);
     fl_set_pixmap_data(fdui->popup[i], minbutup);
   }
   

@@ -525,24 +525,25 @@ XMULIB = $(XMULIBONLY) $(XTOOLLIB) $(XLIB)
 # ----------------------------------------------------------------------
 # start of Imakefile
 
-XPIXMAPDIR=/usr/X11/include/X11/pixmaps
-XBINDIR=/usr/local/bin
-XFCE_DIR=/var/XFCE
-XFCE_PAL=/var/XFCE/palettes
-FVWM_MODULES=/usr/lib/X11/fvwm
-FVWM2_MODULES=/usr/lib/X11/fvwm2
-SRCS = XFCE.c XFCE_cb.c sendinfo.c main.c pulldown.c color.c defcolor.c defcolor_cb.c addicon.c addicon_cb.c fileutil.c configfile.c info.c  info_cb.c startup.c command.c command_cb.c screen.c screen_cb.c
+XPIXMAPDIR    = /usr/X11/include/X11/pixmaps
+XBINDIR       = /usr/local/bin
+XFCE_DIR      = /var/XFCE
+XFCE_PAL      = /var/XFCE/palettes
+FVWM_MODULES  = /usr/lib/X11/fvwm
+FVWM2_MODULES = /usr/lib/X11/fvwm2
 
-OBJS = XFCE.o XFCE_cb.o sendinfo.o main.o pulldown.o color.o defcolor.o defcolor_cb.o addicon.o addicon_cb.o fileutil.o configfile.o info.o  info_cb.o startup.o command.o command_cb.o screen.o screen_cb.o
+SRCS = XFCE.c XFCE_cb.c addicon.c addicon_cb.c color.c command.c command_cb.c configfile.c defcolor.c defcolor_cb.c fileutil.c info.c info_cb.c main.c pulldown.c screen.c screen_cb.c select.c sendinfo.c startup.c
+
+OBJS = XFCE.o XFCE_cb.o addicon.o addicon_cb.o color.o command.o command_cb.o configfile.o defcolor.o defcolor_cb.o fileutil.o info.o info_cb.o main.o pulldown.o screen.o screen_cb.o select.o sendinfo.o startup.o
 
 # for LINUX:
-EXTRA_LIBRARIES  = -L/usr/local/lib -lforms -lXpm -lm #
+EXTRA_LIBRARIES = -L/usr/local/lib -lforms -lXpm -lm #
 
 # FOR Solaris
-# EXTRA_LIBRARIES  = -L/usr/local/lib -lforms -lXpm -lm -lnsl
+# EXTRA_LIBRARIES = -L/usr/local/lib -lforms -lXpm -lm -lnsl
 
 EXTRA_INCLUDES = -I/usr/local/include -I.
-EXTRA_DEFINES =  -DXPIXMAPDIR=\"$(XPIXMAPDIR)\" -DXFCE_DIR=\"$(XFCE_DIR)\" -DXBINDIR=\"$(XBINDIR)\" -DXFCE_PAL=\"$(XFCE_PAL)\"
+EXTRA_DEFINES  = -DXPIXMAPDIR=\"$(XPIXMAPDIR)\" -DXFCE_DIR=\"$(XFCE_DIR)\" -DXBINDIR=\"$(XBINDIR)\" -DXFCE_PAL=\"$(XFCE_PAL)\"
 
 LDLIBS = $(EXTRA_LIBRARIES) $(EXTENSIONLIB) $(XLIB)
 

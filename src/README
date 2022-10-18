@@ -25,6 +25,20 @@ License agreement :
   CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
   SOFTWARE.
 
+Special thanks
+--------------
+
+Of course, deep thanks to Dr. T.C. Zhao and Mark Overmars for the XFORMS
+library. Special thanks to T.C. Zhao who has allways replyed (quickly) to 
+my mails !!
+
+I would like to thank Rob Nation for FVWM. Some parts of this program
+(especially the part of XFCE that communicate with FVWM) are based on his 
+work.
+
+I would also thank Roman Mitnitski for Tycoon, I've taken a look at his work
+before I first started writing XFCE (I've never used XFORMS before)
+
 Note to CDROM vendors and distribution makers
 ---------------------------------------------
 
@@ -49,7 +63,7 @@ FILE "NEW" FOR MORE INFORMATION.
 
 1) Untar source :
 
-	$ tar xvzf XFCE110.tgz; cd XFCE
+	$ tar xvzf XFCE111.tgz; cd XFCE
 	
 2) Edit Imakefile to suits your system
 
@@ -67,7 +81,7 @@ or even better, get Imake from ftp.x.org !
 
 	$ make
 	
-If you have a poor 256 colors adaptator (just like me), you might want to 
+If you have a poor 256 colors vga adaptator (just like me), you might want to 
 install the "dithered" version of XFCE. The full color version might allocate
 all the colors, so your system may not be able to display other programs
 properly.

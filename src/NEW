@@ -1,7 +1,18 @@
 NEW
 ---
 
-version 1.1
+version 1.11b
+
+* Starts a shell before running a command line
+
+version 1.11
+
+* Removed those ugly zombies processes
+* Added writes to config file each time it's modified (that's safer)
+* Added special behavior for panel buttons
+* Lightly modified to keep the same aspect under xforms v 0.86
+
+version 1.10
 
 So many things !!
 * Bug concerning set_font_name under v0.84 of xforms has been removed. (Shame on

@@ -1,6 +1,6 @@
 /*
 
- ORIGINAL FILE NAME : pulldown.h
+ ORIGINAL FILE NAME : select.c
 
  ********************************************************************
  *                                                                  *
@@ -22,42 +22,40 @@
 
 
 
-#ifndef FD_pullmenu_h_
-#define FD_pullmenu_h_
-
+#include <stdio.h>
+#include <signal.h>
 #include "forms.h"
 #include "constant.h"
 
+FL_OBJECT * last_ob = NULL;
 
-extern void pullmenu_cb(FL_OBJECT *, long);
-extern void addicon_cb(FL_OBJECT *, long);
+void ToggleSelectUp(FL_OBJECT *ob)
+{
+  fl_set_object_boxtype(ob,FL_FLAT_BOX);
+  fl_set_object_color(ob,XFCE_COL8,XFCE_COL1);
+  fl_redraw_object(ob);
+}
 
-typedef struct {
-	FL_OBJECT * button;
-	FL_OBJECT * icon;
-	char 	  * label;
-	char      * pixfile;
-	char      * command;
-} ST_item;
+void ToggleSelectDn(FL_OBJECT *ob)
+{
+  fl_set_object_boxtype(ob,FL_DOWN_BOX);
+  fl_set_object_color(ob,XFCE_COL3,XFCE_COL1);
+  fl_redraw_object(ob);
+}
 
-typedef struct {
-	FL_FORM *pullmenu;
-	ST_item    *menuitem[NBMAXITEMS];
-	FL_OBJECT * botframe;
-	FL_OBJECT * addbutton;
-	FL_OBJECT * addicon;
-	void *vdata;
-	long ldata;
-	int nbitems;
-} FD_pullmenu;
+void wakeup(int SIG) 
+{
+    if (last_ob) ToggleSelectUp(last_ob);
+    last_ob = NULL;
+}
 
-typedef struct {
-	char *command;
-} ST_select;
-
-extern FD_pullmenu *create_form_menu(int no_menu);
-extern void set_item_menu(FD_pullmenu *, int, char *, char *, char *);
-extern void add_item_menu(FD_pullmenu *, char *, char *, char *);
-extern void popup_pulldown(FD_pullmenu *, FL_Coord, FL_Coord);
-
-#endif /* FD_pullmenu_h_ */
+void press(FL_OBJECT * ob, unsigned l)
+{
+   if (l) {
+     if (alarm(0)) wakeup(0);
+     ToggleSelectDn(ob);
+     last_ob = ob;
+     signal(SIGALRM, wakeup);
+     alarm(l);
+   }
+}

@@ -32,8 +32,6 @@
 
 extern void move_cb(FL_OBJECT *, long);
 extern void popup_cb(FL_OBJECT *, long);
-extern void select_cb(FL_OBJECT *, long);
-extern void screen_cb(FL_OBJECT *, long);
 extern void info_cb(FL_OBJECT *, long);
 extern void save_cb(FL_OBJECT *, long);
 extern void setup_cb(FL_OBJECT *, long);
@@ -59,8 +57,10 @@ typedef struct {
 	long ldata;
 } FD_XFCE;
 
-extern void ToggleButtonUp(FD_XFCE *,   FL_OBJECT *);
-extern void ToggleButtonDn(FD_XFCE *,   FL_OBJECT *);
+extern void ToggleButtonUp(FL_OBJECT *);
+extern void ToggleButtonDn(FL_OBJECT *);
+extern void ToggleSelectUp(FL_OBJECT *);
+extern void ToggleSelectDn(FL_OBJECT *);
 extern FD_XFCE * create_form_XFCE(void);
 
 #endif /* FD_XFCE_h_ */

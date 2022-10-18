@@ -83,7 +83,7 @@ void defcolor_save_cb(FL_OBJECT *ob, long data)
   	if(strlen(fselect)) {
    	    if(existfile(fselect))
 #if FL_REVISION>=84
-              rep=(fl_show_question("File exists : Overwrite ?",1)==1);
+              rep=(fl_show_question("File exists : Overwrite ?",-1)==1);
 #else
               rep=(fl_show_question("File exists : Overwrite ?", " ", " ")==1);
 #endif      

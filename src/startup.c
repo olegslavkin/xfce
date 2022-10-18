@@ -47,7 +47,7 @@ FD_startup *create_form_startup(void)
       fl_set_object_lsize(obj,XFCE_HUGE_SIZE);
       fl_set_object_lstyle(obj,XFTIT+FL_ENGRAVED_STYLE); }
     fl_set_object_boxtype(obj,FL_NO_BOX);
-  obj = fl_add_text(FL_NORMAL_TEXT,10,100,230,20,"Please Wait, XFCE is loading...");
+  obj = fl_add_text(FL_NORMAL_TEXT,10,100,230,25,"Please Wait, XFCE is loading...");
     fl_set_object_color(obj,XFCE_COL8,XFCE_COL8);
     fl_set_object_lalign(obj,FL_ALIGN_CENTER|FL_ALIGN_INSIDE);
     fl_set_object_lsize(obj,XFCE_MEDIUM_SIZE);

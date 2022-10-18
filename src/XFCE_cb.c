@@ -28,6 +28,7 @@
 #include "addicon.h"
 #include "configfile.h"
 #include "fileutil.h"
+#include "select.h"
 #include "sendinfo.h"
 #include "constant.h"
 #include "extern.h"
@@ -42,11 +43,11 @@ void popup_cb(FL_OBJECT *ob, long data)
    FL_Coord x, y, w, h;
    int n;
    
-   /* change callback function so it closes popup when button pressed */
+   /* change callback function so it closes popup when button is pressed */
    fl_set_object_callback(ob, close_popup, data);
    /* Then show menu and wait for events */
    /* Display down arrow in button */
-   ToggleButtonDn(fd_XFCE, ob);
+   ToggleButtonDn(ob);
    /* Then displays items of menu */
    fl_get_object_geometry(ob, &x, &y, &w ,&h);
    popup_pulldown(menus[data], fd_XFCE->XFCE->x+x+w/2, 
@@ -61,10 +62,11 @@ void select_cb(FL_OBJECT *ob, long data)
       fl_deactivate_all_forms();
       fl_show_form(fd_def_command->defcom,FL_PLACE_CENTER,
       		   FL_TRANSIENT,"Define command..."); }
-    else {
+    else
       if ((strncasecmp(selects[data].command, "None", strlen("None")))
-       && (strncasecmp(selects[data].command, "Nothing", strlen("Nothing"))))
-        exec_comm(selects[data].command); }
+       && (strncasecmp(selects[data].command, "Nothing", strlen("Nothing")))) {
+           press(ob, WAIT_STATE);
+           exec_comm(selects[data].command); }
 }
 
 void screen_cb(FL_OBJECT *ob, long data)
@@ -82,7 +84,8 @@ void screen_cb(FL_OBJECT *ob, long data)
        fl_set_input(fd_def_screen->screen_input, fd_XFCE->screen[data]->label);
        fl_set_object_callback(fd_def_screen->OKbutton, OK_screen_cb, data);
        fl_deactivate_all_forms();
-       fl_show_form(fd_def_screen->def_screen, FL_PLACE_CENTER,FL_TRANSIENT,"Name screen..."); }
+       fl_show_form(fd_def_screen->def_screen, FL_PLACE_CENTER,FL_TRANSIENT,"Name screen...");
+       }
 }
 
 void info_cb(FL_OBJECT *ob, long data)
@@ -99,7 +102,7 @@ void save_cb(FL_OBJECT *ob, long data)
 void quit_cb(FL_OBJECT *ob, long data)
 {
 #if FL_REVISION>=84
-    if(fl_show_question("Are you sure you want to quit ?\nThis might log you off",1) == 1) {
+    if(fl_show_question("Are you sure you want to quit ?\nThis might log you off",0) == 1) {
 #else
     if(fl_show_question("Are you sure you want to quit ?", 
     			"This might log you off",
@@ -122,7 +125,7 @@ void close_popup(FL_OBJECT *ob, long data)
 {
    int n;
    
-   ToggleButtonUp(fd_XFCE, fd_XFCE->popup[data]); 
+   ToggleButtonUp(fd_XFCE->popup[data]); 
    fl_set_object_callback(fd_XFCE->popup[data], popup_cb, data);
    fl_hide_form(menus[data]->pullmenu);
 }

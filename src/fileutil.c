@@ -23,6 +23,7 @@
 
 
 #include <stdio.h>
+#include <errno.h>
 #include "constant.h"
 #include "configfile.h"
 
@@ -43,24 +44,31 @@ void exec_comm(char * comm)
     char * toexec;
     
     command = (char *) malloc((MAXSTRLEN+1) * sizeof(char));
-    if ((comm)						/* Valid pointer ?   */
-        && strlen(comm) 				/* Something to do ? */
-        && strncasecmp(comm, "None", strlen("None"))) { /* Real command ?    */
-      if(!fork()) {
-          if (strncasecmp(comm, "exec", strlen("exec"))) {
-              strcpy(command, "exec ");
-              strcat(command, comm); }
-          else {
-              strcpy(command, comm); }
-	  /* Clean up the command */
-	  toexec = skiphead(command);
-	  if(strlen(toexec)) skiptail(toexec);
-	  /* Still got something to do ? */
-	  if (strlen(toexec) && strncasecmp(toexec, "None", strlen("None")))
-              execl(DEFAULT_SHELL, DEFAULT_SHELL, "-c", toexec, NULL);
-          free(command); 
-          exit(-1);
-      }
+    if (comm) { 
+        if (strncasecmp(comm, "exec", strlen("exec"))) {
+            strcpy(command, "exec ");
+            strcat(command, comm); }
+        else {
+            strcpy(command, comm); }
+        toexec = skiphead(comm);
+        if(strlen(toexec)) {
+            skiptail(toexec);
+ 	    /* Still got something to do ? */
+	    if(strlen(toexec) && strncasecmp(toexec, "None", strlen("None"))) {
+	        switch(fork()) {
+                case 0:
+                    execl(DEFAULT_SHELL, DEFAULT_SHELL, "-c", toexec, NULL);
+		    perror("XFCE");
+		    exit(-1);
+           	    break;
+      		case -1:
+          	    fprintf(stderr, "XFCE : cannot execute fork()\n");
+      		    break;
+      		default : 
+      		    break;
+                }
+            }
+	}
     }
     free(command);
 }
