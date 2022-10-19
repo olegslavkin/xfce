@@ -1,9 +1,19 @@
-DD-MMM-YYYY: Xfce 3.8.18 xfce-3.8.18.tar.gz xfce-3.8.18.tar.bz2
-DD-MMM-YYYY: Xfce 3.8.16 xfce-3.8.16.tar.gz xfce-3.8.16.tar.bz2
+11-NOV-2002: Xfce 3.8.18 xfce-3.8.18.tar.gz xfce-3.8.18.tar.bz2 (+ github)
+17-APR-2002: Xfce 3.8.16 xfce-3.8.16.tar.gz xfce-3.8.16.tar.bz2 (+ github)
+31-JUN-2002: Xfce 3.8.15 github
+26-JUN-2002: Xfce 3.8.14f github
+26-JUN-2002: Xfce 3.8.14e github
+25-JUN-2002: Xfce 3.8.14d github
 DD-MMM-YYYY: Xfce 3.8.14c xfce-3.8.14c.tar.bz2
-DD-MMM-YYYY: Xfce 3.8.14 xfce-3.8.14.tar.gz
-...
-DD-MMM-YYYY: Xfce 3.8.5 xfce-3.8.5.tar.bz2
+22-NOV-2001: Xfce 3.8.14  xfce-3.8.14.tar.gz (+ github)
+04-NOV-2001: Xfce 3.8.12 github
+01-NOV-2001: Xfce 3.8.11 github
+29-OCT-2001: Xfce 3.8.10 github
+26-SEP-2001: Xfce 3.8.9 github
+31-AUG-2001: Xfce 3.8.8 github
+XX-AUG-2001: Xfce 3.8.7 github
+03-AUG-2001: Xfce 3.8.6
+DD-MMM-YYYY: Xfce 3.8.5 xfce-3.8.5.tar.bz2 (+ github)
 DD-MMM-YYYY: Xfce 3.8.4
 28-MAY-2001: Xfce 3.8.3
 14-MAY-2001: Xfce 3.8.2

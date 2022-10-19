@@ -1,0 +1,3 @@
+[submodule "dist/xfce3"]
+	path = dist/xfce3
+	url = https://github.com/olegslavkin/xfce3
