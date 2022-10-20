@@ -12,7 +12,7 @@ DD-MMM-YYYY: Xfce 3.8.14c xfce-3.8.14c.tar.bz2
 26-SEP-2001: Xfce 3.8.9 github
 31-AUG-2001: Xfce 3.8.8 github
 XX-AUG-2001: Xfce 3.8.7 github
-03-AUG-2001: Xfce 3.8.6
+03-AUG-2001: Xfce 3.8.6 github
 DD-MMM-YYYY: Xfce 3.8.5 xfce-3.8.5.tar.bz2 (+ github)
 DD-MMM-YYYY: Xfce 3.8.4
 28-MAY-2001: Xfce 3.8.3
@@ -50,33 +50,33 @@ DD-MMM-YYYY: Xfce 3.8.4
 02-AUG-1999: XFce-3.0.3
 19-JUL-1999: XFce-3.0.2 xfce-3.0.2.tar.gz xfce-3.0.2.tar.bz2
 17-JUL-1999: XFce-3.0.1
-14-JUL-1999: XFce-3.0.0 Final
+14-JUL-1999: XFce-3.0.0
 20-JUN-1999: XFce-3.0.0 Pre-release 2
 03-JUN-1999: XFce-3.0.0 Pre-release 1
 
-version 2.40 xfce-common-2.4.0.tar.gz
-version 2.30
-version 2.20
-version 2.11
-version 2.10
-version 2.04 xfce-2.4.0-1rh5.i386.rpm (binary!) xfce-common-2.4.0.tar.gz
-version 2.03
-version 2.02
-04-JUL-1998: version 2.01 xfce-2.0.1.tar.gz
-version 2.00
+DD-MMM-YYYY: XFce-2.4.0 xfce-common-2.4.0.tar.gz
+DD-MMM-YYYY: XFce-2.30
+DD-MMM-YYYY: XFce-2.20
+DD-MMM-YYYY: XFce-2.11
+DD-MMM-YYYY: XFce-2.10
+DD-MMM-YYYY: XFce-2.04 xfce-2.4.0-1rh5.i386.rpm (binary!) xfce-common-2.4.0.tar.gz
+DD-MMM-YYYY: XFce-2.03
+DD-MMM-YYYY: XFce-2.02
+04-JUL-1998: XFce-2.01 xfce-2.0.1.tar.gz
+DD-MMM-YYYY: XFce-2.00
 
-version 1.29
-version 1.28
-version 1.27
-version 1.26
-version 1.25
-20-AUG-1997: version 1.24 xfce-1.2.4.tar.gz
-version 1.23
-version 1.22
-version 1.21
-version 1.20
-30-MAR-1997: version 1.11b XFCE111b.tgz 76582
-version 1.11
-25-MAR-1997: version 1.10 XFCE110.tgz 75173
-version 1.05b
-version 1.04
+DD-MMM-YYYY: XFce-1.29
+DD-MMM-YYYY: XFce-1.28
+DD-MMM-YYYY: XFce-1.27
+DD-MMM-YYYY: XFce-1.26
+DD-MMM-YYYY: XFce-1.25
+20-AUG-1997: XFce-1.24 xfce-1.2.4.tar.gz
+DD-MMM-YYYY: XFce-1.23
+DD-MMM-YYYY: XFce-1.22
+DD-MMM-YYYY: XFce-1.21
+DD-MMM-YYYY: XFce-1.20
+30-MAR-1997: XFce-1.11b XFCE111b.tgz 76582
+DD-MMM-YYYY: XFce-1.11
+25-MAR-1997: XFce-1.10 XFCE110.tgz 75173
+DD-MMM-YYYY: XFce-1.05b
+DD-MMM-YYYY: XFce-1.04
