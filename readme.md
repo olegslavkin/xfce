@@ -1,8 +1,8 @@
 # Xfce Archive Versions (1.04 - 3.8.18)
 |     Date    |    Version   |         Sources          | Screenshots |   Notes   |
 |-------------|--------------|--------------------------|-------------|-----------|
-| 11-NOV-2002 | Xfce 3.8.18  | [xfce-3.8.18.tar.gz](dist/xfce-3.8.18.tar.gz), [xfce-3.8.18.tar.bz2](dist/xfce-3.8.18.tar.bz2) | |  + [github v3.8.5](https://github.com/olegslavkin/xfce3/tree/v3.8.18) |
-| 17-APR-2002 | Xfce 3.8.16  | [xfce-3.8.16.tar.gz](dist/xfce-3.8.16.tar.gz), [xfce-3.8.16.tar.bz2](dist/xfce-3.8.16.tar.bz2) | |  + [github v3.8.5](https://github.com/olegslavkin/xfce3/tree/v3.8.16) |
+| 11-NOV-2002 | Xfce 3.8.18  | [xfce-3.8.18.tar.gz](dist/xfce-3.8.18.tar.gz), [xfce-3.8.18.tar.bz2](dist/xfce-3.8.18.tar.bz2) | |  + [github v3.8.18](https://github.com/olegslavkin/xfce3/tree/v3.8.18) |
+| 17-APR-2002 | Xfce 3.8.16  | [xfce-3.8.16.tar.gz](dist/xfce-3.8.16.tar.gz), [xfce-3.8.16.tar.bz2](dist/xfce-3.8.16.tar.bz2) | |  + [github v3.8.16](https://github.com/olegslavkin/xfce3/tree/v3.8.16) |
 | 31-JUN-2002 | Xfce 3.8.15  | ? | |  [github v3.8.15](https://github.com/olegslavkin/xfce3/tree/v3.8.15) |
 | 26-JUN-2002 | Xfce 3.8.14f | Lost | |  [github v3.8.14f](https://github.com/olegslavkin/xfce3/tree/v3.8.14f) |
 | 26-JUN-2002 | Xfce 3.8.14e | Lost | |  [github v3.8.14e](https://github.com/olegslavkin/xfce3/tree/v3.8.14e) |
