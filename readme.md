@@ -32,8 +32,8 @@
 | 19-NOV-2000 | Xfce 3.6.1   | [xfce-3.6.1.tar.gz](dist/xfce-3.6.1.tar.gz) | | |
 | 19-NOV-2000 | Xfce 3.6.0   | [xfce-3.6.0.tar.gz](dist/xfce-3.6.0.tar.gz) | [0](screenshots/xfce-3.6.0.jpg) | |
 | 01-OCT-2000 | Xfce 3.5.2   | [xfce-3.5.2.tar.gz](dist/xfce-3.5.2.tar.gz) | | The first appearance of the Xue mascot? (see tar backdrops/Xfcemice.jpg) |
-| 24-SEP-2000 | Xfce 3.5.1   | Lost. Saved only [xfce-3.5.0-3.5.1-20000830.patch](dist/xfce-3.5.0-3.5.1-20000830.patch) | | |
-| 21-AUG-2000 | Xfce 3.5.0   | Lost. Saved only [xfce-3.4.4-3.5.0-20000815.patch](dist/xfce-3.5.0-3.5.1-20000830.patch) | [0](screenshots/xfce-3.5.0-0.jpg), [1](screenshots/xfce-3.5.0-1.jpg), [2](screenshots/xfce-3.5.0-2.jpg) | |
+| 24-SEP-2000 | Xfce 3.5.1   | Original tar is lost. Saved only [xfce-3.5.0-3.5.1-20000830.patch](dist/xfce-3.5.0-3.5.1-20000830.patch), tar from patch: [xfce-3.5.1.tar.gz](dist/xfce-3.5.1.tar.gz) | | |
+| 21-AUG-2000 | Xfce 3.5.0   | Original tar is lost. Saved only [xfce-3.4.4-3.5.0-20000815.patch](dist/xfce-3.5.0-3.5.1-20000830.patch), tar from patch: [xfce-3.5.0.tar.gz](dist/xfce-3.5.0.tar.gz) | [0](screenshots/xfce-3.5.0-0.jpg), [1](screenshots/xfce-3.5.0-1.jpg), [2](screenshots/xfce-3.5.0-2.jpg) | |
 | 15-JUL-2000 | Xfce 3.4.4   | [xfce-3.4.4.tar.gz](dist/xfce-3.4.3.tar.gz), [xfce-3.4.3-3.4.4-patch.gz](dist/xfce-3.4.3-3.4.4-patch.gz) | | |
 | 09-JUL-2000 | Xfce 3.4.3   | [xfce-3.4.3.tar.gz](dist/xfce-3.4.3.tar.gz) | [0](screenshots/xfce-3.4.3.jpg) | |
 | 26-JUN-2000 | Xfce 3.4.2   | Lost | | |
