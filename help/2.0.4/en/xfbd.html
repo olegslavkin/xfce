@@ -1,0 +1,95 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Olivier Fourdan">
+   <META NAME="Description" CONTENT="XFce Desktop Environment">
+   <META NAME="Keywords" CONTENT="XFCE,toolbar,X11,window manager,linux,icons,xforms">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (X11; I; Linux 2.0.32 i586) [Netscape]">
+   <TITLE>XFce Desktop Environment - XFBD, the Backrop Manager</TITLE>
+</HEAD>
+<BODY BACKGROUND="../images/backgr.gif" NOSAVE>
+
+<UL>
+<UL>
+<UL>
+<UL><A NAME="TOP"></A>&nbsp;<IMG SRC="../images/XFCE_logo.gif" NOSAVE HEIGHT=50 WIDTH=125>&nbsp;<IMG SRC="../images/cholesterol-small.gif" NOSAVE HEIGHT=24 WIDTH=400><IMG SRC="../images/bouncing.gif" NOSAVE HEIGHT=32 WIDTH=32>
+<BR>
+<HR WIDTH="100%">
+<BR>&nbsp;
+<BR><IMG SRC="../images/backdrop_manager.gif" ALT="XFbd, the backdrop manager" NOSAVE HEIGHT=33 WIDTH=314>
+<BR><B><FONT COLOR="#CC0000">The XFCE Backdrop Manager is a separate program
+used to display XPM images in the root window.</FONT></B>
+
+<P ALIGN="JUSTIFY"><B><U>1) Starting XFBD</U></B>
+<BR>&nbsp;
+<CENTER><IMG SRC="../images/XFBD.gif" ALT="XFBD" NOSAVE HEIGHT=441 WIDTH=394></CENTER>
+&nbsp;
+<BR>XFBD provides a nice graphic interface to browse the various backdrops
+provided with XFCE.
+<BR>It can also be started without the interface, to automatically display
+the XPM (X Pixmap) image in the root window.
+<BR>&nbsp;
+<UL>
+<LI>
+<TT>xfbd -d</TT> or just&nbsp; <TT>xfbd</TT> alone will read the name of
+the file to display from the configuration file, and display it as a backdrop.</LI>
+
+<BR>This option should be used in a login startup script, such as .login
+or .Xsession, or even in the FVWM configuration file (this is what is done
+in the examples provided with XFCE)
+<BR>&nbsp;
+<LI>
+<TT>xfbd -i</TT> will start XFBD with the interactive interface shown above.
+This option is used whenever you want the user (yourself ?) to change the
+backdrop.</LI>
+</UL>
+<B>XFBD</B> writes the data in a separate configuration file, called <TT>.xfbdrc</TT>,
+located in the user's home directory.
+
+<P ALIGN="JUSTIFY">When started, <B>XFBD</B> searches for this file in the following order
+:
+<UL>
+<LI>
+<TT>.xfbdrc</TT> In the user's home directory</LI>
+
+<LI>
+<TT>.xfbdrc</TT> In <TT>/var/XFCE</TT> directory</LI>
+
+<LI>
+<TT>sample.xfbdrc</TT> in <TT>/var/XFCE</TT></LI>
+</UL>
+<B><U>2) Usage</U></B>
+
+<P ALIGN="JUSTIFY">You can type directly the name of a pixmap file, including its directory,
+if you know one. Instead, you might prefer to use the buttons :
+<UL>
+<LI>
+"<B>Ok</B>" save the current selected file and exits</LI>
+
+<LI>
+"<B>Load</B>" let you browse and select a pixmap file from the list of
+backdrops shipped with XFCE</LI>
+
+<LI>
+"<B>Apply</B>" applies the current selected backdrop</LI>
+
+<LI>
+"<B>Clear</B>" erase the selection. This option is used if you don't want
+XFBD to display any backdrop (if you've selected "Repaint root window of
+workspace" in the <A HREF="parameters.html">Setup configuration</A>, for
+example.)</LI>
+
+<LI>
+"<B>Cancel</B>" exits without saving the configuration file.</LI>
+</UL>
+
+
+<P ALIGN="JUSTIFY">&nbsp; <U>Note :</U> Please note that XFBD consumes a lot of colors,
+depending on the backdrop displayed, and therefore it should not be suitable
+with screen depth lower that 16 bit (ie less that&nbsp; 65535 colors)</UL>
+</UL>
+</UL>
+</UL>
+
+</BODY>
+</HTML>

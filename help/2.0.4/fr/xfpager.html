@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Olivier Fourdan">
+   <META NAME="Description" CONTENT="XFce Desktop Environment">
+   <META NAME="Keywords" CONTENT="XFCE,toolbar,X11,window manager,linux,icons,xforms">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.08 [en] (X11; I; Linux 2.0.36 i586) [Netscape]">
+   <TITLE>XFce Desktop Environment - XFPager, gestion des fen&ecirc;tres</TITLE>
+</HEAD>
+<BODY BACKGROUND="../images/backgr.gif" NOSAVE>
+
+<UL>
+<UL>
+<UL>
+<UL><A NAME="TOP"></A><IMG SRC="../images/XFCE_logo.gif" NOSAVE HEIGHT=50 WIDTH=125><IMG SRC="../images/cholesterol-small.gif" NOSAVE HEIGHT=24 WIDTH=400><IMG SRC="../images/bouncing.gif" NOSAVE HEIGHT=32 WIDTH=32>
+<BR>
+<HR WIDTH="100%">
+<P><IMG SRC="../images/XFPager-Gestion_des_fenetres.gif" ALT="XFPager - Gestion des fenêtres" NOSAVE HEIGHT=33 WIDTH=346>
+<P><B><FONT COLOR="#CC0000">Le pager de XFce procure une vue mignature
+de tous les bureaux de XFwm.</FONT></B>
+<P><B><U>1) Le concept</U></B>
+<P>XFPager doit &ecirc;tre d&eacute;marr&eacute; comme un module (c'est-&agrave;-dire
+depuis XFce ou XFwm en utilisant le mot-cl&eacute; "Module") pour initier
+le tube de communication avec XFwm.
+<P>XFPager peut recevoir ou emettre des messages vers les fen&ecirc;tres
+fonctionnant sur chacun des bureaux virtuels de XFwm. Si vous d&eacute;placez
+une fen&ecirc;tre &agrave; l'&eacute;cran, son image sera d&eacute;plac&eacute;e
+dans XFPager et vice-versa.
+<P>Par d&eacute;faut, XFPager g&egrave;re les 4&nbsp;&eacute;crans virtuels
+de XFce, mais il est capable de g&eacute;rer jusqu'&agrave; 32&nbsp;&eacute;crans
+!
+<P><B><U>2) L'interface utilisateur</U></B>
+<P>XFPager peut &ecirc;tre d&eacute;marr&eacute; depuis XFwm ou XFce par
+la commande Module <TT>xfsound</TT>:
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>
+<BR>
+<BR>
+<CENTER>
+<P><IMG SRC="../images/XFPager.gif" NOSAVE HEIGHT=371 WIDTH=387></CENTER>
+
+<BR>&nbsp;
+<P><BR>
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<UL>
+<LI>
+En cliquant sur un bureau avec le bouton 1&nbsp;de la souris (bouton gauche
+par d&eacute;faut) cela d&eacute;place le point de vue vers le bureau correspondant.</LI>
+
+<LI>
+Les fen&ecirc;tres peuvent &ecirc;tre d&eacute;plac&eacute;es depuis un
+bureau vers un autre en les "glissant" &agrave; l'aide du bouton 2&nbsp;(milieu)</LI>
+</UL>
+
+<P><BR>L'utilisateur peut &eacute;galement sp&eacute;cifier le nombre de
+bureaux virtuels &agrave; g&eacute;rer par XFPager. Par d&eacute;faut,
+XFPager affiche uniquement les bureaux 1&nbsp;&agrave; 4.&nbsp;Mais si
+quelqu'un a besoin de plus d'espaces virtuels, XFPager est capable de g&eacute;rer
+jusqu'&agrave; 32&nbsp;&eacute;crans.
+<P>Il est possible de sp&eacute;cifier le nombre d'&eacute;crans virtuels
+depuis la ligne de commande :
+<BR>&nbsp;
+<UL><TT>Module xfpager 8</TT></UL>
+
+<P><BR>Cela d&eacute;marrera XFPager avec 8&nbsp;&eacute;crans virtuels.
+<P><B><U>3) Plus d'options de configuration</U></B>
+<P>Les options doivent &ecirc;tre ajout&eacute;es au fichier de configuration
+<TT>system.xfwmrc</TT> (&eacute;galement appel&eacute; <TT>sample.xfwmrc</TT>
+ou <TT>.xfwmrc</TT>)
+<P>*xfpager.geometry geometry
+<UL>Sp&eacute;cifie la position et la taille de XFPager, en notation X&nbsp;standard.</UL>
+*xfpager.icongeometry geometry
+<UL>Sp&eacute;cifie la position (optionnelle) et la taille (optionnelle)
+de l'ic&ocirc;ne de XFPager.</UL>
+*xfpager.font font-name
+<UL>Sp&eacute;cifie la fonte &agrave; utiliser pour afficher les labels
+d'&eacute;cran.&nbsp; Si font_name est "none", aucun label ne sera affich&eacute;.</UL>
+*xfpager.smallfont font-name
+<UL>Sp&eacute;cifie la fonte &agrave; utiliser pour afficher le nom des
+fen&ecirc;tres dans le pager. Si ce n'est pas sp&eacute;cifi&eacute;, les
+labels de fen&ecirc;tres seront ignor&eacute;s.</UL>
+*xfpager.label desk label
+<UL>Assigne un label &agrave; chaque espace virtuel dans la fen&ecirc;tre
+du pager.
+<BR>&nbsp;</UL>
+<B><U>4) D&eacute;marrer XFPager automatiquement</U></B>
+<P>XFPager est d&eacute;marr&eacute; par les fonctions r&eacute;serv&eacute;es
+"<TT>InitFunction</TT>" et&nbsp; "<TT>RestartFunction</TT>" dans le fichier
+<TT>system.xfwmrc</TT>.
+<P>Si vous avez une version modifi&eacute;e de system.xfwmrc (&eacute;galement
+appel&eacute;e <TT>sample.xfwmrc</TT> ou <TT>.xfwmrc</TT>), vous devrez
+ajouter les lignes suivantes dans le fichier de configuration <TT>system.xfwmrc</TT>
+:
+<BR>&nbsp;
+<CENTER><TABLE BORDER NOSAVE >
+<TR>
+<TD><TT>AddToFunc "InitFunction"</TT>
+<BR><TT>+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+"I" Module xfpager</TT>
+<P><TT>AddToFunc "RestartFunction"</TT>
+<BR><TT>+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+"I" Module xfpager</TT></TD>
+</TR>
+</TABLE></CENTER>
+</UL>
+</UL>
+</UL>
+</UL>
+
+</BODY>
+</HTML>

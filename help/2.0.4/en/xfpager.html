@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Olivier Fourdan">
+   <META NAME="Description" CONTENT="XFce Desktop Environment">
+   <META NAME="Keywords" CONTENT="XFCE,toolbar,X11,window manager,linux,icons,xforms">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.08 [en] (X11; I; Linux 2.0.36 i586) [Netscape]">
+   <TITLE>XFce Desktop Environment - XFPager, Managing the windows</TITLE>
+</HEAD>
+<BODY BACKGROUND="../images/backgr.gif" NOSAVE>
+
+<UL>
+<UL>
+<UL>
+<UL><A NAME="TOP"></A><IMG SRC="../images/XFCE_logo.gif" NOSAVE HEIGHT=50 WIDTH=125><IMG SRC="../images/cholesterol-small.gif" NOSAVE HEIGHT=24 WIDTH=400><IMG SRC="../images/bouncing.gif" NOSAVE HEIGHT=32 WIDTH=32>
+<BR>
+<HR WIDTH="100%">
+<P><IMG SRC="../images/XFPager-Managing_windows.gif" NOSAVE HEIGHT=33 WIDTH=328>
+<P><B><FONT COLOR="#CC0000">The XFce pager provides a miniature view of
+all XFwm desktops.</FONT></B>
+<P><B><U>1) The main concept</U></B>
+<P>XFPager must be started as a module (ie from XFce or XFwm using the
+keyword "Module") to initiate the communication pipe with XFwm.
+<P>XFPager is able to receive and send events to windows running on each
+XFwm desktop.&nbsp; If you move a window on the screen, its image will
+be moved in XFPager, and if you move a window in the pager, the windows
+will be moved on the screen accordingly.
+<P>By default, XFPager will manage the default 4 screens of XFce, but it
+can also manage up to 32 screens !
+<P><B><U>2) The user interface</U></B>
+<P>XFPager must be started from XFwm or XFce by using Module <TT>xfsound</TT>:
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>
+<BR>
+<BR>
+<CENTER>
+<P><IMG SRC="../images/XFPager.gif" NOSAVE HEIGHT=371 WIDTH=387></CENTER>
+
+<BR>&nbsp;
+<P><BR>
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<UL>
+<LI>
+Clicking on a desktop with mouse button 1 (left button by default) will
+move the viewport to the corresponding desktop.</LI>
+
+<LI>
+Windows can be dragged from a desktop to another using the mouse button
+2 (middle) or 3&nbsp;(right)</LI>
+</UL>
+
+<P><BR>User can specify the number of desktops that XFPager has to manage.
+By default, XFPager displays the screens 1 to 4. But if someone needs more
+than 4 desktops, XFPager is able to use up to 32 screens.
+<P>You can specify the default number of screens from the command line
+:
+<BR>&nbsp;
+<UL><TT>Module xfpager 8</TT></UL>
+
+<P><BR>will start xfpager with 8 screens.
+<P><B><U>3) More configuration options</U></B>
+<P>The options have to be added to XFwm system configuration file <TT>system.xfwmrc</TT>
+(also called <TT>sample.xfwmrc</TT> or <TT>.xfwmrc</TT>)
+<P>*xfpager.geometry geometry
+<UL>Specifies&nbsp; the pager windows location and geometry, in standard
+X11 notation.</UL>
+*xfpager.icongeometry geometry
+<UL>Specifies a size (optional) and location (optional) for the pager's
+icon window.</UL>
+*xfpager.font font-name
+<UL>Specified&nbsp; a font to use to label the desktops.&nbsp; If font_name
+is "none" then no desktop labels will be displayed.</UL>
+*xfpager.smallfont font-name
+<UL>Specified&nbsp; a&nbsp; font to use to label the window names in the
+pager. If not specified, the&nbsp; window&nbsp; labels will be omitted.</UL>
+*xfpager.label desk label
+<UL>Assigns&nbsp; the&nbsp; text&nbsp; label to desk desk in the pager
+window.&nbsp; Useful for&nbsp; assigning&nbsp; symbolic names to desktops.</UL>
+
+<P><BR><B><U>4) Starting XFPager automatically</U></B>
+<P>XFPager is started by the reserved functions "<TT>InitFunction</TT>"
+and&nbsp; "<TT>RestartFunction</TT>" in <TT>system.xfwmrc</TT>.
+<P>If you have a customized version of system.xfwmrc (also called <TT>sample.xfwmrc</TT>
+or <TT>.xfwmrc</TT>), you need to add the following sentences to your <TT>system.xfwmrc</TT>
+configuration file :
+<BR>&nbsp;
+<CENTER><TABLE BORDER NOSAVE >
+<TR>
+<TD><TT>AddToFunc "InitFunction"</TT>
+<BR><TT>+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+"I" Module xfpager</TT>
+<P><TT>AddToFunc "RestartFunction"</TT>
+<BR><TT>+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+"I" Module xfpager</TT></TD>
+</TR>
+</TABLE></CENTER>
+</UL>
+</UL>
+</UL>
+</UL>
+
+</BODY>
+</HTML>

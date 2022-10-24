@@ -1,0 +1,230 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Olivier Fourdan">
+   <META NAME="Description" CONTENT="XFce Desktop Environment">
+   <META NAME="Keywords" CONTENT="XFCE,toolbar,X11,window manager,linux,icons,xforms">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.05 [en] (X11; I; Linux 2.0.34 i586) [Netscape]">
+   <TITLE>XFce Desktop Environment - Compiler et installer &agrave; partir des sources</TITLE>
+</HEAD>
+<BODY BACKGROUND="../images/backgr.gif" NOSAVE>
+
+<UL>
+<UL>
+<UL>
+<UL><A NAME="TOP"></A><IMG SRC="../images/XFCE_logo.gif" NOSAVE HEIGHT=50 WIDTH=125><IMG SRC="../images/cholesterol-small.gif" NOSAVE HEIGHT=24 WIDTH=400><IMG SRC="../images/bouncing.gif" NOSAVE HEIGHT=32 WIDTH=32>
+<BR>
+<HR WIDTH="100%">
+<BR>&nbsp;
+<DT>
+<IMG SRC="../images/compiler_xfce.gif" ALT="Compiler XFce" NOSAVE HEIGHT=33 WIDTH=164></DT>
+
+<BR>&nbsp;
+
+<P>&nbsp;
+
+<P><B><FONT COLOR="#CC0000">IMPORTANT: IL EST NECESSAIRE D'AVOIR UN ACCES
+ROOT POUR POUVOIR INSTALLER XFCE CORRECTEMENT.</FONT></B>
+
+<P><B><U>1) T&eacute;l&eacute;charger les sources</U></B>
+
+<P><U>1.a) Linux</U>
+
+<P>XFce compile directement sur la plupart des distributions Linux. Cependant,
+certaines distributions ne sont pas livr&eacute;es avec les derni&egrave;res
+versions de la librairie Xpm (libXpm). Sur Debian, par exemple, il faut
+installer xpm4g-dev et xpm4-altdev autrement xfwm va g&eacute;n&eacute;rer
+un core dump au d&eacute;marrage.
+
+<P>Vous aurez &eacute;galement besoin de la librairie XForms pour votre
+syst&egrave;me (libc5 ou libc6). Utiliser la mauvaise libaririe peut provoquer
+des effets bizarres, comme une heure compl&egrave;tement fausse dans l'horloge
+de XFce ou des r&eacute;pertoires pleins de "D.." !
+
+<P><U>1.b) SUN Solaris <SUP>(tm)</SUP></U>
+
+<P>Pour compiler XFce sur SUN Solaris, il vous faut les outils GNU :
+<UL>
+<LI>
+gcc-2.8.1</LI>
+
+<LI>
+gzip-1.2.4</LI>
+
+<LI>
+libXpm-4.7</LI>
+
+<LI>
+libstdc++-2.8.1.1</LI>
+
+<LI>
+make-3.76.1</LI>
+
+<LI>
+unzip-5.32</LI>
+</UL>
+Ces applications peuvent &ecirc;tre t&eacute;l&eacute;charg&eacute;es gratuitement
+sur <A HREF="http://www.sun.com">SUN</A> ou la plupart des mirroirs de
+<A HREF="http://metalab.unc.edu/">SUNSite</A>.
+
+<P>Bien s&ucirc;r, il vous faudra aussi XForms pour Solaris.
+
+<P><B><U>2) Installer &agrave; partir de l'achive tar</U></B>
+
+<P>Une fois r&eacute;cup&eacute;r&eacute;e l'achive, c'est a dire un fichier
+qui ressemble &agrave; xfce-2.?.?.tar.gz et xfce-common-2.?.?.tar.gz,
+
+<P>D&eacute;compresser le fichier source :
+<BR>&nbsp;
+<UL><TT>$ tar xfzf xfce-common-2.?.?.tar.gz</TT>
+<BR><TT>$ tar xvzf xfce-2.?.?.tar.gz</TT>
+<BR><TT>$ cd xfce-2.?.?</TT></UL>
+
+
+<P><I>(Bien s&ucirc;r, il faut remplacer le point d'interrogtion par le
+num&eacute;ro de version)</I>
+
+<P><B><U>3) Editer le fichier Imakefile pour qu'il corresponde &agrave;
+votre syst&egrave;me (si n&eacute;cessaire)</U></B>
+
+<P>Ce point est optionnel. Si vous &ecirc;tes nouveaux sous UNIX, essayez
+de compiler sans changer Imakefile.
+<BR>&nbsp;
+<UL><TT>$ vi Imakefile</TT></UL>
+
+
+<P><B><U>4) Editer le fichier de d&eacute;finition</U></B>
+
+<P>Le fichier appel&eacute; XFCE.def contient toutes le d&eacute;finitions
+par d&eacute;faut pour la compilation de XFce sur Linux, SUN&nbsp;Solaris
+et FreeBSD.
+
+<P><TT>XCOMM Definition options : Please edit !</TT>
+<BR><TT>XCOMM ==================================</TT>
+
+<P><TT>#define LINUX</TT>
+<BR><TT>/* #define SOLARIS */</TT>
+<BR><TT>/* #define BSD */</TT>
+<BR><TT>#define STATIC</TT>
+<BR><TT>...</TT>
+
+<P>En supprimant les caract&egrave;res de commentaires sur le nom des syst&egrave;mes,
+il est possible de s&eacute;lectionner la plateforme cible. Cela n'a cependant
+aucun effet sur le code source, cela change uniquement les options de compilation
+et les r&eacute;pertoires.
+
+<P>Il est &eacute;galement possible de changer ces r&eacute;pertoires ou
+m&euml;me de rajouter de nouveaux syst&egrave;mes cibles en changeant/ajoutant
+les lignes suivantes dans XFCE.def :
+
+<P><TT>XCOMM Compile options : Please check !</TT>
+<BR><TT>XCOMM ================================</TT><TT></TT>
+
+<P><TT>...</TT>
+<BR><TT>&nbsp;#ifdef LINUX</TT>
+<BR><TT>XCOMM</TT>
+<BR><TT>XCOMM for LINUX</TT>
+<BR><TT>XCOMM</TT>
+<BR><TT>XFCE_SYSLIB =&nbsp; -L/usr/X11/lib -L/usr/X11R6/lib -L/usr/local/lib</TT>
+<BR><TT>STD_LIBRARIES = -lXext -lX11 -lXpm -lm</TT>
+<BR><TT>XFCE_EXTRA_LIBRARIES = $(USRLIBDIR)/libforms.a $(XFCE_SYSLIB) $(STD_LIBRARIES)</TT>
+<BR><TT>#else</TT>
+<BR><TT>XFCE_EXTRA_LIBRARIES =&nbsp; $(XFCE_SYSLIB) $(STD_LIBRARIES) -lforms</TT>
+<BR><TT>#endif</TT>
+<BR><TT>COMPILE_OPTIONS = -O -Wall $(EXTRA_INCLUDES) $(EXTRA_DEFINES)</TT>
+<BR><TT>LINK_OPTIONS = -O -s</TT>
+<BR><TT>#endif</TT><TT></TT>
+
+<P><TT>#ifdef SOLARIS</TT>
+<BR><TT>...</TT>
+<BR><TT>#endif</TT><TT></TT>
+
+<P><TT>#ifdef BSD</TT>
+<BR><TT>...</TT>
+<BR><TT>#endif</TT><TT></TT>
+
+<P><TT>XCOMM BINDIR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = /usr/local/bin</TT>
+<BR><TT>XFCE_DIR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = /var/XFCE</TT>
+<BR><TT>XBINDIR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = $(BINDIR)</TT>
+<BR><TT>XFCE_PAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = $(XFCE_DIR)/palettes</TT>
+<BR><TT>XFCE_BACKDROPS = $(XFCE_DIR)/backdrops</TT>
+<BR><TT>XFCE_HELP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = $(XFCE_DIR)/help</TT>
+<BR><TT>XFCE_ICONS&nbsp;&nbsp;&nbsp;&nbsp; = $(XFCE_DIR)/icons</TT>
+<BR><TT>XFCE_SOUNDS&nbsp;&nbsp;&nbsp; = $(XFCE_DIR)/sounds</TT><TT></TT>
+
+<P><TT>DESTDIR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = $(RPM_BUILD_ROOT)</TT>
+<BR><TT>DEST_BIN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = $(DESTDIR)$(XBINDIR)</TT>
+<BR><TT>DEST_XFCE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = $(DESTDIR)$(XFCE_DIR)</TT>
+<BR><TT>DEST_PAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = $(DESTDIR)$(XFCE_PAL)</TT>
+<BR><TT>DEST_BACKDROPS = $(DESTDIR)$(XFCE_BACKDROPS)</TT>
+<BR><TT>DEST_HELP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = $(DESTDIR)$(XFCE_HELP)</TT>
+<BR><TT>DEST_ICONS&nbsp;&nbsp;&nbsp;&nbsp; = $(DESTDIR)$(XFCE_ICONS)</TT>
+<BR><TT>DEST_SOUNDS&nbsp;&nbsp;&nbsp; = $(DESTDIR)$(XFCE_SOUNDS)</TT><TT></TT>
+
+<P><TT>EXTRA_INCLUDES =&nbsp; -I/usr/local/include -I/usr/X11R6/include
+-I/usr/X11R6/include/X11 -I.</TT>
+<BR><TT>EXTRA_DEFINES = -DXFCE_ICONS=\"$(XFCE_ICONS)\" -DXFCE_DIR=\"$(XFCE_DIR)\"\</TT>
+<BR><TT>-DXBINDIR=\"$(XBINDIR)\" -DXFCE_PAL=\"$(XFCE_PAL)\"\</TT>
+<BR><TT>-DXFCE_BACKDROP=\"$(XFCE_BACKDROPS)\"</TT><TT></TT>
+
+<P><TT>CC=gcc</TT>
+<BR><TT>CFLAGS=$(COMPILE_OPTIONS)</TT>
+<BR><TT>LDOPTIONS=$(LINK_OPTIONS)</TT>
+
+<P>Par exemple, il vous est possible de changer le r&eacute;pertoire de
+base des fichiers ex&eacute;cutables vers /<TT>usr/local/bin</TT> en suppimant
+le commentaire (<TT>XCOMM</TT>) sur la ligne <TT>BINDIR = /usr/local/bin</TT>
+
+<P><B><U>5) Cr&eacute;er tous les Makefiles</U></B>
+<BR>&nbsp;
+<UL><TT>$ xmkmf -a</TT></UL>
+
+
+<P>Si vous n'avez pas Imake install&eacute;, vous pouvez toujours essayer
+avec le fichier Makefile livr&eacute; avec XFCE, o&ugrave; utiliser le
+Makefile de quelqu'un d'autre qui utilise le m&ecirc;me type de plateforme,
+ou m&ecirc;me encore mieux, t&eacute;l&eacute;chargez Imake sur <A HREF="ftp://ftp.x.org">ftp.x.org</A>
+!
+
+<P><B><U>6) Compiler et Installer</U></B>
+
+<P>Pour compiler et installer la XFce, tapez :
+<BR>&nbsp;
+<UL><TT>$ make install</TT></UL>
+
+
+<P>Cela permet d&eacute;j&agrave; de pouvoir lancer XFCE, XFwm ou XFbd
+depuis la ligne de commande.
+
+<P><B><U>7) Recommencer avec xfce-common</U></B>
+
+<P>Il faut effectuer les op&eacute;rations 2 &agrave; 6&nbsp;dans le r&eacute;pertoire
+xfce-common !
+
+<P><B><U>8) Choisir la langue par d&eacute;faut</U></B></UL>
+</UL>
+</UL>
+</UL>
+
+<UL>
+<UL>
+<UL>
+<UL>La langue utilis&eacute;e par d&eacute;faut est d&eacute;finie gr&acirc;ce
+&agrave; la variable d'environnement XFCE_LANG.&nbsp;Cle peut &euml;tre
+fait dans le fichier de d&eacute;marrage $HOME/.xinitrc :
+<BR>&nbsp;
+<UL><TT>$ export XFCE_LANG="fr"</TT>
+<BR><TT>$ export XFCE_LANG="en"</TT>
+<BR><TT>$ export XFCE_LANG="it"</TT>
+<BR><TT>$ export XFCE_LANG="de"</TT>
+<BR><TT>$ export XFCE_LANG="hu"</TT>
+<BR><TT>$ export XFCE_LANG="es"</TT>
+<BR><TT>$ export XFCE_LANG="sk"</TT>
+<BR><TT>$ export XFCE_LANG="pt"</TT></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+
+</BODY>
+</HTML>

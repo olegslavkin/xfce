@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Olivier Fourdan">
+   <META NAME="Description" CONTENT="XFce Desktop Environment">
+   <META NAME="Keywords" CONTENT="XFCE,toolbar,X11,window manager,linux,icons,xforms">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.08 [en] (X11; I; Linux 2.0.36 i586) [Netscape]">
+   <TITLE>XFce Desktop Environment - XFMouse, Configuring the mouse</TITLE>
+</HEAD>
+<BODY BACKGROUND="../images/backgr.gif" NOSAVE>
+
+<UL>
+<UL>
+<UL>
+<UL><A NAME="TOP"></A><IMG SRC="../images/XFCE_logo.gif" NOSAVE HEIGHT=50 WIDTH=125><IMG SRC="../images/cholesterol-small.gif" NOSAVE HEIGHT=24 WIDTH=400><IMG SRC="../images/bouncing.gif" NOSAVE HEIGHT=32 WIDTH=32>
+<BR>
+<HR WIDTH="100%">
+<P><IMG SRC="../images/XFMouse-Configuration_souris.gif" NOSAVE HEIGHT=33 WIDTH=403>
+<P><B><FONT COLOR="#CC0000">Ls systeme de configuration de la souris dans
+XFce Mouse est une interface graphique qui permet de modifier les parametres
+de lasouris facilement.</FONT></B>
+<P><B><U>1) Le concept</U></B>
+<P>XFMouse peut-&ecirc;tre lanc&eacute; depuis la ligne de commande ou
+depuis le fichier system.xfwmrc au d&eacute;marrage (d&eacute;faut). Si
+aucun param&ecirc;tre n'est sp&eacute;cifi&eacute;, la commande "xfmouse"
+lit juste le fichier de configuration de l'utilisateur et applique les
+param&ecirc;tres en cons&eacute;quence.
+<P>Pour acc&eacute;der &agrave; l'interface graphique, l'utilisateur doit
+sp&eacute;cifier le param&ecirc;tre "-i" lors de lappel depuis la ligne
+de commande.
+<P><B><U>2) L'interface utilisateur</U></B>
+<BR>&nbsp;
+<P>En d&eacute;marrant XFMouse par la commande <TT>xfmouse -i</TT>,&nbsp;
+on obtient l'interface graphique de XFMouse :
+<BR>&nbsp;
+<P><BR>
+<CENTER>
+<P><IMG SRC="../images/XFMouse.gif" NOSAVE HEIGHT=291 WIDTH=344></CENTER>
+
+<BR>&nbsp;
+<P><BR>
+<BR>&nbsp;
+<UL>
+<LI>
+Selectionnez "Droit" ou "Gauche" suivant que vous &ecirc;tes droitier ou
+gaucher.&nbsp;Si vous s&eacute;lectionnez "Gaucher", le bouton logique
+num&eacute;ro 1&nbsp;sera affect&eacute; au bouton physique num&eacute;ro
+3&nbsp;alors que le bouton logique num&eacute;ro 3&nbsp;sera affect&eacute;
+au bouton physique num&eacute;ro 1. Le bouton 2 (milieu) est laiss&eacute;
+inchang&eacute;. Notez que ce param&eacute;trage est global au serveur
+X et affecte toutes les applications fonctionnant sur le terminal.</LI>
+
+<LI>
+"Acc&eacute;l&eacute;ration" d&eacute;termine de combien de pixels le pointeur
+est d&eacute;plac&eacute; par rapport au d&eacute;placement physique de
+la souris.</LI>
+
+<LI>
+"Seuil" sp&eacute;cifie de combien de pixels le pointeur physique doit
+&ecirc;tre d&eacute;plac&eacute; pour que "acc&eacute;l&eacute;ration"
+prenne effet.</LI>
+</UL>
+<B><U></U></B>
+<P><BR><B><U>3) D&eacute;marrer XFmouse automatiquement</U></B>
+<P>XFMouse est d&eacute;marr&eacute; par les fonctions r&eacute;serv&eacute;es
+"<TT>InitFunction</TT>" et&nbsp; "<TT>RestartFunction</TT>" dans le fichier
+<TT>system.xfwmrc</TT>.
+<P>Si vous avez modifi&eacute; la version de system.xfwmrc (&eacute;galement
+appel&eacute;e <TT>sample.xfwmrc</TT> ou <TT>.xfwmrc</TT>), vous devrez
+ajouter les lignes suivantes a votre fichier de configuration <TT>system.xfwmrc</TT>
+:
+<BR>&nbsp;
+<CENTER><TABLE BORDER NOSAVE >
+<TR>
+<TD><TT>AddToFunc "InitFunction"</TT>
+<BR><TT>+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+"I" Exec xfmouse -d</TT>
+<P><TT>AddToFunc "RestartFunction"</TT>
+<BR><TT>+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+"I" Exec xfmouse -d</TT></TD>
+</TR>
+</TABLE></CENTER>
+</UL>
+</UL>
+</UL>
+</UL>
+
+</BODY>
+</HTML>

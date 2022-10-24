@@ -1,0 +1,108 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Olivier Fourdan">
+   <META NAME="Description" CONTENT="XFce Desktop Environment">
+   <META NAME="Keywords" CONTENT="XFCE,toolbar,X11,window manager,linux,icons,xforms">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (X11; I; Linux 2.0.32 i586) [Netscape]">
+   <TITLE>XFce Desktop Environment - XFBD, le Gestionnaire de fonds d'&eacute;cran</TITLE>
+</HEAD>
+<BODY BACKGROUND="../images/backgr.gif" NOSAVE>
+
+<UL>
+<UL>
+<UL>
+<UL><A NAME="TOP"></A>&nbsp;<IMG SRC="../images/XFCE_logo.gif" NOSAVE HEIGHT=50 WIDTH=125>&nbsp;<IMG SRC="../images/cholesterol-small.gif" NOSAVE HEIGHT=24 WIDTH=400><IMG SRC="../images/bouncing.gif" NOSAVE HEIGHT=32 WIDTH=32>
+<BR>
+<HR WIDTH="100%">
+<BR>&nbsp;
+<DT>
+<IMG SRC="../images/gestionnaire_papier.gif" ALT="Gestionnaire de papiers peints" NOSAVE HEIGHT=33 WIDTH=315></DT>
+
+<BR>&nbsp;
+<BR><B><FONT COLOR="#CC0000">Le gestionnaire de fonds d'&eacute;cran d'XFCE
+est un programme s&eacute;par&eacute; utilis&eacute; pour afficher des
+images XPM dans la fen&ecirc;tre racine.</FONT></B>
+
+<P ALIGN="JUSTIFY"><B><U>1) D&eacute;marrer XFBD</U></B>
+<BR>&nbsp;
+<CENTER><IMG SRC="../images/XFBD.gif" ALT="XFBD" NOSAVE HEIGHT=441 WIDTH=394></CENTER>
+&nbsp;
+
+<P ALIGN="JUSTIFY">XFBD procure une interface graphique pour parcourir et s&eacute;lectionner
+le fond d'&eacute;cran parmi les nombreux papiers peints livr&eacute;s
+avec XFCE.
+<BR>Ce programme peut aussi &ecirc;tre utilis&eacute; sans son interface,
+pour afficher automatiquement l'image XPM (X Pixmap) dans la fen&ecirc;tre
+racine.
+<BR>&nbsp;
+<UL>
+<LI>
+<TT>xfbd -d</TT> ou juste&nbsp; <TT>xfbd</TT> seulement lit le nom du papier
+peint dans le fichier de configuration et l'affiche en fond d'&eacute;cran.</LI>
+
+<BR>Cette option doit &ecirc;tre utilis&eacute;e au d&eacute;marrage d'une
+session, dans le script de d&eacute;marrage comme .login ou .Xsession ou
+encore dans le fichier de configuration de FVWM (ce qui est le cas avec
+le fichier donn&eacute; en exemple avec XFCE).
+<BR>&nbsp;
+<LI>
+<TT>xfbd -i</TT> lance XFBD avec l'interface graphique montr&eacute;e ci-dessus.
+Cette option doit &ecirc;tre utilis&eacute;e chaque fois que l'utilisateur
+(vous-m&ecirc;me ?) d&eacute;cide de chager le papier peint de son &eacute;cran.</LI>
+</UL>
+
+
+<P ALIGN="JUSTIFY">&nbsp; <B>XFBD</B> &eacute;crit ses donn&eacute;es dans un fichier de
+configuration s&eacute;par&eacute;, appel&eacute; <TT>.xfbdrc</TT>, plac&eacute;
+dans le r&eacute;pertoire de l'utilisateur.
+
+<P ALIGN="JUSTIFY">Une fois d&eacute;marr&eacute;, XFBD recherche son fichier de configuration
+dans l'ordre suivant :
+<BR>&nbsp;
+<UL>
+<LI>
+<TT>.xfbdrc</TT> dans le r&eacute;pertoire personnel de l'utilisateur.</LI>
+
+<LI>
+<TT>.xfbdrc</TT> dans le r&eacute;pertoire <TT>/var/XFCE</TT></LI>
+
+<LI>
+<TT>sample.xfbdrc</TT> dans <TT>/var/XFCE</TT></LI>
+</UL>
+<B><U>2) Utilisation</U></B>
+<BR>&nbsp;
+
+<P ALIGN="JUSTIFY">Il est possible de taper directement le nom du fichier image Pixmap,
+y compris son chemin d'acc&egrave;s complet, si vous le connaissez. O&ugrave;
+alors, il est plus simple d'utiliser les boutons suivants :
+<BR>&nbsp;
+<UL>
+<LI>
+"<B>Ok</B>" sauvegarde le fichier s&eacute;lectionn&eacute; et ferme XFBD.</LI>
+
+<LI>
+"<B>Load</B>" permet de parcourir et de s&eacute;lectionner le fichier
+image dans la liste des fichiers disponibles avec XFCE.</LI>
+
+<LI>
+"<B>Apply</B>" applique le papier peint actuellement s&eacute;lectionn&eacute;.</LI>
+
+<LI>
+"<B>Clear</B>" efface la s&eacute;lection. Cette option est utilis&eacute;e
+si vous ne voulez pas qu'XFBD n'affiche de papier peint (si vous avez choisit
+"Associer les couleurs au fond d'&eacute;cran" dans les Param&egrave;tres
+de <A HREF="parameters.html">configuration</A>, par exemple.)</LI>
+
+<LI>
+"<B>Cancel</B>" ferme XFBD sans sauvegarder la s&eacute;lection.</LI>
+</UL>
+<U>Note :</U> Il est &agrave; noter qu'XFBD consomme beaucoup de couleurs,
+en fonction du papier peint choisit, et il se peut donc qu'il ne soit pas
+souha&icirc;table sur des &eacute;crans disposant de moins de 65536 couleurs.</UL>
+</UL>
+</UL>
+</UL>
+
+</BODY>
+</HTML>

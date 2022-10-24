@@ -1,0 +1,134 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Author" content="Olivier Fourdan">
+   <meta name="Description" content="XFce Desktop Environment">
+   <meta name="Keywords" content="XFCE,toolbar,X11,window manager,linux,icons,xforms">
+   <meta name="GENERATOR" content="Mozilla/4.5 [en] (X11; I; Linux 2.0.33 i586) [Netscape]">
+   <title>XFce Desktop Environment - XFSound, the System Sound Manager</title>
+</head>
+<body background="../images/backgr.gif" nosave>
+
+<ul>
+<ul>
+<ul>
+<ul><a NAME="TOP"></a><img SRC="../images/XFCE_logo.gif" NOSAVE height=50 width=125><img SRC="../images/cholesterol-small.gif" NOSAVE height=24 width=400><img SRC="../images/bouncing.gif" NOSAVE height=32 width=32>
+<br>
+<hr WIDTH="100%">
+<P ALIGN="JUSTIFY"><img SRC="../images/sound_manager.gif" ALT="XFSound, The System Sound Manager" NOSAVE height=33 width=413>
+<P ALIGN="JUSTIFY"><b><font color="#CC0000">The XFce Sound Manager is both a module and
+an application that keeps on listening to XFce's events and plays sounds
+accordinlgy.</font></b>
+<P ALIGN="JUSTIFY"><b><u>1) The main concept</u></b>
+<P ALIGN="JUSTIFY">When XFSound is started as a module (ie from XFce or XFwm using the
+keyword "Module"), it just enters a loop that keeps on listening to the
+events coming from the Window Manager (XFwm)
+<P ALIGN="JUSTIFY">Whenever a event occurs, XFSound will execute the user specified command
+intended to play actually the sound with the sound file corresponding to
+the event itself.
+<P ALIGN="JUSTIFY">The user can interact with XFSound using the graphical interface by
+starting XFSound as a regular X application (ie not as a module).
+<P ALIGN="JUSTIFY"><b><u>2) The user interface</u></b>
+<P ALIGN="JUSTIFY">Starting XFSound from a command prompt, by typing <tt>xfsound</tt>,&nbsp;
+will open the graphical interface :
+<center><img SRC="../images/XFSND_dialog.gif" ALT="Graphical user interface" NOSAVE height=281 width=474></center>
+
+<P ALIGN="JUSTIFY"><br>
+<ul>
+<li>
+"Event" defines the type of event</li>
+
+<li>
+"Sound file" is the file to be played when "event" occurs.</li>
+
+<li>
+"Command line" is the command to be used to actually play the sound</li>
+
+<li>
+"Play sound" determines whether or not the system sounds have to be played.</li>
+
+<li>
+"Test" let you hear the sound file (played with the command defined in
+the field "command line")</li>
+
+<li>
+The two tiny buttons "I" and "D" define respectively the Internal sound
+player or the Default sound player.</li>
+</ul>
+
+<br>&nbsp;
+<P ALIGN="JUSTIFY"><b><u>3) The events</u></b>
+<P ALIGN="JUSTIFY">XFwm emits a large variety of events. XFSound covers the user oriented
+ones.
+<center><img SRC="../images/XFSND_eventlist.gif" ALT="Events list" NOSAVE height=370 width=159></center>
+
+<P ALIGN="JUSTIFY"><br>
+<br>
+<br>
+<P ALIGN="JUSTIFY">The last 3 events are not truely XFwm events :
+<ul>
+<li>
+<b><i>Startup</i></b> is the sound that will be played when XFSound module
+is started</li>
+
+<li>
+<b><i>Shutdown</i></b> is the one that will be played when XFSound dies.</li>
+
+<li>
+<b><i>Unknown</i></b> is the sound that is played when an unknown event
+occurs.</li>
+</ul>
+
+<br>&nbsp;
+<P ALIGN="JUSTIFY"><b><u>4) The sound command : xfplay</u></b>
+<P ALIGN="JUSTIFY">XFce provides its own command to play the sounds. <tt>xfplay</tt>, as
+it is called, uses <tt>sox</tt> to convert the .wav file to raw data sent
+directly to /dev/dsp
+<P ALIGN="JUSTIFY"><tt>xplay</tt> is a shell script that contains the following command
+:
+<br>&nbsp;
+<center><table BORDER NOSAVE >
+<tr NOSAVE>
+<td NOSAVE><tt>sox $1 -t .raw -r 8000 - > /dev/dsp</tt></td>
+</tr>
+</table></center>
+
+<P ALIGN="JUSTIFY">This method is quite simple and robust, though sox does not seem to
+able to convert 16bit wave sound files.
+<P ALIGN="JUSTIFY">For best results, use 8bit sample at 8000 Hz.
+<P ALIGN="JUSTIFY">In order to use the internal sound player, you have to use "internal"
+as play command (this can be performed automatically by pressing the tiny
+"I" button).&nbsp;The internal player uses less system &amp; CPU&nbsp;resources,
+but requires raw files as input (not Wav files).
+<P ALIGN="JUSTIFY">To use the external (default) player, press the button "D".
+<P ALIGN="JUSTIFY"><b><u>5) XFsound and other Window Managers</u></b>
+<P ALIGN="JUSTIFY">XFwm and other FVwm based Window managers partially share the event
+scheme. Therefore, XFSound might work with other Window managers such as
+FVWM, FVWM2, Afterstep, FVWM-95, etc.
+<P ALIGN="JUSTIFY"><b><u>6) Starting XFSound automatically</u></b>
+<P ALIGN="JUSTIFY">To prevent incompatibility with some kernels, XFSound is not started
+automatically from within XFwm.
+<P ALIGN="JUSTIFY">XFSound is started by the reserved functions "<tt>InitFunction</tt>"
+and&nbsp; "<tt>RestartFunction</tt>" in <tt>system.xfwmrc</tt>.
+<P ALIGN="JUSTIFY">If you have a customized version of system.xfwmrc (also called <tt>sample.xfwmrc</tt>
+or <tt>.xfwmrc</tt>), you need to add the following sentences to your <tt>system.xfwmrc</tt>
+configuration file :
+<br>&nbsp;
+<center><table BORDER NOSAVE >
+<tr>
+<td><tt>AddToFunc "InitFunction"</tt>
+<br><tt>+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+"I" Module xfsound</tt>
+<P ALIGN="JUSTIFY"><tt>AddToFunc "RestartFunction"</tt>
+<br><tt>+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+"I" Module xfsound</tt></td>
+</tr>
+</table></center>
+</ul>
+</ul>
+</ul>
+</ul>
+
+</body>
+</html>

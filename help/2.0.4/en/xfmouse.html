@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Olivier Fourdan">
+   <META NAME="Description" CONTENT="XFce Desktop Environment">
+   <META NAME="Keywords" CONTENT="XFCE,toolbar,X11,window manager,linux,icons,xforms">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.08 [en] (X11; I; Linux 2.0.36 i586) [Netscape]">
+   <TITLE>XFce Desktop Environment - XFMouse, Configuring the mouse</TITLE>
+</HEAD>
+<BODY BACKGROUND="../images/backgr.gif" NOSAVE>
+
+<UL>
+<UL>
+<UL>
+<UL><A NAME="TOP"></A><IMG SRC="../images/XFCE_logo.gif" NOSAVE HEIGHT=50 WIDTH=125><IMG SRC="../images/cholesterol-small.gif" NOSAVE HEIGHT=24 WIDTH=400><IMG SRC="../images/bouncing.gif" NOSAVE HEIGHT=32 WIDTH=32>
+<BR>
+<HR WIDTH="100%">
+<P><IMG SRC="../images/XFMouse-Configuring_mouse.gif" ALT="XFMouse - Configuring the mouse" NOSAVE HEIGHT=33 WIDTH=374>
+<P><B><FONT COLOR="#CC0000">The XFce Mouse Configurator is a graphic user
+interface for easy mouse configuration.</FONT></B>
+<P><B><U>1) The main concept</U></B>
+<P>XFMouse can be started from the command line or from the system.xfwmrc
+file at startup (default). If no parameter is specified, the command "xfmouse"
+will just read the user's configuration file and apply the settings to
+the mouse accordingly.
+<P>In order to access the graphic interface, the user must specify "-i"
+as parameter.
+<P><B><U>2) The user interface</U></B>
+<P>Starting XFMouse from a command prompt, by typing <TT>xfmouse -i</TT>,&nbsp;
+will open the graphical interface of XFMouse :
+<BR>&nbsp;
+<P><BR>
+<CENTER>
+<P><IMG SRC="../images/XFMouse.gif" NOSAVE HEIGHT=291 WIDTH=344></CENTER>
+
+<BR>&nbsp;
+<P><BR>
+<BR>&nbsp;
+<UL>
+<LI>
+Select Left or Right if you are left or right handed. If you select "Left",
+logical button 1 will be mapped on physical button 3 and logical button
+3 will be mapped on physical button 1. Button 2 (middle) is kept unchanged.
+Note that this setting is global to the X server and will affect all applications
+running on the screen.</LI>
+
+<LI>
+"Acceleration" determine how many pixels to move the cursor based on how
+much the physical pointer moved.</LI>
+
+<LI>
+"Threshold" specifies how many pixels the physical pointer must have to
+move for "acceleration" to take effect.</LI>
+</UL>
+<B><U></U></B>
+<P><BR><B><U>3) Starting XFmouse automatically</U></B>
+<P>XFMouse is started by the reserved functions "<TT>InitFunction</TT>"
+and&nbsp; "<TT>RestartFunction</TT>" in <TT>system.xfwmrc</TT>.
+<P>If you have a customized version of system.xfwmrc (also called <TT>sample.xfwmrc</TT>
+or <TT>.xfwmrc</TT>), you need to add the following sentences to your <TT>system.xfwmrc</TT>
+configuration file :
+<BR>&nbsp;
+<CENTER><TABLE BORDER NOSAVE >
+<TR>
+<TD><TT>AddToFunc "InitFunction"</TT>
+<BR><TT>+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+"I" Exec xfmouse -d</TT>
+<P><TT>AddToFunc "RestartFunction"</TT>
+<BR><TT>+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+"I" Exec xfmouse -d</TT></TD>
+</TR>
+</TABLE></CENTER>
+</UL>
+</UL>
+</UL>
+</UL>
+
+</BODY>
+</HTML>

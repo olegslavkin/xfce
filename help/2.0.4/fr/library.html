@@ -1,0 +1,77 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Olivier Fourdan">
+   <META NAME="Description" CONTENT="XFce Desktop Environment">
+   <META NAME="Keywords" CONTENT="XFCE,toolbar,X11,linux,icons,xforms">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (X11; I; Linux 2.0.32 i586) [Netscape]">
+   <TITLE>XFce Desktop Environment - Pr&eacute;parer la librairie XForms</TITLE>
+</HEAD>
+<BODY BACKGROUND="../images/backgr.gif" NOSAVE>
+
+<UL>
+<UL>
+<UL>
+<UL><A NAME="TOP"></A>&nbsp;<IMG SRC="../images/XFCE_logo.gif" NOSAVE HEIGHT=50 WIDTH=125>&nbsp;<IMG SRC="../images/cholesterol-small.gif" NOSAVE HEIGHT=24 WIDTH=400><IMG SRC="../images/bouncing.gif" NOSAVE HEIGHT=32 WIDTH=32>
+<BR>
+<HR WIDTH="100%">
+<BR>&nbsp;
+<DT>
+<IMG SRC="../images/librairie_xforms.gif" ALT="La librairie XForms" NOSAVE HEIGHT=28 WIDTH=204></DT>
+
+<BR>&nbsp;
+<BR><B><FONT COLOR="#CC0000">XFCE n&eacute;cessite la librairie XForms,
+version 0.81 ou sup&eacute;rieure. Il est n&eacute;cessaire d'installer
+cette librairie AVANT de compiler ou d'utiliser XFCE.</FONT></B>
+<BR>&nbsp;
+<BR><B><U>1) O&ugrave; obtenir la librairie XForms</U></B>
+<BR>&nbsp;
+<BR>&nbsp;Visitez <A HREF="http://bragg.phys.uwm.edu/xforms">http://bragg.phys.uwm.edu/xforms</A>
+<BR>&nbsp;
+
+<P ALIGN="JUSTIFY"><B><U>2) T&eacute;l&eacute;chargez la version de la librairie correspondante
+&agrave; votre plateforme</U></B>.
+
+<P ALIGN="JUSTIFY">Par exemple, si vous t&eacute;l&eacute;chargez la version pour Linux,
+vous obtiendrez un fichier qui ressemble &agrave; (en fonction de la version
+t&eacute;l&eacute;charg&eacute;e, &eacute;videmment)
+<BR>&nbsp;
+<UL><TT>bxform-linuxELF.tgz</TT></UL>
+Ce fichier est une archive tar compress&eacute;e avec GNU Zip, exactement
+comme la distribution de XFCE.
+
+<P ALIGN="JUSTIFY"><B><U>3) Decompressez l'archive dans le r&eacute;pertoire de votre choix
+(/usr/src, par exemple)</U></B>
+<BR>&nbsp;
+<BR>&nbsp;
+<UL><TT>$ tar -xvzf bxform-linuxELF.tgz -C /usr/src</TT></UL>
+Cela devrait cr&eacute;er un sous-r&eacute;pertoire&nbsp; /usr/src/xforms
+
+<P ALIGN="JUSTIFY"><B><U>4) Installer la librarie et les ent&ecirc;tes C</U></B>
+
+<P ALIGN="JUSTIFY">Copier la librairie vers /usr/X11/lib :
+<BR>&nbsp;
+<UL><TT>$ cp -ivd /usr/src/xforms/FORMS/libforms* /usr/X11/lib</TT></UL>
+Copier les ent&ecirc;tes C vers /usr/X11/include/X11 :
+<BR>&nbsp;
+<UL><TT>$ cp -ivd /usr/src/xforms/FORMS/forms.h /usr/X11/include/X11</TT></UL>
+Il faut noter que le r&eacute;pertoire /usr/X11 peut &ecirc;tre li&eacute;
+au syst&egrave;me. Sur certains syst&egrave;mes, cela pourrait &ecirc;tre
+<TT>/usr/X11R6</TT> ou <TT>/usr/X386</TT>. Bien s&ucirc;r, dans ce cas
+replacez X11 par ce qui convient &agrave; votre syst&egrave;me.
+
+<P ALIGN="JUSTIFY"><B><U>5) Reconfigurer ld (le chargeur dynamique de librairies pour Linux)</U></B>
+
+<P ALIGN="JUSTIFY">En tant que root, tapez :
+<BR>&nbsp;
+<UL><TT>$ ldconfig -v</TT></UL>
+Vous devriez trouver libforms dans la liste des librairies connues.
+<BR>&nbsp;
+
+<P ALIGN="JUSTIFY">&nbsp;</UL>
+</UL>
+</UL>
+</UL>
+&nbsp;
+</BODY>
+</HTML>

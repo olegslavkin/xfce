@@ -1,0 +1,94 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Author" content="Olivier Fourdan">
+   <meta name="Description" content="XFce Desktop Environment">
+   <meta name="Keywords" content="XFCE,toolbar,X11,linux,icons,xforms">
+   <meta name="GENERATOR" content="Mozilla/4.5 [en] (X11; I; Linux 2.0.33 i586) [Netscape]">
+   <title>XFce Desktop Environment - The binary distribution</title>
+</head>
+<body background="../images/backgr.gif" nosave>
+
+<ul>
+<ul>
+<ul>
+<ul><a NAME="TOP"></a><img SRC="../images/XFCE_logo.gif" NOSAVE height=50 width=125><img SRC="../images/cholesterol-small.gif" NOSAVE height=24 width=400><img SRC="../images/bouncing.gif" NOSAVE height=32 width=32>
+<br>
+<hr WIDTH="100%">
+<br>&nbsp;
+<dt>
+<img SRC="../images/binary_distribution.gif" ALT="Binary Distribution" NOSAVE height=33 width=193></dt>
+
+<p><br><b><font color="#CC0000">If you do not feel like compiling XFCE
+yourself, a binary pre-compiled version of XFCE is available.</font></b>
+<p><b><u>1) Downloading the distribution</u></b>
+<p>The binary pre-compiled distribution of XFCE is a gziped tar archive.
+The application is compiled with XForms statically linked, so you do not
+even have to set up XForms on your system.
+
+<p>XFce is available for :
+<ul>
+<li>
+Linux libc5</li>
+
+<li>
+Linux glibc (aka libc6)</li>
+
+<li>
+Solaris 2.6&nbsp;Intel Edition</li>
+
+<li>
+FreeBSD</li>
+</ul>
+
+<p><br><b><u>2) Installing the distribution</u></b>
+<p>The distribution is now splitted, to save disk space.
+<ul>
+<li>
+The common data (backdrops, sounds, icons) and shell scripts</li>
+
+<li>
+The platform specific binaries</li>
+</ul>
+
+<p><br>The archive contains the right path, so all you have to do is unpacking
+it at the root directory.
+<br>&nbsp;
+<ul><tt>$ gunzip xfce-common-2.?.?.bin.tar.gz</tt>
+<br><tt>$ tar xvf xfce-common-2.?.?.bin.tar -C /</tt>
+<br><tt>$ gunzip xfce-2.?.?.&lt;platform>.static.bin.tar.gz</tt>
+<br><tt>$ tar xvf xfce-2.?.?.&lt;platform>.static.bin.tar -C&nbsp;/</tt></ul>
+
+<ul>&nbsp;</ul>
+<b><u>&nbsp;3) How to use RPM format (from Red Hat)</u></b>
+<p>Just a few tips on how to use RPM (for more informations about RPM,
+please use <tt>rpm --help</tt> or <tt>man rpm</tt>) :
+<br>&nbsp;
+<ul>
+<li>
+<tt>rpm -ivh &lt;package>.i386.rpm</tt></li>
+
+<br>Install package
+<li>
+<tt>rpm -U &lt;package>.i386.rpm</tt></li>
+
+<br>Update package
+<li>
+<tt>rpm -e &lt;package></tt></li>
+
+<br>Remove package and all its files
+<li>
+<tt>rpm -ba &lt;spec></tt></li>
+
+<br>Rebuild the whole package using the "spec" file.</ul>
+
+<p><br>The rpm distribution for Red Hat Linux is also splitted.&nbsp;As
+a result, you must install the common data before the binaries.
+<br>&nbsp;</ul>
+</ul>
+</ul>
+</ul>
+
+</body>
+</html>

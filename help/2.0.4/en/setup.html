@@ -1,0 +1,213 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Olivier Fourdan">
+   <META NAME="Description" CONTENT="XFce Desktop Environment">
+   <META NAME="Keywords" CONTENT="XFCE,toolbar,X11,window managerlinux,icons,xforms">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.05 [en] (X11; I; Linux 2.0.34 i586) [Netscape]">
+   <TITLE>XFce Desktop Environment - Compiling and Installing from the Sources</TITLE>
+</HEAD>
+<BODY BACKGROUND="../images/backgr.gif" NOSAVE>
+
+<UL>
+<UL>
+<UL>
+<UL><A NAME="TOP"></A><IMG SRC="../images/XFCE_logo.gif" NOSAVE HEIGHT=50 WIDTH=125><IMG SRC="../images/cholesterol-small.gif" NOSAVE HEIGHT=24 WIDTH=400><IMG SRC="../images/bouncing.gif" NOSAVE HEIGHT=32 WIDTH=32>
+<BR>
+<HR WIDTH="100%">
+<BR>&nbsp;
+<DT>
+<IMG SRC="../images/compiling_sources.gif" ALT="Compiling the sources" NOSAVE HEIGHT=33 WIDTH=240></DT>
+
+<BR>&nbsp;
+
+<P><B><FONT COLOR="#CC0000">IMPORTANT : YOU NEED TO HAVE A ROOT ACCESS
+TO INSTALL XFCE PROPERLY.</FONT></B>
+<BR>&nbsp;
+
+<P><B><U>1) Requirements</U></B>
+
+<P><U>1.a) Linux</U>
+
+<P>XFce compiles out of the box on most Linux distributions. Although,
+some distributions do not provide the latest version for Xpm librariy (libXpm).
+On Debian, for exemple, you'll have to install xpm4g-dev and xpm4-altdev
+otherwise xfwm will core dump at startup.
+
+<P>You'll need the XForms library for your system (libc5 or libc6). Using
+the wrong library can cause some oddities such as wrong time displayed
+in XFce clock or directories full of "D.." !
+
+<P><U>1.b) SUN Solaris <SUP>(tm)</SUP></U>
+
+<P>To compile XFce on SUN Solaris, you'll need the GNU tools :
+<UL>
+<LI>
+gcc-2.8.1</LI>
+
+<LI>
+gzip-1.2.4</LI>
+
+<LI>
+libXpm-4.7</LI>
+
+<LI>
+libstdc++-2.8.1.1</LI>
+
+<LI>
+make-3.76.1</LI>
+
+<LI>
+unzip-5.32</LI>
+</UL>
+These applications can be freely downloaded from <A HREF="http://www.sun.com">SUN</A>
+or most <A HREF="http://metalab.unc.edu/">SUNSite</A> mirrors.
+
+<P>Of course, you'll also need XForms for Solaris.
+
+<P><B><U>2) Installing from a tar archive</U></B>
+
+<P>Once you've retrieved the archives, ie two files that sounds like xfce-2.?.?.tar.gz
+and xfce-common-2.?.?.tar.gz,
+
+<P>Untar the source files :
+<BR>&nbsp;
+<UL><TT>$ tar xfzf xfce-common-2.?.?.tar.gz</TT>
+<BR><TT>$ tar xvzf xfce-2.?.?.tar.gz</TT>
+<BR><TT>$ cd xfce-2.?.?</TT>
+<BR>&nbsp;</UL>
+<I>(Of course, replace the question tag by the release version)</I>
+
+<P><B><U>3) Edit Imakefile to suit your system (if needed)</U></B>
+
+<P>This point could be optional.. If you are new to Unix, first try without
+editing the Imakefile
+<BR>&nbsp;
+<UL><TT>$ vi Imakefile</TT></UL>
+
+
+<P><B><U>4) Edit definition file</U></B>
+
+<P>The file called <TT>XFCE.def </TT>contains all default definitions for
+compiling XFce on Linux, SUN Solaris and FreeBSD.
+
+<P><TT>XCOMM Definition options : Please edit !</TT>
+<BR><TT>XCOMM ==================================</TT>
+
+<P><TT>#define LINUX</TT>
+<BR><TT>/* #define SOLARIS */</TT>
+<BR><TT>/* #define BSD */</TT>
+<BR><TT>#define STATIC</TT>
+<BR><TT>...</TT>
+
+<P>By commenting out the system name, you can select which target you want
+to build. This has no effect on the code itself, it just set the right
+compile options and directories for the selected system.
+
+<P>You can change these directories, or even add a new target system by
+changing/adding the following lines in XFCE.def :
+
+<P><TT>XCOMM Compile options : Please check !</TT>
+<BR><TT>XCOMM ================================</TT>
+
+<P><TT>...</TT>
+<BR><TT>#ifdef LINUX</TT>
+<BR><TT>XCOMM</TT>
+<BR><TT>XCOMM for LINUX</TT>
+<BR><TT>XCOMM</TT>
+<BR><TT>XFCE_SYSLIB =&nbsp; -L/usr/X11/lib -L/usr/X11R6/lib -L/usr/local/lib</TT>
+<BR><TT>STD_LIBRARIES = -lXext -lX11 -lXpm -lm</TT>
+<BR><TT>#ifdef STATIC</TT>
+<BR><TT>XFCE_EXTRA_LIBRARIES = $(USRLIBDIR)/libforms.a $(XFCE_SYSLIB) $(STD_LIBRARIES)</TT>
+<BR><TT>#else</TT>
+<BR><TT>XFCE_EXTRA_LIBRARIES =&nbsp; $(XFCE_SYSLIB) $(STD_LIBRARIES) -lforms</TT>
+<BR><TT>#endif</TT>
+<BR><TT>COMPILE_OPTIONS = -O -Wall $(EXTRA_INCLUDES) $(EXTRA_DEFINES)</TT>
+<BR><TT>LINK_OPTIONS = -O -s</TT>
+<BR><TT>#endif</TT>
+
+<P><TT>#ifdef SOLARIS</TT>
+<BR><TT>...</TT>
+<BR><TT>#endif</TT>
+
+<P><TT>#ifdef BSD</TT>
+<BR><TT>...</TT>
+<BR><TT>#endif</TT>
+
+<P><TT>XCOMM BINDIR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = /usr/local/bin</TT>
+<BR><TT>XFCE_DIR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = /var/XFCE</TT>
+<BR><TT>XBINDIR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = $(BINDIR)</TT>
+<BR><TT>XFCE_PAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = $(XFCE_DIR)/palettes</TT>
+<BR><TT>XFCE_BACKDROPS = $(XFCE_DIR)/backdrops</TT>
+<BR><TT>XFCE_HELP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = $(XFCE_DIR)/help</TT>
+<BR><TT>XFCE_ICONS&nbsp;&nbsp;&nbsp;&nbsp; = $(XFCE_DIR)/icons</TT>
+<BR><TT>XFCE_SOUNDS&nbsp;&nbsp;&nbsp; = $(XFCE_DIR)/sounds</TT>
+
+<P><TT>DESTDIR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = $(RPM_BUILD_ROOT)</TT>
+<BR><TT>DEST_BIN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = $(DESTDIR)$(XBINDIR)</TT>
+<BR><TT>DEST_XFCE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = $(DESTDIR)$(XFCE_DIR)</TT>
+<BR><TT>DEST_PAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = $(DESTDIR)$(XFCE_PAL)</TT>
+<BR><TT>DEST_BACKDROPS = $(DESTDIR)$(XFCE_BACKDROPS)</TT>
+<BR><TT>DEST_HELP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = $(DESTDIR)$(XFCE_HELP)</TT>
+<BR><TT>DEST_ICONS&nbsp;&nbsp;&nbsp;&nbsp; = $(DESTDIR)$(XFCE_ICONS)</TT>
+<BR><TT>DEST_SOUNDS&nbsp;&nbsp;&nbsp; = $(DESTDIR)$(XFCE_SOUNDS)</TT>
+
+<P><TT>EXTRA_INCLUDES =&nbsp; -I/usr/local/include -I/usr/X11R6/include
+-I/usr/X11R6/include/X11 -I.</TT>
+<BR><TT>EXTRA_DEFINES = -DXFCE_ICONS=\"$(XFCE_ICONS)\" -DXFCE_DIR=\"$(XFCE_DIR)\"\</TT>
+<BR><TT>&nbsp;-DXBINDIR=\"$(XBINDIR)\" -DXFCE_PAL=\"$(XFCE_PAL)\"\</TT>
+<BR><TT>&nbsp;-DXFCE_BACKDROP=\"$(XFCE_BACKDROPS)\"</TT>
+
+<P><TT>CC=gcc</TT>
+<BR><TT>CFLAGS=$(COMPILE_OPTIONS)</TT>
+<BR><TT>LDOPTIONS=$(LINK_OPTIONS)</TT>
+
+<P>For example, you can change the default base directory for binaries
+to /usr/local/bin by uncommenting out (<TT>XCOMM</TT>)the line <TT>BINDIR
+= /usr/local/bin</TT>
+
+<P><B><U>5) Create all Makefiles</U></B>
+<BR>&nbsp;
+<UL><TT>$ xmkmf -a</TT></UL>
+
+
+<P>If you don't have Imake installed, then you can try with the one shipped
+in the package or get the makefile that someone else used for your platform,
+or even better, get Imake from <A HREF="ftp://ftp.x.org">ftp.x.org</A>
+!
+<BR>&nbsp;
+
+<P><B><U>6) Compile and install</U></B>
+
+<P>To compile and install XFCE, just type
+<BR>&nbsp;
+<UL><TT>$ make install</TT></UL>
+
+
+<P>This would install XFCE, XFwm and XFbd so it can be run from the command
+line.
+
+<P><B><U>7) Do the same for xfce-common !</U></B>
+
+<P>You have to perform actions 2 to 6 for xfce-common.
+
+<P><B><U>8) Choose your default language</U></B>
+
+<P>Language is defined through the environment variable XFCE_LANG. This
+can be set in your $HOME/.xinitrc startup file&nbsp; :
+<BR>&nbsp;
+<UL><TT>$ export XFCE_LANG="fr"</TT>
+<BR><TT>$ export XFCE_LANG="en"</TT>
+<BR><TT>$ export XFCE_LANG="it"</TT>
+<BR><TT>$ export XFCE_LANG="de"</TT>
+<BR><TT>$ export XFCE_LANG="hu"</TT>
+<BR><TT>$ export XFCE_LANG="es"</TT>
+<BR><TT>$ export XFCE_LANG="sk"</TT>
+<BR><TT>$ export XFCE_LANG="pt"</TT></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+
+</BODY>
+</HTML>

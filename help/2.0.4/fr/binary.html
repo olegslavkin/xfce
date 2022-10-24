@@ -1,0 +1,104 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Author" content="Olivier Fourdan">
+   <meta name="Description" content="XFce Desktop Environment">
+   <meta name="Keywords" content="XFCE,toolbar,X11,window manager,linux,icons,xforms">
+   <meta name="GENERATOR" content="Mozilla/4.5 [en] (X11; I; Linux 2.0.33 i586) [Netscape]">
+   <title>XFce Desktop Environment - La distribution compil&eacute;e</title>
+</head>
+<body background="../images/backgr.gif" nosave>
+
+<ul>
+<ul>
+<ul>
+<ul><a NAME="TOP"></a><img SRC="../images/XFCE_logo.gif" NOSAVE height=50 width=125><img SRC="../images/cholesterol-small.gif" NOSAVE height=24 width=400><img SRC="../images/bouncing.gif" NOSAVE height=32 width=32>
+<br>
+<hr WIDTH="100%">
+<br>&nbsp;
+<dt>
+<img SRC="../images/distribution_precompilee.gif" ALT="La distribution précompilée" NOSAVE height=33 width=259></dt>
+
+<br>&nbsp;
+<p>&nbsp;
+<p><b><font color="#CC0000">Si vous ne vous sentez pas &agrave; l'aise
+pour compiler XFCE vous-m&ecirc;me, une distribution d&eacute;j&agrave;
+compil&eacute;e est disponible.</font></b>
+<p><b><u>1) T&eacute;l&eacute;charger la distribution</u></b>
+<br>&nbsp;
+<p>La distribution pr&eacute;compil&eacute;e de XFCE est un fichier tar
+compr&eacute;ss&eacute; avec gzip. L'application est compil&eacute;e avec
+la librairie XForms en statique, ce qui fait qu'il n'est m&ecirc;me pas
+n&eacute;cessaire d'avoir XForm install&eacute; sur le syst&egrave;me pour
+pouvoir utiliser cette distribution.
+
+<p>XFce est disponible pour :
+<ul>
+<li>
+Linux libc5</li>
+
+<li>
+Linux glibc (alias libc6)</li>
+
+<li>
+Solaris 2.6 Intel Edition</li>
+
+<li>
+FreeBSD</li>
+</ul>
+
+<p><br><b><u>2) Installer la distribution</u></b>
+<p>La distribution est maintenant en deux parties, pour economiser de la
+place disque&nbsp;:
+<ul>
+<li>
+Les donn&eacute;es communes (sons, fonds d'&eacute;cran, ic&ocirc;nes)</li>
+
+<li>
+Les fichiers binaires sp&eacute;cifiques a la plateforme</li>
+</ul>
+
+<p><br>L'archive contient d&eacute;j&agrave; les chemins d'acc&egrave;s
+corrects, il suffit donc de la d&eacute;compr&eacute;sser depuis la racine
+de l'arborescence du syst&egrave;me :
+<br>&nbsp;
+<ul><tt>$ gunzip xfce-common-2.?.?.bin.tar.gz</tt>
+<br><tt>$ tar xvf xfce-common-2.?.?.bin.tar -C /</tt>
+<br><tt>$ gunzip xfce-2.?.?.&lt;platform>.static.bin.tar.gz</tt>
+<br><tt>$ tar xvf xfce-2.?.?.&lt;platform>.static.bin.tar -C /</tt></ul>
+
+<ul>&nbsp;</ul>
+&nbsp;<b><u>3) Pour les utilisateurs de RPM (le format d'archives de Red
+Hat)</u></b>
+<p>Quelques rappels des commandes de bases de rpm (pour plus d'information
+sur RPM, utilisez <tt>man rpm </tt>ou r<tt>pm --help</tt>) :
+<br>&nbsp;
+<ul>
+<li>
+<tt>rpm -ivh &lt;archive>.i386.rpm</tt></li>
+
+<br>Installe l'archive
+<li>
+<tt>rpm -U &lt;archive>.i386.rpm</tt></li>
+
+<br>Mise a jour d'une archive
+<li>
+<tt>rpm -e &lt;archive></tt></li>
+
+<br>Supprime l'archive et ses fichiers
+<li>
+<tt>rpm -ba &lt;spec></tt></li>
+
+<br>Reconstruit enti&egrave;rement l'archive &agrave; partir d'un fichier
+spec
+<br>&nbsp;</ul>
+La distribution rpm de XFce pour Linux Red Hat est aussi en deux parties.&nbsp;En
+cons&eacute;quence, vous devrez installer les donn&eacute;es communes avant
+les fichiers binaires.</ul>
+</ul>
+</ul>
+</ul>
+
+</body>
+</html>

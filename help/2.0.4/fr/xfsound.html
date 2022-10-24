@@ -1,0 +1,150 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Author" content="Olivier Fourdan">
+   <meta name="Description" content="XFce Desktop Environment">
+   <meta name="Keywords" content="XFCE,toolbar,X11,window manager,linux,icons,xforms">
+   <meta name="GENERATOR" content="Mozilla/4.5 [en] (X11; I; Linux 2.0.33 i586) [Netscape]">
+   <title>XFce Desktop Environment - XFSound, the System Sound Manager</title>
+</head>
+<body background="../images/backgr.gif" nosave>
+
+<ul>
+<ul>
+<ul>
+<ul><a NAME="TOP"></a><img SRC="../images/XFCE_logo.gif" NOSAVE height=50 width=125><img SRC="../images/cholesterol-small.gif" NOSAVE height=24 width=400><img SRC="../images/bouncing.gif" NOSAVE height=32 width=32>
+<br>
+<hr WIDTH="100%">
+<P ALIGN="JUSTIFY"><img SRC="../images/gestionnaire_sons.gif" ALT="XFSound, le Gestionnaire de fichiers sons" NOSAVE height=33 width=481>
+<P ALIGN="JUSTIFY"><b><font color="#CC0000">Le gestionnaire de sons syst&egrave;mes de
+XFce est &agrave; la fois un module et une application qui reste &agrave;
+l'&eacute;coute des &eacute;v&egrave;nements et joue les sons en cons&eacute;quence.</font></b>
+<P ALIGN="JUSTIFY"><b><u>1) Le concept de base</u></b>
+<P ALIGN="JUSTIFY">Quand XFSound est d&eacute;marr&eacute; comme module (c'est &agrave;
+dire depuis XFce ou XFwm en utilisant le mot cl&eacute; "Module"), il se
+met en boucle en attendant le &eacute;v&egrave;nements provenant du gestionnaire
+de fen&ecirc;tres (XFwm)
+<P ALIGN="JUSTIFY">Lorsque un &eacute;v&egrave;nement se produit, XFSound ex&eacute;cute
+la commande sp&eacute;cifi&eacute;e par l'utilisateur pour emettre le sons
+correspondant &agrave; l'&eacute;v&egrave;nement.
+<P ALIGN="JUSTIFY">L'utilisateur agit sur XFSound par l'interm&eacute;diaire de son interface
+graphique en demarrant XFSound comme une application X normale (c'est &agrave;
+dire pas en tant que module)
+<br>&nbsp;
+<P ALIGN="JUSTIFY"><b><u>2) L'interface utilisateur</u></b>
+<br>&nbsp;
+<P ALIGN="JUSTIFY">Pour obtenir l'inteface utilisateur de XFSound, il suffit de le lancer
+depuis la ligne de commande, en tapant <tt>xfsound</tt> :
+<br>&nbsp;
+<center>
+<P ALIGN="JUSTIFY"><img SRC="../images/XFSND_dialog.gif" ALT="Graphical user interface" NOSAVE height=281 width=474></center>
+
+<P ALIGN="JUSTIFY"><br>
+<ul>
+<li>
+"Event" d&eacute;termine le type d'&eacute;v&egrave;nement</li>
+
+<li>
+"Sound file" est le fichier son qui sera jou&eacute; quand "event" se produira..</li>
+
+<li>
+"Command line" est la commande utilis&eacute;e pour jouer le son</li>
+
+<li>
+"Play sound" d&eacute;termine si les sons sont emis ou non.</li>
+
+<li>
+"Test" pemet de jouer le fichier son (en utilisant la commande d&eacute;finit
+dans le champ "Command line")</li>
+
+<li>
+Les deux petits boutons marqu&eacute;s "I" et "D" permettent d'utiliser
+respectivement le m&eacute;chanisme de restitution sonore interne ou externe
+(par d&eacute;faut)</li>
+</ul>
+
+<br>&nbsp;
+<P ALIGN="JUSTIFY"><b><u>3) Les &eacute;v&egrave;nements</u></b>
+<P ALIGN="JUSTIFY">XFwm &eacute;met une large vari&eacute;t&eacute; d'&eacute;v&egrave;nements.
+XFSound couvre ceux qui proviennent essentiellement des actions utilisateur.
+<center><img SRC="../images/XFSND_eventlist.gif" ALT="Events list" NOSAVE height=370 width=159></center>
+
+<P ALIGN="JUSTIFY"><br>
+<br>
+<P ALIGN="JUSTIFY">Les 3 derniers &eacute;v&egrave;nements ne sont pas vraiement des &eacute;v&egrave;nements
+de XFwm :
+<ul>
+<li>
+<b><i>Startup</i></b> est le son jou&eacute; au d&eacute;marrage du module
+XFSound</li>
+
+<li>
+<b><i>Shutdown</i></b> est l'&eacute;v&egrave;nement li&eacute; &agrave;
+la fin de XFSound.</li>
+
+<li>
+<b><i>Unknown</i></b> est le son jou&eacute; lorsque survient un &eacute;v&egrave;nement
+inconnu de XFSound.</li>
+</ul>
+
+<P ALIGN="JUSTIFY"><b><u>4) La commande qui joue le son : xfplay</u></b>
+<P ALIGN="JUSTIFY">XFce procure sa propre commande pour jouer le sons.. <tt>xfplay</tt>,
+comme elle s'appelle, utilise <tt>sox</tt> pour convertir le fichier .wav
+en donn&eacute;&eacute;e brutes qui sont envoy&eacute;es &agrave; /dev/dsp
+<P ALIGN="JUSTIFY"><tt>xplay</tt> est un scripte shell qui contient la commande suivante
+:
+<br>&nbsp;
+<center><table BORDER NOSAVE >
+<tr NOSAVE>
+<td NOSAVE><tt>sox $1 -t .raw -r 8000 - > /dev/dsp</tt></td>
+</tr>
+</table></center>
+
+<P ALIGN="JUSTIFY">Cette methode est plut&ocirc;t simple et robuste, cependant <tt>sox</tt>
+ne semble pas &ecirc;tre capable de convertir des fichiers wave sur 16
+bits automatiquement.
+<P ALIGN="JUSTIFY">Pour obtenir les meilleurs r&eacute;sultats, utilisez des &eacute;chantillons
+sur 8 bits a 8000 Hz.
+<P ALIGN="JUSTIFY">Pour utiliser le m&eacute;chanisme interne de restitution de son, il
+faut utiliser le mot cl&eacute; "internal" comme commande (ceci peut &ecirc;tre
+obtenu directement en pressant le petit bouton "I").&nbsp;Le m&eacute;chanisme
+interne sollicite moins le processeur et les ressources syst&egrave;mes,
+mais requiert des fichiers son bruts (cd qui n'est pas le cas des fichiers
+Wav).
+<P ALIGN="JUSTIFY">Pour revenir &agrave; la commande externe, il suffit de presser le bouton
+"D" (comme D&eacute;faut).
+<P ALIGN="JUSTIFY"><b><u>5) XFsound et les autres Gestionnaires de Fen&ecirc;tres</u></b>
+<P ALIGN="JUSTIFY">XFwm et les autres gestionnaires de fen&ecirc;tres de la famille de
+FVWM partagent plus ou moins le m&ecirc;me sch&eacute;ma d'&eacute;v&egrave;nements.
+Par cons&eacute;quent, XFSound devrait fonctionner avec d'autres gestionnaires
+de fen&ecirc;tres tels que FVWM, FVWM2, Afterstep, FVWM-95, etc.
+<P ALIGN="JUSTIFY"><b><u>6) Le d&eacute;marrage automatique de XFSound</u></b>
+<P ALIGN="JUSTIFY">Pour &eacute;viter des incompatibilit&eacute;s avec certains kernels,
+XFSound n'est pas lanc&eacute; automatiquement depuis XFwm.
+<P ALIGN="JUSTIFY">XFSound est lanc&eacute; par les fonctions r&eacute;serv&eacute;es "<tt>InitFunction</tt>"
+et&nbsp; "<tt>RestartFunction</tt>" dans le fichier <tt>system.xfwmrc</tt>.
+<P ALIGN="JUSTIFY">Si vous utilisez une version modifi&eacute;e de <tt>system.xfwmrc</tt>
+(&eacute;galement appel&eacute; <tt>sample.xfwmrc</tt> ou <tt>.xfwmrc</tt>),
+il vous faut ajouter les lignes suivantes a votre fichier de configuration
+<tt>system.xfwmrc</tt>
+:
+<br>&nbsp;
+<center><table BORDER NOSAVE >
+<tr>
+<td><tt>AddToFunc "InitFunction"</tt>
+<br><tt>+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+"I" Module xfsound</tt>
+<P ALIGN="JUSTIFY"><tt>AddToFunc "RestartFunction"</tt>
+<br><tt>+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+"I" Module xfsound</tt></td>
+</tr>
+</table></center>
+
+<br>&nbsp;</ul>
+</ul>
+</ul>
+</ul>
+
+</body>
+</html>
