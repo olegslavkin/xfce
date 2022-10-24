@@ -53,7 +53,7 @@
 | 24-SEP-1999 | Xfce-3.1.1   | [xfce-3.1.1.tar.gz](dist/xfce-3.1.1.tar.gz) | | |
 | 04-SEP-1999 | Xfce-3.1.0   | [xfce-3.1.0.tar.gz](dist/xfce-3.1.0.tar.gz) | | |
 | 02-AUG-1999 | Xfce-3.0.3   | Lost | | |
-| 19-JUL-1999 | Xfce-3.0.2   | [xfce-3.0.2.tar.gz](dist/xfce-3.0.2.tar.gz) [xfce-3.0.2.tar.bz2](dist/xfce-3.0.2.tar.bz2)| | [online help](help/3.0.2/manual.html) |
+| 19-JUL-1999 | Xfce-3.0.2   | [xfce-3.0.2.tar.gz](dist/xfce-3.0.2.tar.gz), [xfce-3.0.2.tar.bz2](dist/xfce-3.0.2.tar.bz2)| | [online help](help/3.0.2/manual.html) |
 | 17-JUL-1999 | Xfce-3.0.1   | Lost | | |
 | 14-JUL-1999 | Xfce-3.0.0   | Lost | | |
 | 20-JUN-1999 | Xfce-3.0.0 Pre-release 2 | Lost | | |
