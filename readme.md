@@ -50,14 +50,14 @@
 | 30-NOV-1999 | Xfce 3.2.1   | [xfce-3.2.1.tar.gz](dist/xfce-3.2.1.tar.gz) | | |
 | 14-NOV-1999 | Xfce 3.2.0   | Lost | | |
 | 01-OCT-1999 | Xfce-3.1.2   | Lost | | |
-| 24-SEP-1999 | Xfce-3.1.1   | [xfce-3.1.1.tar.gz](dist/xfce-3.1.1.tar.gz) | | |
+| 24-SEP-1999 | Xfce-3.1.1   | [xfce-3.1.1.tar.gz](dist/xfce-3.1.1.tar.gz) | [0](screenshots/xfce-3.1.1-0.png), [1](screenshots/xfce-3.1.1-1.png), [2](screenshots/xfce-3.1.1-2.png), [3](screenshots/xfce-3.1.1-3.png), [4](screenshots/xfce-3.1.1-4.png), [5](screenshots/xfce-3.1.1-5.png), [6](screenshots/xfce-3.1.1-6.png), [7](screenshots/xfce-3.1.1-7.png) | |
 | 04-SEP-1999 | Xfce-3.1.0   | [xfce-3.1.0.tar.gz](dist/xfce-3.1.0.tar.gz) | | |
 | 02-AUG-1999 | Xfce-3.0.3   | Lost | | |
-| 19-JUL-1999 | Xfce-3.0.2   | [xfce-3.0.2.tar.gz](dist/xfce-3.0.2.tar.gz), [xfce-3.0.2.tar.bz2](dist/xfce-3.0.2.tar.bz2)| | [online help](help/3.0.2/manual.html) |
+| 19-JUL-1999 | Xfce-3.0.2   | [xfce-3.0.2.tar.gz](dist/xfce-3.0.2.tar.gz), [xfce-3.0.2.tar.bz2](dist/xfce-3.0.2.tar.bz2)| [0](screenshots/xfce-3.0.2-0.png), [1](screenshots/xfce-3.0.2-1.png), [2](screenshots/xfce-3.0.2-2.png), [3](screenshots/xfce-3.0.2-3.png) | [online help](help/3.0.2/manual.html) |
 | 17-JUL-1999 | Xfce-3.0.1   | Lost | | |
 | 14-JUL-1999 | Xfce-3.0.0   | Lost | | |
 | 20-JUN-1999 | Xfce-3.0.0 Pre-release 2 | Lost | | |
-| 03-JUN-1999 | Xfce-3.0.0 Pre-release 1 | Lost | | |
+| 03-JUN-1999 | Xfce-3.0.0 Pre-release 1 | Lost (xfce-3.0.0pre1.tar.gz) | | |
 | DD-MMM-YYYY | XFce-2.4.0   | xfce-common-2.4.0.tar.gz | [0](screenshots/xfce-2.4.0-0.png), [1](screenshots/xfce-2.4.0-1.png), [2](screenshots/xfce-2.4.0-2.png), [3](screenshots/xfce-2.4.0-3.png), [4](screenshots/xfce-2.4.0-4.png), [5](screenshots/xfce-2.4.0-5.png), [6](screenshots/xfce-2.4.0-6.png), [7](screenshots/xfce-2.4.0-7.png) | |
 | DD-MMM-YYYY | XFce-2.3.0   | Lost | | |
 | DD-MMM-YYYY | XFce-2.2.0   | Lost | | |
@@ -84,6 +84,3 @@
 | 25-MAR-1997 | XFCE-1.10   | [XFCE110.tgz](dist/XFCE110.tgz) | [0](screenshots/xfce-1.10-0.png), [1](screenshots/xfce-1.10-1.png), [2](screenshots/xfce-1.10-2.png), [3](screenshots/xfce-1.10-3.png), [4](screenshots/xfce-1.10-4.png)| |
 | DD-MMM-YYYY | XFCE-1.05b  | Lost | | |
 | DD-MMM-YYYY | XFCE-1.04   | Lost | | |
-
-
-
