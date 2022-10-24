@@ -7,31 +7,33 @@
 | 26-JUN-2002 | Xfce 3.8.14f | github | | |
 | 26-JUN-2002 | Xfce 3.8.14e | github | | |
 | 25-JUN-2002 | Xfce 3.8.14d | github | | |
-| DD-MMM-YYYY | Xfce 3.8.14c | xfce-3.8.14c.tar.bz2 | | |
-| 22-NOV-2001 | Xfce 3.8.14  | xfce-3.8.14.tar.gz (+ github) | | |
-| 04-NOV-2001 | Xfce 3.8.12  | github | | |
-| 01-NOV-2001 | Xfce 3.8.11  | github | | |
-| 29-OCT-2001 | Xfce 3.8.10  | github | | |
-| 26-SEP-2001 | Xfce 3.8.9   | github | | |
-| 31-AUG-2001 | Xfce 3.8.8   | github | | |
-| XX-AUG-2001 | Xfce 3.8.7   | github | | |
-| 03-AUG-2001 | Xfce 3.8.6   | github | | |
-| DD-MMM-YYYY | Xfce 3.8.5   | xfce-3.8.5.tar.bz2 (+ github) | | |
-| DD-MMM-YYYY | Xfce 3.8.4   | xfce-3.8.4.tar.gz | | |
-| 28-MAY-2001 | Xfce 3.8.3   | xfce-3.8.3.tar.gz | | |
-| 14-MAY-2001 | Xfce 3.8.2   | xfce-3.8.2.tar.gz | | |
-| 29-APR-2001 | Xfce 3.8.1   | xfce-3.8.1.tar.gz | | |
-| 23-APR-2001 | Xfce 3.8.0   | xfce-3.8.0.tar.bz2 | | |
-| 07-FEB-2001 | Xfce 3.7.2   | xfce-3.7.2.tar.bz2  | | |
-| 05-FEB-2001 | Xfce 3.7.1   | xfce-3.7.1.tar.gz | | |
-| 28-JAN-2001 | Xfce 3.7.0   | xfce-3.7.0.tar.gz | | |
-| 27-NOV-2000 | Xfce 3.6.3   | xfce-3.6.3.tar.gz xfce-3.6.3.tar.bz2  | | |
-| 26-NOV-2000 | Xfce 3.6.2   | xfce-3.6.2.tar.gz | | |
-| 19-NOV-2000 | Xfce 3.6.1   | xfce-3.6.1.tar.gz | | |
-| 19-NOV-2000 | Xfce 3.6.0   | xfce-3.6.0.tar.gz | | |
-| 01-OCT-2000 | Xfce 3.5.2   | xfce-3.5.2.tar.gz | | |
-| 24-SEP-2000 | Xfce 3.5.1   | | | |
-| 21-AUG-2000 | Xfce 3.5.0   | (xfce-3.4.4-3.5.0-20000815-patch.gz) | | |
+| DD-MMM-YYYY | Xfce 3.8.14c | xfce-3.8.14c.tar.gz xfce-3.8.14c.tar.bz2 | | |
+| DD-MMM-YYYY | Xfce 3.8.14b | xfce-3.8.14c.tar.bz2 | | |
+| 21-JUN-2002 | Xfce 3.8.14  | xfce-3.8.14.tar.gz (+ github) | | |
+| 22-NOV-2001 | Xfce 3.8.12b | xfce-3.8.12b.tar.gz | | |
+| 21-NOV-2001 | Xfce 3.8.12  | [xfce-3.8.12.tar.gz](dist/xfce-3.8.12.tar.gz) | | |
+| 01-NOV-2001 | Xfce 3.8.11  | [xfce-3.8.11.tar.gz](dist/xfce-3.8.11.tar.gz) | | |
+| 29-OCT-2001 | Xfce 3.8.10  | [xfce-3.8.10.tar.gz](dist/xfce-3.8.10.tar.gz) | | |
+| 26-SEP-2001 | Xfce 3.8.9   | [xfce-3.8.9.tar.gz](dist/xfce-3.8.9.tar.gz) | | |
+| 31-AUG-2001 | Xfce 3.8.8   | [xfce-3.8.8.tar.gz](dist/xfce-3.8.8.tar.gz) | | |
+| XX-AUG-2001 | Xfce 3.8.7   | [xfce-3.8.7.tar.gz](dist/xfce-3.8.7.tar.gz) | | |
+| 03-AUG-2001 | Xfce 3.8.6   | [xfce-3.8.6.tar.gz](dist/xfce-3.8.6.tar.gz) | | |
+| DD-MMM-YYYY | Xfce 3.8.5   | [xfce-3.8.5.tar.bz2](dist/xfce-3.8.5.tar.bz2) (+ github) | | + [github v3.8.5](https://github.com/olegslavkin/xfce3/tree/v3.8.5) |
+| DD-MMM-YYYY | Xfce 3.8.4   | [xfce-3.8.4.tar.gz](dist/xfce-3.8.4.tar.gz) | | |
+| 28-MAY-2001 | Xfce 3.8.3   | [xfce-3.8.3.tar.gz](dist/xfce-3.8.3.tar.gz) | | |
+| 14-MAY-2001 | Xfce 3.8.2   | [xfce-3.8.2.tar.gz](dist/xfce-3.8.2.tar.gz) | | |
+| 29-APR-2001 | Xfce 3.8.1   | [xfce-3.8.1.tar.gz](dist/xfce-3.8.1.tar.gz) | | |
+| 23-APR-2001 | Xfce 3.8.0   | [xfce-3.8.0.tar.bz2](dist/xfce-3.8.0.tar.bz2) | | |
+| 07-FEB-2001 | Xfce 3.7.2   | [xfce-3.7.2.tar.bz2](dist/xfce-3.7.2.tar.bz2)  | | |
+| 05-FEB-2001 | Xfce 3.7.1   | [xfce-3.7.1.tar.gz](dist/xfce-3.7.1.tar.gz) | | |
+| 28-JAN-2001 | Xfce 3.7.0   | [xfce-3.7.0.tar.gz](dist/xfce-3.7.0.tar.gz) | | |
+| 27-NOV-2000 | Xfce 3.6.3   | [xfce-3.6.3.tar.gz](dist/xfce-3.6.3.tar.gz), [xfce-3.6.3.tar.bz2](dist/xfce-3.6.3.tar.bz2) | | |
+| 26-NOV-2000 | Xfce 3.6.2   | [xfce-3.6.2.tar.gz](dist/xfce-3.6.2.tar.gz) | | |
+| 19-NOV-2000 | Xfce 3.6.1   | [xfce-3.6.1.tar.gz](dist/xfce-3.6.1.tar.gz) | | |
+| 19-NOV-2000 | Xfce 3.6.0   | [xfce-3.6.0.tar.gz](dist/xfce-3.6.0.tar.gz) | [0](screenshots/xfce-3.6.0.jpg) | |
+| 01-OCT-2000 | Xfce 3.5.2   | [xfce-3.5.2.tar.gz](dist/xfce-3.5.2.tar.gz) | | The first appearance of the Xue mascot? (see tar backdrops/Xfcemice.jpg) |
+| 24-SEP-2000 | Xfce 3.5.1   | Lost. Saved only [xfce-3.5.0-3.5.1-20000830.patch](dist/xfce-3.5.0-3.5.1-20000830.patch) | | |
+| 21-AUG-2000 | Xfce 3.5.0   | Lost. Saved only [xfce-3.4.4-3.5.0-20000815.patch](dist/xfce-3.5.0-3.5.1-20000830.patch) | [0](screenshots/xfce-3.5.0-0.jpg) [1](screenshots/xfce-3.5.0-1.jpg) [2](screenshots/xfce-3.5.0-2.jpg) | |
 | 15-JUL-2000 | Xfce 3.4.4   | [xfce-3.4.4.tar.gz](dist/xfce-3.4.3.tar.gz), [xfce-3.4.3-3.4.4-patch.gz](dist/xfce-3.4.3-3.4.4-patch.gz) | | |
 | 09-JUL-2000 | Xfce 3.4.3   | [xfce-3.4.3.tar.gz](dist/xfce-3.4.3.tar.gz) | [0](screenshots/xfce-3.4.3.jpg) | |
 | 26-JUN-2000 | Xfce 3.4.2   | Lost | | |
@@ -67,22 +69,21 @@
 | DD-MMM-YYYY | XFce-2.02   | Lost | | |
 | 04-JUL-1998 | XFce-2.01   | [xfce-2.0.1.tar.gz](dist/xfce-2.0.1.tar.gz) | [0](screenshots/xfce-2.0.1-0.png) [1](screenshots/xfce-2.0.1-1.png) [2](screenshots/xfce-2.0.1-2.png) [3](screenshots/xfce-2.0.1-3.png) [4](screenshots/xfce-2.0.1-4.png) [5](screenshots/xfce-2.0.1-5.png) | [online help](help/2.0.1/index.html) |
 | DD-MMM-YYYY | XFce-2.00   | Lost | | |
-| DD-MMM-YYYY | XFce-1.29   | Lost | | |
-| DD-MMM-YYYY | XFce-1.28   | Lost | | |
-| DD-MMM-YYYY | XFce-1.27   | Lost | | |
-| DD-MMM-YYYY | XFce-1.26   | Lost | | |
-| DD-MMM-YYYY | XFce-1.25   | Lost | | |
-| 20-AUG-1997 | XFce-1.24   | [xfce-1.2.4.tar.gz](dist/xfce-1.2.4.tar.gz) | [0](screenshots/xfce-1.2.4-0.png) [1](screenshots/xfce-1.2.4-1.png) [2](screenshots/xfce-1.2.4-2.png) [3](screenshots/xfce-1.2.4-3.png) [4](screenshots/xfce-1.2.4-4.png) [5](screenshots/xfce-1.2.4-5.png) | |
-| DD-MMM-YYYY | XFce-1.23   | Lost | | |
-| DD-MMM-YYYY | XFce-1.22   | Lost | | |
-| DD-MMM-YYYY | XFce-1.21   | Lost | | |
-| DD-MMM-YYYY | XFce-1.20   | Lost | | |
-| 30-MAR-1997 | XFce-1.11b  | [XFCE111b.tgz](dist/XFCE111b.tgz) | [0](xfce-1.11.png) | |
-| DD-MMM-YYYY | XFce-1.11   | Lost | | |
-| 25-MAR-1997 | XFce-1.10   | [XFCE110.tgz](dist/XFCE110.tgz) | [0](screenshots/xfce-1.10-0.png) [1](screenshots/xfce-1.10-1.png) [2](screenshots/xfce-1.10-2.png) [3](screenshots/xfce-1.10-3.png) [4](screenshots/xfce-1.10-4.png)| |
-| DD-MMM-YYYY | XFce-1.05b  | Lost | | |
-| DD-MMM-YYYY | XFce-1.04   | Lost | | |
+| DD-MMM-YYYY | XFCE-1.29   | Lost | | |
+| DD-MMM-YYYY | XFCE-1.28   | Lost | | |
+| DD-MMM-YYYY | XFCE-1.27   | Lost | | |
+| DD-MMM-YYYY | XFCE-1.26   | Lost | | |
+| DD-MMM-YYYY | XFCE-1.25   | Lost | | |
+| 20-AUG-1997 | XFCE-1.24   | [xfce-1.2.4.tar.gz](dist/xfce-1.2.4.tar.gz) | [0](screenshots/xfce-1.2.4-0.png) [1](screenshots/xfce-1.2.4-1.png) [2](screenshots/xfce-1.2.4-2.png) [3](screenshots/xfce-1.2.4-3.png) [4](screenshots/xfce-1.2.4-4.png) [5](screenshots/xfce-1.2.4-5.png) | |
+| DD-MMM-YYYY | XFCE-1.23   | Lost | | |
+| DD-MMM-YYYY | XFCE-1.22   | Lost | | |
+| DD-MMM-YYYY | XFCE-1.21   | Lost | | |
+| DD-MMM-YYYY | XFCE-1.20   | Lost | | |
+| 30-MAR-1997 | XFCE-1.11b  | [XFCE111b.tgz](dist/XFCE111b.tgz) | [0](xfce-1.11.png) | |
+| DD-MMM-YYYY | XFCE-1.11   | Lost | | |
+| 25-MAR-1997 | XFCE-1.10   | [XFCE110.tgz](dist/XFCE110.tgz) | [0](screenshots/xfce-1.10-0.png) [1](screenshots/xfce-1.10-1.png) [2](screenshots/xfce-1.10-2.png) [3](screenshots/xfce-1.10-3.png) [4](screenshots/xfce-1.10-4.png)| |
+| DD-MMM-YYYY | XFCE-1.05b  | Lost | | |
+| DD-MMM-YYYY | XFCE-1.04   | Lost | | |
 
 
 
-[](screenshots/)
