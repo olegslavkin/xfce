@@ -58,17 +58,17 @@
 | 14-JUL-1999 | Xfce-3.0.0   | Lost | | |
 | 20-JUN-1999 | Xfce-3.0.0 Pre-release 2 | Lost | | |
 | 03-JUN-1999 | Xfce-3.0.0 Pre-release 1 | Lost (xfce-3.0.0pre1.tar.gz) | | |
-| DD-MMM-YYYY | XFce-2.4.0   | xfce-common-2.4.0.tar.gz | [0](screenshots/xfce-2.4.0-0.png), [1](screenshots/xfce-2.4.0-1.png), [2](screenshots/xfce-2.4.0-2.png), [3](screenshots/xfce-2.4.0-3.png), [4](screenshots/xfce-2.4.0-4.png), [5](screenshots/xfce-2.4.0-5.png), [6](screenshots/xfce-2.4.0-6.png), [7](screenshots/xfce-2.4.0-7.png) | |
+| DD-MMM-YYYY | XFce-2.4.0   | [xfce-2.4.0-1rh5.i386.rpm](dist/xfce-2.4.0-1rh5.i386.rpm) (binary for RH5.2) [xfce-common-2.4.0.tar.gz](dist/xfce-common-2.4.0.tar.gz) | [0](screenshots/xfce-2.4.0-0.png), [1](screenshots/xfce-2.4.0-1.png), [2](screenshots/xfce-2.4.0-2.png), [3](screenshots/xfce-2.4.0-3.png), [4](screenshots/xfce-2.4.0-4.png), [5](screenshots/xfce-2.4.0-5.png), [6](screenshots/xfce-2.4.0-6.png), [7](screenshots/xfce-2.4.0-7.png) | |
 | DD-MMM-YYYY | XFce-2.3.0   | Lost | | |
 | DD-MMM-YYYY | XFce-2.2.0   | Lost | | |
 | DD-MMM-YYYY | XFce-2.1.2   | Lost | [0](screenshots/xfce-2.1.2.jpg) | |
 | DD-MMM-YYYY | XFce-2.1.1   | Lost | | |
 | DD-MMM-YYYY | XFce-2.1.0   | Lost | | |
-| DD-MMM-YYYY | XFce-2.0.4   | [xfce-2.4.0-1rh5.i386.rpm](dist/xfce-2.4.0-1rh5.i386.rpm) (binary for RH5.2) [xfce-common-2.4.0.tar.gz](dist/xfce-common-2.4.0.tar.gz) | [] | |
-| DD-MMM-YYYY | XFce-2.03   | Lost | | |
-| DD-MMM-YYYY | XFce-2.02   | Lost | | |
-| 04-JUL-1998 | XFce-2.01   | [xfce-2.0.1.tar.gz](dist/xfce-2.0.1.tar.gz) | [0](screenshots/xfce-2.0.1-0.png), [1](screenshots/xfce-2.0.1-1.png), [2](screenshots/xfce-2.0.1-2.png), [3](screenshots/xfce-2.0.1-3.png), [4](screenshots/xfce-2.0.1-4.png), [5](screenshots/xfce-2.0.1-5.png) | [online help](help/2.0.1/index.html) |
-| DD-MMM-YYYY | XFce-2.00   | Lost | | |
+| DD-MMM-YYYY | XFce-2.0.4   | Lost | [] | |
+| DD-MMM-YYYY | XFce-2.0.3   | Lost | | |
+| DD-MMM-YYYY | XFce-2.0.2   | Lost | | |
+| 04-JUL-1998 | XFce-2.0.1   | [xfce-2.0.1.tar.gz](dist/xfce-2.0.1.tar.gz) | [0](screenshots/xfce-2.0.1-0.png), [1](screenshots/xfce-2.0.1-1.png), [2](screenshots/xfce-2.0.1-2.png), [3](screenshots/xfce-2.0.1-3.png), [4](screenshots/xfce-2.0.1-4.png), [5](screenshots/xfce-2.0.1-5.png) | [online help](help/2.0.1/index.html) |
+| DD-MMM-YYYY | XFce-2.0.0   | Lost | | |
 | DD-MMM-YYYY | XFCE-1.29   | Lost | | |
 | DD-MMM-YYYY | XFCE-1.28   | Lost | | |
 | DD-MMM-YYYY | XFCE-1.27   | Lost | | |
