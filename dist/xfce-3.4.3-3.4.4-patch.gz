@@ -1,0 +1,1031 @@
+diff -Naur xfce-3.4.3/ChangeLog xfce-3.4.4/ChangeLog
+--- xfce-3.4.3/ChangeLog	Fri Jul  7 16:15:39 2000
++++ xfce-3.4.4/ChangeLog	Sat Jul 15 14:38:03 2000
+@@ -1,3 +1,10 @@
++15-JUL-2000: XFce 3.4.3
++=======================
++- xfwm
++  * Fix race condition between application and colormapNotify event in 256 
++    color mode
++  * Partially fixed resize problem with XForms apps (the rest is not under WM control)
++
+ 09-JUL-2000: XFce 3.4.3
+ =======================
+ - xfwm
+diff -Naur xfce-3.4.3/configure xfce-3.4.4/configure
+--- xfce-3.4.3/configure	Thu Jul  6 23:48:46 2000
++++ xfce-3.4.4/configure	Fri Jul 14 15:27:14 2000
+@@ -596,7 +596,7 @@
+ 
+ 
+ XFCE_PACKAGE=xfce
+-XFCE_VERSION=3.4.3
++XFCE_VERSION=3.4.4
+ 
+ 
+ 
+diff -Naur xfce-3.4.3/configure.in xfce-3.4.4/configure.in
+--- xfce-3.4.3/configure.in	Thu Jul  6 23:48:29 2000
++++ xfce-3.4.4/configure.in	Fri Jul 14 15:26:39 2000
+@@ -9,7 +9,7 @@
+ AC_CANONICAL_HOST
+ 
+ XFCE_PACKAGE=xfce
+-XFCE_VERSION=3.4.3
++XFCE_VERSION=3.4.4
+ 
+ AC_SUBST(PACKAGE, $XFCE_PACKAGE)
+ AC_SUBST(VERSION, $XFCE_VERSION)
+diff -Naur xfce-3.4.3/debian/changelog xfce-3.4.4/debian/changelog
+--- xfce-3.4.3/debian/changelog	Wed Jun 28 22:09:45 2000
++++ xfce-3.4.4/debian/changelog	Fri Jul 14 15:28:15 2000
+@@ -1,3 +1,9 @@
++xfce (3.4.4-0.1) stable; urgency=low
++
++  * Updates for XFce 3.4.4
++
++ -- Olivier Fourdan <fourdan@xfce.org>  Fri, 14 Jul 2000 15:27:48 +0200
++
+ xfce (3.4.3-0.1) stable; urgency=low
+ 
+   * Updates for XFce 3.4.3
+diff -Naur xfce-3.4.3/xfce-3.4.3.lsm xfce-3.4.4/xfce-3.4.3.lsm
+--- xfce-3.4.3/xfce-3.4.3.lsm	Thu Jul  6 00:30:42 2000
++++ xfce-3.4.4/xfce-3.4.3.lsm	Thu Jan  1 01:00:00 1970
+@@ -1,29 +0,0 @@
+-Begin3
+-Title		XFce
+-Version:        3.4.3
+-Entered-date:   09JUL00
+-Description:    XFce is an easy-to-use and easy-to-configure environment 
+-		using the popular GTK+ toolkit for X11, featuring drag'n drop,
+-		pulldown menus and color icons, 3D widgets, etc. 
+-		It features its own Window Manager (xfwm), a backdrop 
+-		manager (xfbd), a file manager (xftree), a clock/calendar
+-		(xfclock) and a system sound manager (xfsound) and
+-		a user friendly interface for mouse configuration (xfmouse).
+-		Visit HTTP://www.xfce.org/ to see what XFce looks like.
+-Keywords:       desktop, utility, toolbar, icons, menu interface, 
+-		window manager,	file manager, gtk+, X11, linux
+-Author:         fourdan@xfce.org (Olivier Fourdan)
+-Maintained-by:  fourdan@xfce.org (Olivier Fourdan)
+-Primary-site:   HTTP://www.xfce.org/
+-			 	 2572Kb xfce-3.4.3.tar.gz
+-			 	    1Kb xfce-3.4.3.lsm
+-Alternate-site:	HTTP://www.baysurf.net/linux/xfce/
+-		HTTP://tsikora.tiac.net/xfce/
+-Original-site:	HTTP://www.xfce.org/
+-Platform:       Linux, Solaris, FreeBSD, HPUX, IRIX, AIX, etc. gcc, XFree86, 
+-		Require GTK+ 1.2 or above and libXpm (v 4.x or above) 
+-		for pixmaps.
+-		Can make use of Imlib  or gdk-pixbuf if available for image 
+-                dithering and rendering. 
+-Copying-policy: GPL
+-End
+diff -Naur xfce-3.4.3/xfce-3.4.4.lsm xfce-3.4.4/xfce-3.4.4.lsm
+--- xfce-3.4.3/xfce-3.4.4.lsm	Thu Jan  1 01:00:00 1970
++++ xfce-3.4.4/xfce-3.4.4.lsm	Fri Jul 14 15:26:11 2000
+@@ -0,0 +1,29 @@
++Begin3
++Title		XFce
++Version:        3.4.4
++Entered-date:   14JUL00
++Description:    XFce is an easy-to-use and easy-to-configure environment 
++		using the popular GTK+ toolkit for X11, featuring drag'n drop,
++		pulldown menus and color icons, 3D widgets, etc. 
++		It features its own Window Manager (xfwm), a backdrop 
++		manager (xfbd), a file manager (xftree), a clock/calendar
++		(xfclock) and a system sound manager (xfsound) and
++		a user friendly interface for mouse configuration (xfmouse).
++		Visit HTTP://www.xfce.org/ to see what XFce looks like.
++Keywords:       desktop, utility, toolbar, icons, menu interface, 
++		window manager,	file manager, gtk+, X11, linux
++Author:         fourdan@xfce.org (Olivier Fourdan)
++Maintained-by:  fourdan@xfce.org (Olivier Fourdan)
++Primary-site:   HTTP://www.xfce.org/
++			 	 2572Kb xfce-3.4.4.tar.gz
++			 	    1Kb xfce-3.4.4.lsm
++Alternate-site:	HTTP://www.baysurf.net/linux/xfce/
++		HTTP://tsikora.tiac.net/xfce/
++Original-site:	HTTP://www.xfce.org/
++Platform:       Linux, Solaris, FreeBSD, HPUX, IRIX, AIX, etc. gcc, XFree86, 
++		Require GTK+ 1.2 or above and libXpm (v 4.x or above) 
++		for pixmaps.
++		Can make use of Imlib  or gdk-pixbuf if available for image 
++                dithering and rendering. 
++Copying-policy: GPL
++End
+diff -Naur xfce-3.4.3/xfce.spec xfce-3.4.4/xfce.spec
+--- xfce-3.4.3/xfce.spec	Wed Jun 28 22:09:45 2000
++++ xfce-3.4.4/xfce.spec	Fri Jul 14 15:26:34 2000
+@@ -1,5 +1,5 @@
+ %define 	name	xfce
+-%define 	version	3.4.3
++%define 	version	3.4.4
+ %define		release	1
+ %define		prefix 	/usr/X11R6
+ %define		datadir /usr/share
+diff -Naur xfce-3.4.3/xfwm/add_window.c xfce-3.4.4/xfwm/add_window.c
+--- xfce-3.4.3/xfwm/add_window.c	Fri Jul  7 01:42:30 2000
++++ xfce-3.4.4/xfwm/add_window.c	Sat Jul 15 15:02:19 2000
+@@ -314,10 +314,12 @@
+    * reparented, so we'll get a DestroyNotify for it.  We won't have
+    * gotten one for anything up to here, however.
+    */
++  MyXGrabServer (dpy);
+   if (XGetGeometry (dpy, w, &JunkRoot, &JunkX, &JunkY,
+ 		    &JunkWidth, &JunkHeight, &JunkBW, &JunkDepth) == 0)
+     {
+       free ((char *) tmp_win);
++      MyXUngrabServer (dpy);
+       return (NULL);
+     }
+ 
+@@ -580,6 +582,7 @@
+ 	}
+     }
+ 
++  MyXUngrabServer (dpy);
+   RaiseWindow (tmp_win);
+   KeepOnTop ();
+ 
+diff -Naur xfce-3.4.3/xfwm/borders.c xfce-3.4.4/xfwm/borders.c
+--- xfce-3.4.3/xfwm/borders.c	Thu Jul  6 22:48:20 2000
++++ xfce-3.4.4/xfwm/borders.c	Sat Jul 15 14:28:53 2000
+@@ -837,10 +837,11 @@
+ SetupFrame (XfwmWindow * tmp_win, int x, int y, int w, int h,
+ 	    Bool sendEvent, Bool broadcast)
+ {
+-  XWindowChanges frame_wc, xwc;
++  XWindowChanges winwc;
+   Bool Resized = False, Moved = False;
+   int xwidth, ywidth, left, right, horig;
+   int cx, cy, i;
++  unsigned long winmask;
+ 
+   horig = h;
+ 
+@@ -882,27 +883,6 @@
+   if (tmp_win->title_width < 1)
+     tmp_win->title_width = 1;
+ 
+-  tmp_win->attr.width = w - 2 * tmp_win->boundary_width;
+-  tmp_win->attr.height = horig - tmp_win->title_height
+-    - 2 * tmp_win->boundary_width;
+-  /* may need to omit the -1 for shaped windows, next two lines */
+-  cx = tmp_win->boundary_width - tmp_win->bw;
+-  cy = tmp_win->title_height + tmp_win->boundary_width - tmp_win->bw;
+-
+-  XMoveResizeWindow (dpy, tmp_win->Parent, cx, cy,
+-		     tmp_win->attr.width, tmp_win->attr.height);
+-  XResizeWindow (dpy, tmp_win->w, tmp_win->attr.width, tmp_win->attr.height);
+-  /* 
+-   * fix up frame and assign size/location values in tmp_win
+-   */
+-  frame_wc.x = tmp_win->frame_x = tmp_win->shade_x = x;
+-  frame_wc.y = tmp_win->frame_y = tmp_win->shade_y = y;
+-  frame_wc.width = tmp_win->frame_width = tmp_win->shade_width = w;
+-  tmp_win->shade_height = tmp_win->title_height + 2 * tmp_win->boundary_width;
+-  tmp_win->frame_height = horig;
+-  frame_wc.height = h;
+-  XMoveResizeWindow (dpy, tmp_win->frame, frame_wc.x, frame_wc.y,
+-		     frame_wc.width, frame_wc.height);
+   /*
+    * According to the July 27, 1988 ICCCM draft, we should send a
+    * "synthetic" ConfigureNotify event to the client if the window
+@@ -911,6 +891,7 @@
+   if (Moved && !Resized)
+     sendEvent = True;
+ 
++  winmask = (CWX | CWY | CWWidth | CWHeight);
+   if (Resized)
+     {
+       if (tmp_win->flags & TITLE)
+@@ -921,52 +902,67 @@
+ 	    tmp_win->title_x = -10;
+ 	  tmp_win->title_y = tmp_win->boundary_width;
+ 
+-	  xwc.width = tmp_win->title_width;
++	  winwc.width = tmp_win->title_width;
+ 
+-	  xwc.height = tmp_win->title_height;
+-	  xwc.x = tmp_win->title_x;
+-	  xwc.y = tmp_win->title_y;
+-	  XMoveResizeWindow (dpy, tmp_win->title_w, xwc.x, xwc.y, xwc.width,
+-			     xwc.height);
++	  winwc.height = tmp_win->title_height;
++	  winwc.x = tmp_win->title_x;
++	  winwc.y = tmp_win->title_y;
++	  XMoveResizeWindow (dpy, tmp_win->title_w, winwc.x, winwc.y, winwc.width,
++			     winwc.height);
++          /*
++	  XConfigureWindow(dpy, tmp_win->title_w, winmask, &winwc);
++           */
+ 
+ 
+-	  xwc.height = tmp_win->title_height;
+-	  xwc.width = tmp_win->title_height;
++	  winwc.height = tmp_win->title_height;
++	  winwc.width = tmp_win->title_height;
+ 
+-	  xwc.y = tmp_win->boundary_width;
+-	  xwc.x = tmp_win->boundary_width;
++	  winwc.y = tmp_win->boundary_width;
++	  winwc.x = tmp_win->boundary_width;
+ 	  for (i = 0; i < Scr.nr_left_buttons; i++)
+ 	    {
+ 	      if (tmp_win->left_w[i] != None)
+ 		{
+-		  if (xwc.x + tmp_win->title_height <
++		  if (winwc.x + tmp_win->title_height <
+ 		      w - tmp_win->boundary_width)
+-		    XMoveResizeWindow (dpy, tmp_win->left_w[i], xwc.x, xwc.y,
+-				       xwc.width, xwc.height);
++		    XMoveResizeWindow (dpy, tmp_win->left_w[i], winwc.x, winwc.y,
++				       winwc.width, winwc.height);
++                    /*
++		    XConfigureWindow(dpy, tmp_win->left_w[i], winmask, &winwc);
++                     */
+ 		  else
+ 		    {
+-		      xwc.x = -tmp_win->title_height;
+-		      XMoveResizeWindow (dpy, tmp_win->left_w[i], xwc.x,
+-					 xwc.y, xwc.width, xwc.height);
++		      winwc.x = -tmp_win->title_height;
++		      XMoveResizeWindow (dpy, tmp_win->left_w[i], winwc.x,
++					 winwc.y, winwc.width, winwc.height);
++                      /*
++		      XConfigureWindow(dpy, tmp_win->left_w[i], winmask, &winwc);
++                       */
+ 		    }
+-		  xwc.x += tmp_win->title_height;
++		  winwc.x += tmp_win->title_height;
+ 		}
+ 	    }
+ 
+-	  xwc.x = w - tmp_win->boundary_width + tmp_win->bw;
++	  winwc.x = w - tmp_win->boundary_width + tmp_win->bw;
+ 	  for (i = 0; i < Scr.nr_right_buttons; i++)
+ 	    {
+ 	      if (tmp_win->right_w[i] != None)
+ 		{
+-		  xwc.x -= tmp_win->title_height;
+-		  if (xwc.x > tmp_win->boundary_width)
+-		    XMoveResizeWindow (dpy, tmp_win->right_w[i], xwc.x, xwc.y,
+-				       xwc.width, xwc.height);
++		  winwc.x -= tmp_win->title_height;
++		  if (winwc.x > tmp_win->boundary_width)
++		    XMoveResizeWindow (dpy, tmp_win->right_w[i], winwc.x, winwc.y,
++				       winwc.width, winwc.height);
++                    /*
++		    XConfigureWindow(dpy, tmp_win->right_w[i], winmask, &winwc);
++                     */
+ 		  else
+ 		    {
+-		      xwc.x = -tmp_win->title_height;
+-		      XMoveResizeWindow (dpy, tmp_win->right_w[i], xwc.x,
+-					 xwc.y, xwc.width, xwc.height);
++		      winwc.x = -tmp_win->title_height;
++		      XMoveResizeWindow (dpy, tmp_win->right_w[i], winwc.x,
++					 winwc.y, winwc.width, winwc.height);
++                      /*
++		      XConfigureWindow(dpy, tmp_win->right_w[i], winmask, &winwc);
++                       */
+ 		    }
+ 		}
+ 	    }
+@@ -993,63 +989,93 @@
+ 	    {
+ 	      if (i == 0)
+ 		{
+-		  xwc.x = tmp_win->corner_width;
+-		  xwc.y = 0;
+-		  xwc.height = tmp_win->boundary_width;
+-		  xwc.width = xwidth;
++		  winwc.x = tmp_win->corner_width;
++		  winwc.y = 0;
++		  winwc.height = tmp_win->boundary_width;
++		  winwc.width = xwidth;
+ 		}
+ 	      else if (i == 1)
+ 		{
+-		  xwc.x = w - tmp_win->boundary_width + tmp_win->bw;
+-		  xwc.y = tmp_win->corner_width;
+-		  xwc.width = tmp_win->boundary_width;
+-		  xwc.height = ywidth;
++		  winwc.x = w - tmp_win->boundary_width + tmp_win->bw;
++		  winwc.y = tmp_win->corner_width;
++		  winwc.width = tmp_win->boundary_width;
++		  winwc.height = ywidth;
+ 
+ 		}
+ 	      else if (i == 2)
+ 		{
+-		  xwc.x = tmp_win->corner_width;
+-		  xwc.y = h - tmp_win->boundary_width + tmp_win->bw;
+-		  xwc.height = tmp_win->boundary_width + tmp_win->bw;
+-		  xwc.width = xwidth;
++		  winwc.x = tmp_win->corner_width;
++		  winwc.y = h - tmp_win->boundary_width + tmp_win->bw;
++		  winwc.height = tmp_win->boundary_width + tmp_win->bw;
++		  winwc.width = xwidth;
+ 		}
+ 	      else
+ 		{
+-		  xwc.x = 0;
+-		  xwc.y = tmp_win->corner_width;
+-		  xwc.width = tmp_win->boundary_width;
+-		  xwc.height = ywidth;
+-		}
+-	      XMoveResizeWindow (dpy, tmp_win->sides[i], xwc.x, xwc.y,
+-				 xwc.width, xwc.height);
++		  winwc.x = 0;
++		  winwc.y = tmp_win->corner_width;
++		  winwc.width = tmp_win->boundary_width;
++		  winwc.height = ywidth;
++		}
++	      XMoveResizeWindow (dpy, tmp_win->sides[i], winwc.x, winwc.y,
++				 winwc.width, winwc.height);
++              /*
++	      XConfigureWindow(dpy, tmp_win->sides[i], winmask, &winwc);
++               */
+ 	    }
+ 
+-	  xwc.width = tmp_win->corner_width;
+-	  xwc.height = tmp_win->corner_width;
++	  winwc.width = tmp_win->corner_width;
++	  winwc.height = tmp_win->corner_width;
+ 	  for (i = 0; i < 4; i++)
+ 	    {
+ 	      if (i % 2)
+-		xwc.x = w - tmp_win->corner_width + tmp_win->bw;
++		winwc.x = w - tmp_win->corner_width + tmp_win->bw;
+ 	      else
+-		xwc.x = 0;
++		winwc.x = 0;
+ 
+ 	      if (i / 2)
+-		xwc.y = h - tmp_win->corner_width;
++		winwc.y = h - tmp_win->corner_width;
+ 	      else
+-		xwc.y = 0;
++		winwc.y = 0;
+ 
+-	      XMoveResizeWindow (dpy, tmp_win->corners[i], xwc.x, xwc.y,
+-				 xwc.width, xwc.height);
++              XMoveResizeWindow (dpy, tmp_win->corners[i], winwc.x, winwc.y,
++				 winwc.width, winwc.height);
++	      /*
++	      XConfigureWindow(dpy, tmp_win->corners[i], winmask, &winwc);
++               */
+ 	    }
+ 	}
+     }
+ 
++  tmp_win->attr.width = w - 2 * tmp_win->boundary_width;
++  tmp_win->attr.height = horig - tmp_win->title_height
++    - 2 * tmp_win->boundary_width;
++  /* may need to omit the -1 for shaped windows, next two lines */
++  cx = tmp_win->boundary_width - tmp_win->bw;
++  cy = tmp_win->title_height + tmp_win->boundary_width - tmp_win->bw;
++
++  XResizeWindow (dpy, tmp_win->w, tmp_win->attr.width, tmp_win->attr.height);
++  XMoveResizeWindow (dpy, tmp_win->Parent, cx, cy,
++		     tmp_win->attr.width, tmp_win->attr.height);
++  /* 
++   * fix up frame and assign size/location values in tmp_win
++   */
++  winwc.x = tmp_win->frame_x = tmp_win->shade_x = x;
++  winwc.y = tmp_win->frame_y = tmp_win->shade_y = y;
++  winwc.width = tmp_win->frame_width = tmp_win->shade_width = w;
++  tmp_win->shade_height = tmp_win->title_height + 2 * tmp_win->boundary_width;
++  tmp_win->frame_height = horig;
++  winwc.height = h;
++  /* 
++  XConfigureWindow (dpy, tmp_win->frame, winmask, &winwc);
++   */
++  XMoveResizeWindow (dpy, tmp_win->frame, winwc.x, winwc.y,
++		     winwc.width, winwc.height);
++
+   if (ShapesSupported)
+     {
+       if ((Resized) && (tmp_win->wShaped))
+ 	SetShape (tmp_win, w);
+     }
+-  XSync (dpy, 0);
+   if (sendEvent)
+     sendclient_event (tmp_win, x, y, w, horig);
+   if (broadcast)
+diff -Naur xfce-3.4.3/xfwm/events.c xfce-3.4.4/xfwm/events.c
+--- xfce-3.4.3/xfwm/events.c	Fri Jul  7 15:54:12 2000
++++ xfce-3.4.4/xfwm/events.c	Sat Jul 15 15:00:16 2000
+@@ -735,14 +735,12 @@
+       Tmp_win = NULL;
+    }
+ 
+-  MyXGrabServer (dpy);
+-
++  XFlush(dpy);
+   if (!Tmp_win)
+     {
+       Tmp_win = AddWindow (Event.xany.window);
+       if (Tmp_win == NULL)
+         {
+-          MyXUngrabServer (dpy);
+ 	  return;
+         }
+     }
+@@ -762,6 +760,7 @@
+       if (isIconicState != DontCareState)
+ 	state = isIconicState;
+ 
++      MyXGrabServer (dpy);
+       switch (state)
+ 	{
+ 	case IconicState:
+@@ -789,15 +788,13 @@
+ 	  SetMapStateProp (Tmp_win, NormalState);
+ 	  break;
+ 	}
+-
++      XSync (dpy, 0);
++      MyXUngrabServer (dpy);
+     }
+   else
+     {
+       DeIconify (Tmp_win);
+     }
+-  KeepOnTop ();
+-  MyXUngrabServer (dpy);
+-  XSync (dpy, 0);
+ }
+ 
+ 
+@@ -810,23 +807,22 @@
+ void
+ HandleMapNotify ()
+ {
++  MyXGrabServer (dpy);
+   if (!Tmp_win)
+     {
+-      /*
+       if ((Event.xmap.override_redirect == True) &&
+ 	  (Event.xmap.window != Scr.NoFocusWin))
+ 	{
+ 	  XSelectInput (dpy, Event.xmap.window, FocusChangeMask);
+ 	  Scr.UnknownWinFocused = Event.xmap.window;
+ 	}
+-       */
++      MyXUngrabServer (dpy);
+       return;
+     }
+   /*
+   if (Event.xmap.event != Event.xmap.window)
+     return;
+    */
+-  MyXGrabServer (dpy);
+   if (Tmp_win->icon_w)
+     XUnmapWindow (dpy, Tmp_win->icon_w);
+   if (Tmp_win->icon_pixmap_w != None)
+@@ -847,13 +843,19 @@
+ 	       (unsigned long) Tmp_win, 0, 0, 0, 0);
+   SetFocus (Tmp_win->w, Tmp_win, 1);
+   SetBorder (Tmp_win, True, True, True, Tmp_win->frame);
+-  XSync (dpy, 0);
+-  MyXUngrabServer (dpy);
+-  XFlush (dpy);
+   Tmp_win->flags |= MAPPED;
+   Tmp_win->flags &= ~MAP_PENDING;
+   Tmp_win->flags &= ~ICONIFIED;
+   Tmp_win->flags &= ~ICON_UNMAPPED;
++  XSync (dpy, 0);
++  /*
++  while (XCheckMaskEvent (dpy, ExposureMask | VisibilityChangeMask, &Event))
++    {
++      StashEventTime (&Event);
++      DispatchEvent ();
++    }
++   */
++  MyXUngrabServer (dpy);
+   KeepOnTop();
+ }
+ 
+diff -Naur xfce-3.4.3/xfwm/move.c xfce-3.4.4/xfwm/move.c
+--- xfce-3.4.3/xfwm/move.c	Fri Jul  7 00:12:54 2000
++++ xfce-3.4.4/xfwm/move.c	Sat Jul 15 14:46:35 2000
+@@ -423,6 +423,7 @@
+   UngrabEm ();
+ 
+   /* Flush the event queue and discard all ConfigureRequest relative to resized window */
++  XFlush (dpy);
+   while ((!window_deleted) && XPending (dpy))
+     {
+       XNextEvent (dpy, &Event);
+diff -Naur xfce-3.4.3/xfwm/resize.c xfce-3.4.4/xfwm/resize.c
+--- xfce-3.4.3/xfwm/resize.c	Thu Jul  6 22:42:29 2000
++++ xfce-3.4.4/xfwm/resize.c	Sat Jul 15 14:46:49 2000
+@@ -77,7 +77,7 @@
+ 
+   if (!(Scr.Options & ResizeOpaqueWin))
+     {
+-      gcv.line_width = 3;
++      gcv.line_width = 2;
+       XChangeGC (dpy, Scr.DrawGC, GCLineWidth, &gcv);
+     }
+ 
+@@ -311,6 +311,7 @@
+     MyXUngrabServer (dpy);
+   UngrabEm ();
+   /* Flush the event queue and discard all ConfigureRequest relative to resized window */
++  XFlush (dpy);
+   while ((!window_deleted) && XPending (dpy))
+     {
+       XNextEvent (dpy, &Event);
+diff -Naur xfce-3.4.3/xfwm/~decorations.c xfce-3.4.4/xfwm/~decorations.c
+--- xfce-3.4.3/xfwm/~decorations.c	Fri Jul  7 08:53:03 2000
++++ xfce-3.4.4/xfwm/~decorations.c	Thu Jan  1 01:00:00 1970
+@@ -1,484 +0,0 @@
+-/****************************************************************************
+- * 
+- * This is all original code by Robert Nation 
+- * which reads motif mwm window manager
+- * hints from a window, and makes necessary adjustments for xfwm. 
+- *
+- * Definitions of the hint structure and the constants are courtesy of
+- * mitnits@bgumail.bgu.ac.il (Roman Mitnitski ), who sent this note,
+- * after conferring with a friend at the OSF:
+- * Hi, Rob.
+- *
+- *I'm happy to announce, that you can use motif public
+- *headers in any way you can... I just got the letter from
+- *my friend, it says literally:
+- *
+- *>    Hi.
+- *>
+- *> Yes, you can use motif public header files, in particular
+- *> because there is NO limitation on inclusion of this files
+- *> in your programms....Also, no one can put copyright to the NUMBERS
+- *> (I mean binary flags for decorations) or DATA STRUCTURES
+- *> (I mean little structure used by motif to pass description
+- *> of the decorations to the mwm). Call it another name, if you are
+- *> THAT MUCH concerned.
+- *>
+- *> You can even use the little piece of code I've passed to you - 
+- *> we are talking about 10M distribution against two pages of code.
+- *> Don't be silly.
+- *> 
+- *> Best wishes. 
+- *> Eli.
+- *
+- *
+- ****************************************************************************/
+-
+-#include "configure.h"
+-
+-#include <stdio.h>
+-#include <string.h>
+-#include <stdlib.h>
+-#include "xfwm.h"
+-#include <X11/Xatom.h>
+-#include <X11/Xproto.h>
+-#include "misc.h"
+-#include "screen.h"
+-#include "parse.h"
+-#include "menus.h"
+-
+-#ifdef DMALLOC
+-#  include "dmalloc.h"
+-#endif
+-
+-extern Atom _XA_MwmAtom;
+-
+-/* Motif WM window hints structure */
+-typedef struct
+-{
+-  CARD32 flags;			/* window hints */
+-  CARD32 functions;		/* requested functions */
+-  CARD32 decorations;		/* requested decorations */
+-  INT32 inputMode;		/* input mode */
+-  CARD32 status;		/* status (ignored) */
+-}
+-PropMotifWmHints;
+-
+-typedef struct _extended_hints
+-{
+-  int flags;
+-  int desktop;
+-}
+-ExtendedHints;
+-
+-typedef PropMotifWmHints PropMwmHints;
+-
+-/* Motif window hints */
+-#define MWM_HINTS_FUNCTIONS           (1L << 0)
+-#define MWM_HINTS_DECORATIONS         (1L << 1)
+-
+-/* bit definitions for MwmHints.functions */
+-#define MWM_FUNC_ALL            (1L << 0)
+-#define MWM_FUNC_RESIZE         (1L << 1)
+-#define MWM_FUNC_MOVE           (1L << 2)
+-#define MWM_FUNC_MINIMIZE       (1L << 3)
+-#define MWM_FUNC_MAXIMIZE       (1L << 4)
+-#define MWM_FUNC_CLOSE          (1L << 5)
+-
+-/* bit definitions for MwmHints.decorations */
+-#define MWM_DECOR_ALL                 (1L << 0)
+-#define MWM_DECOR_BORDER              (1L << 1)
+-#define MWM_DECOR_RESIZEH             (1L << 2)
+-#define MWM_DECOR_TITLE               (1L << 3)
+-#define MWM_DECOR_MENU                (1L << 4)
+-#define MWM_DECOR_MINIMIZE            (1L << 5)
+-#define MWM_DECOR_MAXIMIZE            (1L << 6)
+-
+-#define PROP_MOTIF_WM_HINTS_ELEMENTS  4
+-#define PROP_MWM_HINTS_ELEMENTS       PROP_MOTIF_WM_HINTS_ELEMENTS
+-
+-#define EXTENDED_HINT_STICKY            (1<<0)
+-#define EXTENDED_HINT_ONTOP             (1<<1)
+-#define EXTENDED_HINT_ONBOTTOM          (1<<2)
+-#define EXTENDED_HINT_NEVER_USE_AREA    (1<<3)
+-#define EXTENDED_HINT_DESKTOP           (1<<4)
+-
+-#define KDE_noDecoration              0
+-#define KDE_normalDecoration          1
+-#define KDE_tinyDecoration            2
+-
+-extern XfwmWindow *Tmp_win;
+-
+-/****************************************************************************
+- * 
+- * Reads the property MOTIF_WM_HINTS
+- *
+- *****************************************************************************/
+-void
+-GetMwmHints (XfwmWindow * t)
+-{
+-  int actual_format;
+-  Atom actual_type;
+-  unsigned long nitems, bytesafter;
+-
+-  t->mwm_hints = NULL;
+-  if (XGetWindowProperty (dpy, t->w, _XA_MwmAtom, 0L, 20L, False,
+-			  _XA_MwmAtom, &actual_type, &actual_format, &nitems,
+-			  &bytesafter,
+-			  (unsigned char **) &t->mwm_hints) == Success)
+-    {
+-      if (nitems >= PROP_MOTIF_WM_HINTS_ELEMENTS)
+-	return;
+-      if (t->mwm_hints)
+-        XFree ((char *) t->mwm_hints);
+-    }
+-
+-  t->mwm_hints = NULL;
+-}
+-
+-void
+-GetExtHints (XfwmWindow * t)
+-{
+-  Atom a1, a3;
+-  unsigned long lnum, ldummy;
+-  int dummy;
+-  ExtendedHints *eh;
+-
+-  a1 = XInternAtom (dpy, "WM_EXTENDED_HINTS", False);
+-  eh = NULL;
+-  if (XGetWindowProperty (dpy, t->w, a1, 0,
+-			  sizeof (ExtendedHints) / sizeof (unsigned long),
+-			  False, a1, &a3, &dummy, &lnum,
+-			  &ldummy, (unsigned char **) &eh) == Success)
+-    {
+-      if (eh)
+-	{
+-	  if (eh->flags & EXTENDED_HINT_STICKY)
+-	    t->flags |= STICKY;
+-	  if (eh->flags & EXTENDED_HINT_ONTOP)
+-	    t->flags |= ONTOP;
+-	  if (eh->flags & EXTENDED_HINT_ONBOTTOM)
+-	    ;			/* Not implemented */
+-	  if (eh->flags & EXTENDED_HINT_NEVER_USE_AREA)
+-	    ;			/* Not implemented */
+-	  if (eh->flags & EXTENDED_HINT_DESKTOP)
+-	    ;			/* Not implemented */
+-	  XFree (eh);
+-	}
+-    }
+-}
+-
+-void
+-GetKDEHints (XfwmWindow * t)
+-{
+-  Atom a, dummy_a;
+-  unsigned long lnum, ldummy;
+-  int dummy;
+-  long *kh;
+-
+-  kh = NULL;
+-  a = XInternAtom (dpy, "KWM_WIN_DECORATION", False);
+-  t->kde_hints = -1;
+-  if (XGetWindowProperty (dpy, t->w, a, 0L, 1L, False, a, &dummy_a, &dummy,
+-			&lnum, &ldummy, (unsigned char **) &kh) == Success);
+-    {
+-      if (kh) 
+-        {
+-          t->kde_hints = (kh[0] & 3);
+-          XFree ((char *) kh);
+-        }
+-    }
+-}
+-
+-/****************************************************************************
+- * 
+- * Interprets the property MOTIF_WM_HINTS, sets decoration and functions
+- * accordingly
+- *
+- *****************************************************************************/
+-void
+-SelectDecor (XfwmWindow * t, unsigned long tflags, int border_width)
+-{
+-  int decor, i;
+-  PropMwmHints *prop;
+-
+-  if (!(tflags & BW_FLAG))
+-    border_width = Scr.NoBoundaryWidth;
+-
+-  for (i = 0; i < 3; i++)
+-    {
+-      t->left_w[i] = 1;
+-      t->right_w[i] = 1;
+-    }
+-
+-  decor = MWM_DECOR_ALL;
+-  t->functions = MWM_FUNC_ALL;
+-  if (t->mwm_hints)
+-    {
+-      prop = (PropMwmHints *) t->mwm_hints;
+-      if (tflags & MWM_DECOR_FLAG)
+-	if (prop->flags & MWM_HINTS_DECORATIONS)
+-	  decor = prop->decorations;
+-      if (tflags & MWM_FUNCTIONS_FLAG)
+-	if (prop->flags & MWM_HINTS_FUNCTIONS)
+-	  t->functions = prop->functions;
+-    }
+-
+-  /* functions affect the decorations! if the user says
+-   * no iconify function, then the iconify button doesn't show
+-   * up. */
+-  if (t->functions & MWM_FUNC_ALL)
+-    {
+-      /* If we get ALL + some other things, that means to use
+-       * ALL except the other things... */
+-      t->functions &= ~MWM_FUNC_ALL;
+-      t->functions = (MWM_FUNC_RESIZE | MWM_FUNC_MOVE | MWM_FUNC_MINIMIZE |
+-		      MWM_FUNC_MAXIMIZE | MWM_FUNC_CLOSE) & (~(t->functions));
+-    }
+-  if ((tflags & MWM_FUNCTIONS_FLAG) && (t->flags & TRANSIENT))
+-    {
+-      t->functions &= ~(MWM_FUNC_MAXIMIZE | MWM_FUNC_MINIMIZE);
+-    }
+-
+-  if (decor & MWM_DECOR_ALL)
+-    {
+-      /* If we get ALL + some other things, that means to use
+-       * ALL except the other things... */
+-      decor &= ~MWM_DECOR_ALL;
+-      decor = (MWM_DECOR_BORDER | MWM_DECOR_RESIZEH | MWM_DECOR_TITLE |
+-	       MWM_DECOR_MENU | MWM_DECOR_MINIMIZE | MWM_DECOR_MAXIMIZE)
+-	& (~decor);
+-    }
+-
+-  if (!(t->functions & MWM_FUNC_RESIZE))
+-    decor &= ~MWM_DECOR_RESIZEH;
+-  if (!(t->functions & MWM_FUNC_MINIMIZE))
+-    decor &= ~MWM_DECOR_MINIMIZE;
+-  if (!(t->functions & MWM_FUNC_MAXIMIZE))
+-    decor &= ~MWM_DECOR_MAXIMIZE;
+-  if (decor & (MWM_DECOR_MENU | MWM_DECOR_MINIMIZE | MWM_DECOR_MAXIMIZE))
+-    decor |= MWM_DECOR_TITLE;
+-
+-  if (tflags & NOTITLE_FLAG)
+-    decor &= ~MWM_DECOR_TITLE;
+-
+-  if (tflags & NOBORDER_FLAG)
+-    decor &= ~MWM_DECOR_RESIZEH;
+-
+-  if ((tflags & MWM_DECOR_FLAG) && (t->flags & TRANSIENT))
+-    {
+-      decor &= ~(MWM_DECOR_MAXIMIZE | MWM_DECOR_MINIMIZE);
+-    }
+-
+-  if (t->kde_hints == KDE_normalDecoration)
+-    {
+-      decor |= MWM_DECOR_ALL;
+-      t->functions |= MWM_FUNC_ALL;
+-    }
+-  else if (t->kde_hints == KDE_noDecoration)
+-    {
+-      decor &= ~(MWM_DECOR_BORDER | MWM_DECOR_RESIZEH | MWM_DECOR_TITLE |
+-		 MWM_DECOR_MENU | MWM_DECOR_MINIMIZE | MWM_DECOR_MAXIMIZE);
+-      t->functions &= ~MWM_FUNC_ALL;
+-      border_width = Scr.NoBoundaryWidth;
+-    }
+-  else if (t->kde_hints == KDE_tinyDecoration)
+-    {
+-      decor &= ~(MWM_DECOR_MAXIMIZE | MWM_DECOR_MINIMIZE |
+-		 MWM_DECOR_TITLE | MWM_DECOR_RESIZEH);
+-      t->functions &= ~(MWM_DECOR_MENU | MWM_FUNC_MINIMIZE |
+-			MWM_FUNC_MAXIMIZE | MWM_DECOR_TITLE);
+-      border_width = 2;
+-    }
+-
+-  if (ShapesSupported)
+-    {
+-      if (t->wShaped)
+-	decor &= ~(BORDER | MWM_DECOR_RESIZEH);
+-    }
+-
+-  t->flags &= ~(BORDER | TITLE);
+-  t->boundary_width = 0;
+-  t->corner_width = 0;
+-  t->title_height = 0;
+-  if (decor & MWM_DECOR_TITLE)
+-    {
+-      t->flags |= TITLE;
+-      t->title_height = GetDecor (t, TitleHeight);
+-    }
+-  if (decor & (MWM_DECOR_RESIZEH | MWM_DECOR_BORDER))
+-    {
+-      t->flags |= BORDER;
+-      t->boundary_width = border_width;
+-      t->corner_width = GetDecor (t, TitleHeight) + t->boundary_width;
+-    }
+-  if (!(decor & MWM_DECOR_MENU))
+-    {
+-      for (i = 0; i < 3; ++i)
+-	{
+-	  if (GetDecor (t, left_buttons[i].flags) & MWMDecorMenu)
+-	    t->left_w[i] = None;
+-	  if (GetDecor (t, right_buttons[i].flags) & MWMDecorMenu)
+-	    t->right_w[i] = None;
+-	}
+-    }
+-  if (!(decor & MWM_DECOR_MINIMIZE))
+-    {
+-      for (i = 0; i < 3; ++i)
+-	{
+-	  if (GetDecor (t, left_buttons[i].flags) & MWMDecorMinimize)
+-	    t->left_w[i] = None;
+-	  if (GetDecor (t, right_buttons[i].flags) & MWMDecorMinimize)
+-	    t->right_w[i] = None;
+-	}
+-    }
+-  if (!(decor & MWM_DECOR_MAXIMIZE))
+-    {
+-      for (i = 0; i < 3; ++i)
+-	{
+-	  if (GetDecor (t, left_buttons[i].flags) & MWMDecorMaximize)
+-	    t->left_w[i] = None;
+-	  if (GetDecor (t, right_buttons[i].flags) & MWMDecorMaximize)
+-	    t->right_w[i] = None;
+-	}
+-    }
+-  if (t->buttons & BUTTON1)
+-    t->left_w[0] = None;
+-  if (t->buttons & BUTTON3)
+-    t->left_w[1] = None;
+-  if (t->buttons & BUTTON5)
+-    t->left_w[1] = None;
+-
+-  if (t->buttons & BUTTON2)
+-    t->right_w[0] = None;
+-  if (t->buttons & BUTTON4)
+-    t->right_w[1] = None;
+-  if (t->buttons & BUTTON6)
+-    t->right_w[1] = None;
+-
+-  t->nr_left_buttons = Scr.nr_left_buttons;
+-  t->nr_right_buttons = Scr.nr_right_buttons;
+-
+-  for (i = 0; i < Scr.nr_left_buttons; i++)
+-    if (t->left_w[i] == None)
+-      t->nr_left_buttons--;
+-
+-  for (i = 0; i < Scr.nr_right_buttons; i++)
+-    if (t->right_w[i] == None)
+-      t->nr_right_buttons--;
+-
+-  t->bw = 0;
+-  if (t->boundary_width <= 0)
+-    t->boundary_width = 0;
+-  if (t->title_height > 0)
+-    t->title_height += t->bw;
+-  if (t->boundary_width == 0)
+-    t->flags &= ~BORDER;
+-}
+-
+-/****************************************************************************
+- * 
+- * Checks the function described in menuItem mi, and sees if it
+- * is an allowed function for window Tmp_Win,
+- * according to the motif way of life.
+- * 
+- * This routine is used to determine whether or not to grey out menu items.
+- *
+- ****************************************************************************/
+-int
+-check_allowed_function (MenuItem * mi)
+-{
+-  /* Complex functions are a little tricky... ignore them for now */
+-
+-  if ((Tmp_win) &&
+-      (!(Tmp_win->flags & DoesWmDeleteWindow)) && (mi->func_type == F_DELETE))
+-    return 0;
+-
+-  /* Move is a funny hint. Keeps it out of the menu, but you're still allowed
+-   * to move. */
+-  if ((mi->func_type == F_MOVE) && (Tmp_win)
+-      && (!(Tmp_win->functions & MWM_FUNC_MOVE)))
+-    return 0;
+-
+-  if ((mi->func_type == F_RESIZE) && (Tmp_win) &&
+-      (!(Tmp_win->functions & MWM_FUNC_RESIZE)))
+-    return 0;
+-
+-  if ((mi->func_type == F_ICONIFY) && (Tmp_win) &&
+-      (!(Tmp_win->flags & ICONIFIED)) &&
+-      (!(Tmp_win->functions & MWM_FUNC_MINIMIZE)))
+-    return 0;
+-
+-  if ((mi->func_type == F_MAXIMIZE) && (Tmp_win) &&
+-      (!(Tmp_win->functions & MWM_FUNC_MAXIMIZE)))
+-    return 0;
+-
+-  if ((mi->func_type == F_DELETE) && (Tmp_win) &&
+-      (!(Tmp_win->functions & MWM_FUNC_CLOSE)))
+-    return 0;
+-
+-  if ((mi->func_type == F_CLOSE) && (Tmp_win) &&
+-      (!(Tmp_win->functions & MWM_FUNC_CLOSE)))
+-    return 0;
+-
+-  if ((mi->func_type == F_DESTROY) && (Tmp_win) &&
+-      (!(Tmp_win->functions & MWM_FUNC_CLOSE)))
+-    return 0;
+-
+-  if (mi->func_type == F_FUNCTION)
+-    {
+-      /* Hard part! What to do now? */
+-      /* Hate to do it, but for lack of a better idea,
+-       * check based on the menu entry name */
+-      if ((Tmp_win) && (!(Tmp_win->functions & MWM_FUNC_MOVE)) &&
+-	  (mystrncasecmp (mi->item, MOVE_STRING, strlen (MOVE_STRING)) == 0))
+-	return 0;
+-
+-      if ((Tmp_win) && (!(Tmp_win->functions & MWM_FUNC_RESIZE)) &&
+-	  (mystrncasecmp (mi->item, RESIZE_STRING1,
+-			  strlen (RESIZE_STRING1)) == 0))
+-	return 0;
+-
+-      if ((Tmp_win) && (!(Tmp_win->functions & MWM_FUNC_RESIZE)) &&
+-	  (mystrncasecmp (mi->item, RESIZE_STRING2,
+-			  strlen (RESIZE_STRING2)) == 0))
+-	return 0;
+-
+-      if ((Tmp_win) && (!(Tmp_win->functions & MWM_FUNC_MINIMIZE)) &&
+-	  (!(Tmp_win->flags & ICONIFIED)) &&
+-	  (mystrncasecmp (mi->item, MINIMIZE_STRING, strlen (MINIMIZE_STRING))
+-	   == 0))
+-	return 0;
+-
+-      if ((Tmp_win) && (!(Tmp_win->functions & MWM_FUNC_MINIMIZE)) &&
+-	  (mystrncasecmp (mi->item, MINIMIZE_STRING2,
+-			  strlen (MINIMIZE_STRING2)) == 0))
+-	return 0;
+-
+-      if ((Tmp_win) && (!(Tmp_win->functions & MWM_FUNC_MAXIMIZE)) &&
+-	  (mystrncasecmp (mi->item, MAXIMIZE_STRING,
+-			  strlen (MAXIMIZE_STRING)) == 0))
+-	return 0;
+-
+-      if ((Tmp_win) && (!(Tmp_win->functions & MWM_FUNC_CLOSE)) &&
+-	  (mystrncasecmp (mi->item, CLOSE_STRING1,
+-			  strlen (CLOSE_STRING1)) == 0))
+-	return 0;
+-
+-      if ((Tmp_win) && (!(Tmp_win->functions & MWM_FUNC_CLOSE)) &&
+-	  (mystrncasecmp (mi->item, CLOSE_STRING2,
+-			  strlen (CLOSE_STRING2)) == 0))
+-	return 0;
+-
+-      if ((Tmp_win) && (!(Tmp_win->functions & MWM_FUNC_CLOSE)) &&
+-	  (mystrncasecmp (mi->item, CLOSE_STRING3,
+-			  strlen (CLOSE_STRING3)) == 0))
+-	return 0;
+-
+-      if ((Tmp_win) && (!(Tmp_win->functions & MWM_FUNC_CLOSE)) &&
+-	  (mystrncasecmp (mi->item, CLOSE_STRING4,
+-			  strlen (CLOSE_STRING4)) == 0))
+-	return 0;
+-
+-    }
+-  return 1;
+-}

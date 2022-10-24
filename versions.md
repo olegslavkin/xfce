@@ -28,9 +28,9 @@ DD-MMM-YYYY: Xfce 3.8.4 xfce-3.8.4.tar.gz
 19-NOV-2000: XFce 3.6.0 xfce-3.6.0.tar.gz
 01-OCT-2000: XFce 3.5.2 xfce-3.5.2.tar.gz
 24-SEP-2000: XFce 3.5.1
-21-AUG-2000: XFce 3.5.0
+21-AUG-2000: XFce 3.5.0 (xfce-3.4.4-3.5.0-20000815-patch.gz)
 15-JUL-2000: XFce 3.4.4 xfce-3.4.4.tar.gz
-09-JUL-2000: XFce 3.4.3 xfce-3.4.3.tar.gz
+09-JUL-2000: XFce 3.4.3 xfce-3.4.3.tar.gz (+ xfce-3.4.3-3.4.4-patch.gz)
 26-JUN-2000: XFce 3.4.2
 25-JUN-2000: XFce 3.4.1
 04-JUN-2000: XFce 3.4.0 xfce-3.4.0.tar.gz
@@ -41,7 +41,7 @@ DD-MMM-YYYY: Xfce 3.8.4 xfce-3.8.4.tar.gz
 20-JAN-2000: XFce 3.2.5 xfce-3.2.5.tar.gz
 19-JAN-2000: XFce 3.2.4
 04-JAN-2000: XFce 3.2.3 xfce-3.2.3.tar.gz
-12-DEC-1999: XFce 3.2.2
+12-DEC-1999: XFce 3.2.2 xfce-3.2.2.tar.gz
 30-NOV-1999: XFce 3.2.1 xfce-3.2.1.tar.gz
 14-NOV-1999: XFce 3.2.0
 01-OCT-1999: XFce-3.1.2
