@@ -1,0 +1,412 @@
+diff -Naur -x *.gmo xfce-3.5.0/ChangeLog xfce-3.5.1/ChangeLog
+--- xfce-3.5.0/ChangeLog	Sat Aug 19 13:15:54 2000
++++ xfce-3.5.1/ChangeLog	Tue Aug 29 22:35:30 2000
+@@ -1,3 +1,11 @@
++xx-SEP-2000: XFce 3.5.1
++=======================
++- xfwm
++  * Change "on top" window stacking order : transient windows are kept on top
++    of their parent window even if the parent window has "KeepOnTop" attribute
++    set.
++  * Add a "User menu" entry in root menu (patch from Chuck Mead)
++  
+ 21-AUG-2000: XFce 3.5.0
+ =======================
+ - xfce
+diff -Naur -x *.gmo xfce-3.5.0/configure xfce-3.5.1/configure
+--- xfce-3.5.0/configure	Mon Aug 14 21:26:34 2000
++++ xfce-3.5.1/configure	Tue Aug 29 22:37:39 2000
+@@ -610,7 +610,7 @@
+ 
+ 
+ XFCE_PACKAGE=xfce
+-XFCE_VERSION=3.5.0
++XFCE_VERSION=3.5.1
+ 
+ 
+ 
+diff -Naur -x *.gmo xfce-3.5.0/configure.in xfce-3.5.1/configure.in
+--- xfce-3.5.0/configure.in	Mon Aug 14 21:26:34 2000
++++ xfce-3.5.1/configure.in	Tue Aug 29 22:32:30 2000
+@@ -9,7 +9,7 @@
+ AC_CANONICAL_HOST
+ 
+ XFCE_PACKAGE=xfce
+-XFCE_VERSION=3.5.0
++XFCE_VERSION=3.5.1
+ 
+ AC_SUBST(PACKAGE, $XFCE_PACKAGE)
+ AC_SUBST(VERSION, $XFCE_VERSION)
+diff -Naur -x *.gmo xfce-3.5.0/debian/sample.xfwmrc xfce-3.5.1/debian/sample.xfwmrc
+--- xfce-3.5.0/debian/sample.xfwmrc	Wed Jun 28 22:09:45 2000
++++ xfce-3.5.1/debian/sample.xfwmrc	Tue Aug 29 22:32:17 2000
+@@ -100,11 +100,6 @@
+ #+ "&Gnome Terminal" Exec gnome-terminal
+ #+ "" Nop
+ #+ "&The GIMP" Exec gimp
+-#
+-# Menu "__builtin_root_menu__" is the name of the default root menu
+-#
+-#AddToMenu "__builtin_root_menu__"
+-#+ "&User menu" popup "user_menu
+ 
+ # Uncomment the following if you want tot remove default keyboard shortcuts
+ # (Some applications require this, as they use the same shortcuts)
+diff -Naur -x *.gmo xfce-3.5.0/libs/configure.h xfce-3.5.1/libs/configure.h
+--- xfce-3.5.0/libs/configure.h	Thu Jun 29 21:31:54 2000
++++ xfce-3.5.1/libs/configure.h	Wed Aug 30 22:36:44 2000
+@@ -1,53 +1,6 @@
+-/***************************************************************************
+- *
+- * In theory, this stuff can be replaced with GNU Autoconf 
+- *
+- **************************************************************************/
+-
+-#if defined _POSIX_SOURCE || defined SYSV || defined __sun__ || defined sgi
+-
+-#define HAVE_WAITPID  1
+-#define HAVE_SYSCONF 1
+-#define HAVE_UNAME 1
+-#undef HAVE_GETHOSTNAME
+-#define HAVE_STRERROR 1
+-
+-#else
+-
+-/**************************************************************************
+- *
+- * Do it yourself here if you don't like the above!
+- *
+- **************************************************************************/
+-/***************************************************************************
+- * Define if you have waitpid.  
+- **************************************************************************/
+-#define HAVE_WAITPID  1
+-
+-/***************************************************************************
+- * Define if you have sysconf
+- **************************************************************************/
+-#define HAVE_SYSCONF 1
+-
+-/***************************************************************************
+- * Define if you have uname. Otherwise, define gethostname
+- ***************************************************************************/
+-#define HAVE_UNAME 1
+-/* #define HAVE_GETHOSTNAME 1 */
+-
+-/***************************************************************************
+- * Define if you have strerror (all but SunOS 4.1.x?)
+- **************************************************************************/
+-#define HAVE_STRERROR 1
+-
++#ifdef HAVE_CONFIG_H
++#  include <config.h>
+ #endif
+-
+-#if defined(__sun__) || defined(sun)
+-#undef HAVE_STRERROR
+-#endif
+-
+-/* End of do-it-yourself OS support section */
+-
+ 
+ /***************************************************************************
+  * Please translate the strings into the language which you use for 
+diff -Naur -x *.gmo xfce-3.5.0/libs/xfcolor.c xfce-3.5.1/libs/xfcolor.c
+--- xfce-3.5.0/libs/xfcolor.c	Mon Aug 14 21:26:37 2000
++++ xfce-3.5.1/libs/xfcolor.c	Wed Aug 30 22:37:00 2000
+@@ -24,6 +24,10 @@
+ #include <sys/types.h>
+ #include <sys/wait.h>
+ 
++#if defined ___AIX || defined _AIX || defined __QNX__ || defined ___AIXV3 || defined AIXV3 || defined _SEQUENT_
++#include <sys/select.h>
++#endif
++
+ #include <signal.h>
+ #include <unistd.h>
+ #include <stdlib.h>
+diff -Naur -x *.gmo xfce-3.5.0/other/xfwmrc.in xfce-3.5.1/other/xfwmrc.in
+--- xfce-3.5.0/other/xfwmrc.in	Mon Aug 14 21:26:37 2000
++++ xfce-3.5.1/other/xfwmrc.in	Tue Aug 29 22:31:43 2000
+@@ -100,11 +100,6 @@
+ #+ "&Gnome Terminal" Exec gnome-terminal
+ #+ "" Nop
+ #+ "&The GIMP" Exec gimp
+-#
+-# Menu "__builtin_root_menu__" is the name of the default root menu
+-#
+-#AddToMenu "__builtin_root_menu__"
+-#+ "&User menu" popup "user_menu
+ 
+ # Uncomment the following if you want tot remove default keyboard shortcuts
+ # (Some applications require this, as they use the same shortcuts)
+diff -Naur -x *.gmo xfce-3.5.0/po/cat-id-tbl.c xfce-3.5.1/po/cat-id-tbl.c
+--- xfce-3.5.0/po/cat-id-tbl.c	Tue Aug 15 09:56:30 2000
++++ xfce-3.5.1/po/cat-id-tbl.c	Tue Aug 29 22:35:54 2000
+@@ -418,19 +418,21 @@
+   {"Se&nd to...", 367},
+   {"S&witch to...", 368},
+   {"&Close", 369},
+-  {"&New window", 370},
+-  {"Shuffle &Up", 371},
+-  {"Shuffle &Down", 372},
+-  {"&Refresh", 373},
+-  {"&Arrange icons", 374},
+-  {"&Iconify all", 375},
+-  {"&Mouse...", 376},
+-  {"&Backdrop...", 377},
+-  {"&Sound...", 378},
+-  {"&Quit XFwm", 379},
+-  {"&Full Screen", 380},
+-  {"&Vertical", 381},
+-  {"&Horizontal", 382},
++  {"User Menu", 370},
++  {"&New window", 371},
++  {"&User Menu", 372},
++  {"Shuffle &Up", 373},
++  {"Shuffle &Down", 374},
++  {"&Refresh", 375},
++  {"&Arrange icons", 376},
++  {"&Iconify all", 377},
++  {"&Mouse...", 378},
++  {"&Backdrop...", 379},
++  {"&Sound...", 380},
++  {"&Quit XFwm", 381},
++  {"&Full Screen", 382},
++  {"&Vertical", 383},
++  {"&Horizontal", 384},
+ };
+ 
+-int _msg_tbl_length = 382;
++int _msg_tbl_length = 384;
+diff -Naur -x *.gmo xfce-3.5.0/po/fr.po xfce-3.5.1/po/fr.po
+--- xfce-3.5.0/po/fr.po	Tue Aug 15 09:57:22 2000
++++ xfce-3.5.1/po/fr.po	Tue Aug 29 22:37:04 2000
+@@ -1557,9 +1557,17 @@
+ msgid "&Close"
+ msgstr "&Fermer"
+ 
++#: xfwm/xfwm.c:742
++msgid "User Menu"
++msgstr "Menu Utilisateur"
++
+ #: xfwm/xfwm.c:658
+ msgid "&New window"
+ msgstr "&Nouvelle fenêtre"
++
++#: xfwm/xfwm.c:745
++msgid "&User Menu"
++msgstr "Menu &Utilisateur"
+ 
+ #: xfwm/xfwm.c:659
+ msgid "Shuffle &Up"
+diff -Naur -x *.gmo xfce-3.5.0/po/xfce.pot xfce-3.5.1/po/xfce.pot
+--- xfce-3.5.0/po/xfce.pot	Tue Aug 15 09:56:29 2000
++++ xfce-3.5.1/po/xfce.pot	Tue Aug 29 22:35:54 2000
+@@ -6,7 +6,7 @@
+ msgid ""
+ msgstr ""
+ "Project-Id-Version: PACKAGE VERSION\n"
+-"POT-Creation-Date: 2000-08-15 09:56+0200\n"
++"POT-Creation-Date: 2000-08-29 22:35+0200\n"
+ "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+ "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+ "Language-Team: LANGUAGE <LL@li.org>\n"
+@@ -48,7 +48,7 @@
+ msgid "Question"
+ msgstr ""
+ 
+-#: libs/xfce-common.c:594 xfwm/xfwm.c:1074
++#: libs/xfce-common.c:594 xfwm/xfwm.c:1076
+ msgid "Terminated: "
+ msgstr ""
+ 
+@@ -1601,54 +1601,62 @@
+ msgid "&Close"
+ msgstr ""
+ 
+-#: xfwm/xfwm.c:743
+-msgid "&New window"
++#: xfwm/xfwm.c:742
++msgid "User Menu"
+ msgstr ""
+ 
+ #: xfwm/xfwm.c:744
+-msgid "Shuffle &Up"
++msgid "&New window"
+ msgstr ""
+ 
+ #: xfwm/xfwm.c:745
+-msgid "Shuffle &Down"
++msgid "&User Menu"
+ msgstr ""
+ 
+ #: xfwm/xfwm.c:746
+-msgid "&Refresh"
++msgid "Shuffle &Up"
+ msgstr ""
+ 
+ #: xfwm/xfwm.c:747
+-msgid "&Arrange icons"
++msgid "Shuffle &Down"
+ msgstr ""
+ 
+ #: xfwm/xfwm.c:748
+-msgid "&Iconify all"
++msgid "&Refresh"
++msgstr ""
++
++#: xfwm/xfwm.c:749
++msgid "&Arrange icons"
+ msgstr ""
+ 
+ #: xfwm/xfwm.c:750
+-msgid "&Mouse..."
++msgid "&Iconify all"
+ msgstr ""
+ 
+ #: xfwm/xfwm.c:752
+-msgid "&Backdrop..."
++msgid "&Mouse..."
+ msgstr ""
+ 
+ #: xfwm/xfwm.c:754
+-msgid "&Sound..."
++msgid "&Backdrop..."
+ msgstr ""
+ 
+ #: xfwm/xfwm.c:756
+-msgid "&Quit XFwm"
++msgid "&Sound..."
+ msgstr ""
+ 
+ #: xfwm/xfwm.c:758
++msgid "&Quit XFwm"
++msgstr ""
++
++#: xfwm/xfwm.c:760
+ msgid "&Full Screen"
+ msgstr ""
+ 
+-#: xfwm/xfwm.c:759
++#: xfwm/xfwm.c:761
+ msgid "&Vertical"
+ msgstr ""
+ 
+-#: xfwm/xfwm.c:760
++#: xfwm/xfwm.c:762
+ msgid "&Horizontal"
+ msgstr ""
+diff -Naur -x *.gmo xfce-3.5.0/xfce-3.5.0.lsm xfce-3.5.1/xfce-3.5.0.lsm
+--- xfce-3.5.0/xfce-3.5.0.lsm	Mon Aug 14 23:07:33 2000
++++ xfce-3.5.1/xfce-3.5.0.lsm	Thu Jan  1 01:00:00 1970
+@@ -1,29 +0,0 @@
+-Begin3
+-Title		XFce
+-Version:        3.5.0
+-Entered-date:   21AUG00
+-Description:    XFce is an easy-to-use and easy-to-configure environment 
+-		using the popular GTK+ toolkit for X11, featuring drag'n drop,
+-		pulldown menus and color icons, 3D widgets, etc. 
+-		It features its own Window Manager (xfwm), a backdrop 
+-		manager (xfbd), a file manager (xftree), a clock/calendar
+-		(xfclock) and a system sound manager (xfsound) and
+-		a user friendly interface for mouse configuration (xfmouse).
+-		Visit HTTP://www.xfce.org/ to see what XFce looks like.
+-Keywords:       desktop, utility, toolbar, icons, menu interface, 
+-		window manager,	file manager, gtk+, X11, linux
+-Author:         fourdan@xfce.org (Olivier Fourdan)
+-Maintained-by:  fourdan@xfce.org (Olivier Fourdan)
+-Primary-site:   HTTP://www.xfce.org/
+-			 	 2539Kb xfce-3.5.0.tar.gz
+-			 	    1Kb xfce-3.5.0.lsm
+-Alternate-site:	HTTP://www.baysurf.net/linux/xfce/
+-		HTTP://tsikora.tiac.net/xfce/
+-Original-site:	HTTP://www.xfce.org/
+-Platform:       Linux, Solaris, FreeBSD, HPUX, IRIX, AIX, etc. gcc, XFree86, 
+-		Require GTK+ 1.2 or above and libXpm (v 4.x or above) 
+-		for pixmaps.
+-		Can make use of Imlib  or gdk-pixbuf if available for image 
+-                dithering and rendering. 
+-Copying-policy: GPL
+-End
+diff -Naur -x *.gmo xfce-3.5.0/xfce-3.5.1.lsm xfce-3.5.1/xfce-3.5.1.lsm
+--- xfce-3.5.0/xfce-3.5.1.lsm	Thu Jan  1 01:00:00 1970
++++ xfce-3.5.1/xfce-3.5.1.lsm	Tue Aug 29 22:33:02 2000
+@@ -0,0 +1,29 @@
++Begin3
++Title		XFce
++Version:        3.5.1
++Entered-date:   xxSEP00
++Description:    XFce is an easy-to-use and easy-to-configure environment 
++		using the popular GTK+ toolkit for X11, featuring drag'n drop,
++		pulldown menus and color icons, 3D widgets, etc. 
++		It features its own Window Manager (xfwm), a backdrop 
++		manager (xfbd), a file manager (xftree), a clock/calendar
++		(xfclock) and a system sound manager (xfsound) and
++		a user friendly interface for mouse configuration (xfmouse).
++		Visit HTTP://www.xfce.org/ to see what XFce looks like.
++Keywords:       desktop, utility, toolbar, icons, menu interface, 
++		window manager,	file manager, gtk+, X11, linux
++Author:         fourdan@xfce.org (Olivier Fourdan)
++Maintained-by:  fourdan@xfce.org (Olivier Fourdan)
++Primary-site:   HTTP://www.xfce.org/
++			 	 2539Kb xfce-3.5.1.tar.gz
++			 	    1Kb xfce-3.5.1.lsm
++Alternate-site:	HTTP://www.baysurf.net/linux/xfce/
++		HTTP://tsikora.tiac.net/xfce/
++Original-site:	HTTP://www.xfce.org/
++Platform:       Linux, Solaris, FreeBSD, HPUX, IRIX, AIX, etc. gcc, XFree86, 
++		Require GTK+ 1.2 or above and libXpm (v 4.x or above) 
++		for pixmaps.
++		Can make use of Imlib  or gdk-pixbuf if available for image 
++                dithering and rendering. 
++Copying-policy: GPL
++End
+diff -Naur -x *.gmo xfce-3.5.0/xfce.spec xfce-3.5.1/xfce.spec
+--- xfce-3.5.0/xfce.spec	Mon Aug 14 21:26:39 2000
++++ xfce-3.5.1/xfce.spec	Tue Aug 29 22:33:12 2000
+@@ -1,5 +1,5 @@
+ %define 	name	xfce
+-%define 	version	3.5.0
++%define 	version	3.5.1
+ %define		release	1
+ %define		prefix 	/usr
+ %define		datadir /usr/share
+diff -Naur -x *.gmo xfce-3.5.0/xfwm/misc.c xfce-3.5.1/xfwm/misc.c
+--- xfce-3.5.0/xfwm/misc.c	Sat Aug 19 13:11:41 2000
++++ xfce-3.5.1/xfwm/misc.c	Tue Aug 29 22:16:06 2000
+@@ -801,7 +801,8 @@
+   /* ONTOP windows on top */
+   for (t2 = Scr.XfwmRoot.next; t2 != NULL; t2 = t2->next)
+     {
+-      if ((t2->flags & ONTOP) && !(t2->flags & ICONIFIED))
++      if ((t2->flags & ONTOP) && !(t2->flags & ICONIFIED) && (t2 != t) &&
++          !((t->flags & TRANSIENT) && (t->transientfor == t2->w)))
+ 	{
+ 	  Broadcast (XFCE_M_RAISE_WINDOW, 3, t2->w, t2->frame,
+ 		     (unsigned long) t2, 0, 0, 0, 0);
+@@ -812,8 +813,7 @@
+   /* now raise transients */
+   for (t2 = Scr.XfwmRoot.next; t2 != NULL; t2 = t2->next)
+     {
+-      if ((t2->flags & TRANSIENT) &&
+-	  (t2->transientfor == t->w) && (t2 != t) && (!(t2->flags & ONTOP)))
++      if ((t2->flags & TRANSIENT) && (t2->transientfor == t->w) && (t2 != t))
+ 	{
+ 	  wins[i++] = t2->frame;
+ 	  if ((t2->flags & ICONIFIED) && (!(t2->flags & SUPPRESSICON)))
+diff -Naur -x *.gmo xfce-3.5.0/xfwm/xfwm.c xfce-3.5.1/xfwm/xfwm.c
+--- xfce-3.5.0/xfwm/xfwm.c	Tue Aug 15 09:05:04 2000
++++ xfce-3.5.1/xfwm/xfwm.c	Tue Aug 29 22:30:34 2000
+@@ -739,8 +739,10 @@
+     "+ \"" N_("S&witch to...") "\" WindowList",
+     "+ \"\" Nop",
+     "+ \"" N_("&Close") "\" Delete",
++    "AddToMenu \"user_menu\" \"" N_("User Menu") "\" Title",
+     "AddToMenu \"__builtin_root_menu__\"",
+     "+ \"" N_("&New window") "\" Exec xfterm",
++    "+ \"" N_("&User Menu") "\" popup user_menu",
+     "+ \"" N_("Shuffle &Up") "\" Next [*] focus",
+     "+ \"" N_("Shuffle &Down") "\"  Prev [*] focus",
+     "+ \"" N_("&Refresh") "\" Refresh",
