@@ -33,7 +33,7 @@
 | 19-NOV-2000 | Xfce 3.6.0   | [xfce-3.6.0.tar.gz](dist/xfce-3.6.0.tar.gz) | [0](screenshots/xfce-3.6.0.jpg) | |
 | 01-OCT-2000 | Xfce 3.5.2   | [xfce-3.5.2.tar.gz](dist/xfce-3.5.2.tar.gz) | | The first appearance of the Xue mascot? (see tar backdrops/Xfcemice.jpg) |
 | 24-SEP-2000 | Xfce 3.5.1   | Lost. Saved only [xfce-3.5.0-3.5.1-20000830.patch](dist/xfce-3.5.0-3.5.1-20000830.patch) | | |
-| 21-AUG-2000 | Xfce 3.5.0   | Lost. Saved only [xfce-3.4.4-3.5.0-20000815.patch](dist/xfce-3.5.0-3.5.1-20000830.patch) | [0](screenshots/xfce-3.5.0-0.jpg) [1](screenshots/xfce-3.5.0-1.jpg) [2](screenshots/xfce-3.5.0-2.jpg) | |
+| 21-AUG-2000 | Xfce 3.5.0   | Lost. Saved only [xfce-3.4.4-3.5.0-20000815.patch](dist/xfce-3.5.0-3.5.1-20000830.patch) | [0](screenshots/xfce-3.5.0-0.jpg), [1](screenshots/xfce-3.5.0-1.jpg), [2](screenshots/xfce-3.5.0-2.jpg) | |
 | 15-JUL-2000 | Xfce 3.4.4   | [xfce-3.4.4.tar.gz](dist/xfce-3.4.3.tar.gz), [xfce-3.4.3-3.4.4-patch.gz](dist/xfce-3.4.3-3.4.4-patch.gz) | | |
 | 09-JUL-2000 | Xfce 3.4.3   | [xfce-3.4.3.tar.gz](dist/xfce-3.4.3.tar.gz) | [0](screenshots/xfce-3.4.3.jpg) | |
 | 26-JUN-2000 | Xfce 3.4.2   | Lost | | |
@@ -58,7 +58,7 @@
 | 14-JUL-1999 | Xfce-3.0.0   | Lost | | |
 | 20-JUN-1999 | Xfce-3.0.0 Pre-release 2 | Lost | | |
 | 03-JUN-1999 | Xfce-3.0.0 Pre-release 1 | Lost | | |
-| DD-MMM-YYYY | XFce-2.4.0   | xfce-common-2.4.0.tar.gz | [0](screenshots/xfce-2.4.0-0.png) [1](screenshots/xfce-2.4.0-1.png) [2](screenshots/xfce-2.4.0-2.png) [3](screenshots/xfce-2.4.0-3.png) [4](screenshots/xfce-2.4.0-4.png) [5](screenshots/xfce-2.4.0-5.png) [6](screenshots/xfce-2.4.0-6.png) [7](screenshots/xfce-2.4.0-7.png) | |
+| DD-MMM-YYYY | XFce-2.4.0   | xfce-common-2.4.0.tar.gz | [0](screenshots/xfce-2.4.0-0.png), [1](screenshots/xfce-2.4.0-1.png), [2](screenshots/xfce-2.4.0-2.png), [3](screenshots/xfce-2.4.0-3.png), [4](screenshots/xfce-2.4.0-4.png), [5](screenshots/xfce-2.4.0-5.png), [6](screenshots/xfce-2.4.0-6.png), [7](screenshots/xfce-2.4.0-7.png) | |
 | DD-MMM-YYYY | XFce-2.3.0   | Lost | | |
 | DD-MMM-YYYY | XFce-2.2.0   | Lost | | |
 | DD-MMM-YYYY | XFce-2.1.2   | Lost | [0](screenshots/xfce-2.1.2.jpg) | |
@@ -67,21 +67,21 @@
 | DD-MMM-YYYY | XFce-2.0.4   | [xfce-2.4.0-1rh5.i386.rpm](dist/xfce-2.4.0-1rh5.i386.rpm) (binary for RH5.2) [xfce-common-2.4.0.tar.gz](dist/xfce-common-2.4.0.tar.gz) | [] | |
 | DD-MMM-YYYY | XFce-2.03   | Lost | | |
 | DD-MMM-YYYY | XFce-2.02   | Lost | | |
-| 04-JUL-1998 | XFce-2.01   | [xfce-2.0.1.tar.gz](dist/xfce-2.0.1.tar.gz) | [0](screenshots/xfce-2.0.1-0.png) [1](screenshots/xfce-2.0.1-1.png) [2](screenshots/xfce-2.0.1-2.png) [3](screenshots/xfce-2.0.1-3.png) [4](screenshots/xfce-2.0.1-4.png) [5](screenshots/xfce-2.0.1-5.png) | [online help](help/2.0.1/index.html) |
+| 04-JUL-1998 | XFce-2.01   | [xfce-2.0.1.tar.gz](dist/xfce-2.0.1.tar.gz) | [0](screenshots/xfce-2.0.1-0.png), [1](screenshots/xfce-2.0.1-1.png), [2](screenshots/xfce-2.0.1-2.png), [3](screenshots/xfce-2.0.1-3.png), [4](screenshots/xfce-2.0.1-4.png), [5](screenshots/xfce-2.0.1-5.png) | [online help](help/2.0.1/index.html) |
 | DD-MMM-YYYY | XFce-2.00   | Lost | | |
 | DD-MMM-YYYY | XFCE-1.29   | Lost | | |
 | DD-MMM-YYYY | XFCE-1.28   | Lost | | |
 | DD-MMM-YYYY | XFCE-1.27   | Lost | | |
 | DD-MMM-YYYY | XFCE-1.26   | Lost | | |
 | DD-MMM-YYYY | XFCE-1.25   | Lost | | |
-| 20-AUG-1997 | XFCE-1.24   | [xfce-1.2.4.tar.gz](dist/xfce-1.2.4.tar.gz) | [0](screenshots/xfce-1.2.4-0.png) [1](screenshots/xfce-1.2.4-1.png) [2](screenshots/xfce-1.2.4-2.png) [3](screenshots/xfce-1.2.4-3.png) [4](screenshots/xfce-1.2.4-4.png) [5](screenshots/xfce-1.2.4-5.png) | |
+| 20-AUG-1997 | XFCE-1.24   | [xfce-1.2.4.tar.gz](dist/xfce-1.2.4.tar.gz) | [0](screenshots/xfce-1.2.4-0.png), [1](screenshots/xfce-1.2.4-1.png), [2](screenshots/xfce-1.2.4-2.png), [3](screenshots/xfce-1.2.4-3.png), [4](screenshots/xfce-1.2.4-4.png), [5](screenshots/xfce-1.2.4-5.png) | |
 | DD-MMM-YYYY | XFCE-1.23   | Lost | | |
 | DD-MMM-YYYY | XFCE-1.22   | Lost | | |
 | DD-MMM-YYYY | XFCE-1.21   | Lost | | |
 | DD-MMM-YYYY | XFCE-1.20   | Lost | | |
 | 30-MAR-1997 | XFCE-1.11b  | [XFCE111b.tgz](dist/XFCE111b.tgz) | [0](xfce-1.11.png) | |
 | DD-MMM-YYYY | XFCE-1.11   | Lost | | |
-| 25-MAR-1997 | XFCE-1.10   | [XFCE110.tgz](dist/XFCE110.tgz) | [0](screenshots/xfce-1.10-0.png) [1](screenshots/xfce-1.10-1.png) [2](screenshots/xfce-1.10-2.png) [3](screenshots/xfce-1.10-3.png) [4](screenshots/xfce-1.10-4.png)| |
+| 25-MAR-1997 | XFCE-1.10   | [XFCE110.tgz](dist/XFCE110.tgz) | [0](screenshots/xfce-1.10-0.png), [1](screenshots/xfce-1.10-1.png), [2](screenshots/xfce-1.10-2.png), [3](screenshots/xfce-1.10-3.png), [4](screenshots/xfce-1.10-4.png)| |
 | DD-MMM-YYYY | XFCE-1.05b  | Lost | | |
 | DD-MMM-YYYY | XFCE-1.04   | Lost | | |
 
