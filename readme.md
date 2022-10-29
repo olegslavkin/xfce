@@ -38,7 +38,7 @@
 | 09-JUL-2000 | Xfce 3.4.3   | [xfce-3.4.3.tar.gz](dist/xfce-3.4.3.tar.gz) | [0](screenshots/xfce-3.4.3.jpg) | |
 | 26-JUN-2000 | Xfce 3.4.2   | Lost | | |
 | 25-JUN-2000 | Xfce 3.4.1   | Lost | | |
-| 04-JUN-2000 | Xfce 3.4.0   | [xfce-3.4.0.tar.gz](dist/xfce-3.4.0.tar.gz) | | |
+| 04-JUN-2000 | Xfce 3.4.0   | [xfce-3.4.0.tar.gz](dist/xfce-3.4.0.tar.gz) | [0](screenshots/xfce-3.4.0-0.png), [1](screenshots/xfce-3.4.0-1.png), [2](screenshots/xfce-3.4.0-2.png), [3](screenshots/xfce-3.4.0-3.png) | [online help](help/3.4.0/help.html) |
 | 02-APR-2000 | Xfce 3.3.3   | Lost | | |
 | 15-MAR-2000 | Xfce 3.3.2   | [xfce-3.3.2.tar.bz2](dist/xfce-3.3.2.tar.bz2) | [0](screenshots/xfce-3.3.2-0.png), [1](screenshots/xfce-3.3.2-1.png), [2](screenshots/xfce-3.3.2-2.png), [3](screenshots/xfce-3.3.2-3.png) | [online help](help/3.3.2/help.html) |
 | 01-MAR-2000 | Xfce 3.3.1   | Lost | | |
