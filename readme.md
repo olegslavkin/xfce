@@ -39,7 +39,7 @@
 | 26-JUN-2000 | Xfce 3.4.2   | Lost | | |
 | 25-JUN-2000 | Xfce 3.4.1   | Lost | | |
 | 04-JUN-2000 | Xfce 3.4.0   | [xfce-3.4.0.tar.gz](dist/xfce-3.4.0.tar.gz) | [0](screenshots/xfce-3.4.0-0.png), [1](screenshots/xfce-3.4.0-1.png), [2](screenshots/xfce-3.4.0-2.png), [3](screenshots/xfce-3.4.0-3.png) | [online help](help/3.4.0/help.html) |
-| 02-APR-2000 | Xfce 3.3.3   | Lost | | |
+| 02-APR-2000 | Xfce 3.3.3   | [xfce-3.3.3.tar.gz](dist/xfce-3.3.3.tar.gz) | | [online help](help/3.3.3/help.html) |
 | 15-MAR-2000 | Xfce 3.3.2   | [xfce-3.3.2.tar.bz2](dist/xfce-3.3.2.tar.bz2) | [0](screenshots/xfce-3.3.2-0.png), [1](screenshots/xfce-3.3.2-1.png), [2](screenshots/xfce-3.3.2-2.png), [3](screenshots/xfce-3.3.2-3.png) | [online help](help/3.3.2/help.html) |
 | 01-MAR-2000 | Xfce 3.3.1   | Lost | | |
 | 27-FEB-2000 | Xfce 3.3.0   | Lost | [0](screenshots/xfce-3.3.0.jpg) | |
@@ -69,7 +69,7 @@
 | DD-MMM-YYYY | XFce-2.0.2   | Lost | | |
 | 04-JUL-1998 | XFce-2.0.1   | [xfce-2.0.1.tar.gz](dist/xfce-2.0.1.tar.gz) | [0](screenshots/xfce-2.0.1-0.png), [1](screenshots/xfce-2.0.1-1.png), [2](screenshots/xfce-2.0.1-2.png), [3](screenshots/xfce-2.0.1-3.png), [4](screenshots/xfce-2.0.1-4.png), [5](screenshots/xfce-2.0.1-5.png) | [online help](help/2.0.1/index.html) |
 | DD-MMM-YYYY | XFce-2.0.0   | Lost | | |
-| DD-MMM-YYYY | XFCE-1.29   | Lost | | |
+| DD-MMM-YYYY | XFCE-1.29   | Lost (xfce-1.2.9.tar.gz) | | unsite.unc.edu:X11/toolbars/xfce-1.2.9.tar.gz [info](http://ftp.math.sk/linux/journals/noviny/noviny-1998-06.pdf) |
 | DD-MMM-YYYY | XFCE-1.28   | Lost | | |
 | DD-MMM-YYYY | XFCE-1.27   | Lost | | |
 | DD-MMM-YYYY | XFCE-1.26   | Lost | | |
