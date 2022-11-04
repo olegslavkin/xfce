@@ -47,7 +47,7 @@
 | 19-JAN-2000 | Xfce 3.2.4   | Lost | | |
 | 04-JAN-2000 | Xfce 3.2.3   | [xfce-3.2.3.tar.gz](dist/xfce-3.2.3.tar.gz) | | [online help](help/3.2.3/help.html)|
 | 12-DEC-1999 | Xfce 3.2.2   | [xfce-3.2.2.tar.gz](dist/xfce-3.2.2.tar.gz) | [0](screenshots/xfce-3.2.2-0.png), [1](screenshots/xfce-3.2.2-1.png), [2](screenshots/xfce-3.2.2-2.png), [3](screenshots/xfce-3.2.2-3.png) | [online help](help/3.2.2/help.html) |
-| 30-NOV-1999 | Xfce 3.2.1   | [xfce-3.2.1.tar.gz](dist/xfce-3.2.1.tar.gz) | | [online help](help/3.2.1/help.html) |
+| 30-NOV-1999 | Xfce 3.2.1   | [xfce-3.2.1.tar.gz](dist/xfce-3.2.1.tar.gz) | [0](screenshots/xfce-3.2.1-0.png), [1](screenshots/xfce-3.2.1-1.png), [2](screenshots/xfce-3.2.1-2.png), [3](screenshots/xfce-3.2.1-3.png), [4](screenshots/xfce-3.2.1-4.png), [5](screenshots/xfce-3.2.1-5.png), [6](screenshots/xfce-3.2.1-6.png) | [online help](help/3.2.1/help.html) |
 | 14-NOV-1999 | Xfce 3.2.0   | Lost | | |
 | 01-OCT-1999 | Xfce-3.1.2   | [xfce-3.1.2.tar.gz](dist/xfce-3.1.2.tar.gz) | | |
 | 24-SEP-1999 | Xfce-3.1.1   | [xfce-3.1.1.tar.gz](dist/xfce-3.1.1.tar.gz) | [0](screenshots/xfce-3.1.1-0.png), [1](screenshots/xfce-3.1.1-1.png), [2](screenshots/xfce-3.1.1-2.png), [3](screenshots/xfce-3.1.1-3.png), [4](screenshots/xfce-3.1.1-4.png), [5](screenshots/xfce-3.1.1-5.png), [6](screenshots/xfce-3.1.1-6.png), [7](screenshots/xfce-3.1.1-7.png), [8](screenshots/xfce-3.1.1-8.png) | [online help](help/3.1.1/help.html) |
