@@ -86,4 +86,5 @@
 | DD-MMM-YYYY | XFCE-1.04   | Lost | | |
 
 # Articles about Xfce
-- Xfce: A lightweight desktop environment by Olivier Fourdan [ps](materials/fourdan.ps), [pdf](materials/fourdan.pdf)
+- Xfce: A lightweight desktop environment by Olivier Fourdan [ps](materials/fourdan.ps)/[pdf](materials/fourdan.pdf)
+- XFce: The Little Desktop That Could by Dennis E. Powell [Internet Archive](https://web.archive.org/web/20000816005858/http://www.linuxplanet.com/linuxplanet/reports/1931/1/)
