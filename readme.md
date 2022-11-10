@@ -48,7 +48,7 @@
 | 04-JAN-2000 | Xfce 3.2.3   | [xfce-3.2.3.tar.gz](dist/xfce-3.2.3.tar.gz) | [0](screenshots/xfce-3.2.3-0.png), [1](screenshots/xfce-3.2.3-1.png), [2](screenshots/xfce-3.2.3-2.png), [3](screenshots/xfce-3.2.3-3.png), [4](screenshots/xfce-3.2.3-4.png) | [online help](help/3.2.3/help.html)|
 | 12-DEC-1999 | Xfce 3.2.2   | [xfce-3.2.2.tar.gz](dist/xfce-3.2.2.tar.gz) | [0](screenshots/xfce-3.2.2-0.png), [1](screenshots/xfce-3.2.2-1.png), [2](screenshots/xfce-3.2.2-2.png), [3](screenshots/xfce-3.2.2-3.png) | [online help](help/3.2.2/help.html) |
 | 30-NOV-1999 | Xfce 3.2.1   | [xfce-3.2.1.tar.gz](dist/xfce-3.2.1.tar.gz) | [0](screenshots/xfce-3.2.1-0.png), [1](screenshots/xfce-3.2.1-1.png), [2](screenshots/xfce-3.2.1-2.png), [3](screenshots/xfce-3.2.1-3.png), [4](screenshots/xfce-3.2.1-4.png), [5](screenshots/xfce-3.2.1-5.png), [6](screenshots/xfce-3.2.1-6.png) | [online help](help/3.2.1/help.html) |
-| 14-NOV-1999 | Xfce 3.2.0   | Lost | | |
+| 14-NOV-1999 | Xfce 3.2.0   | Lost | [0](screenshots/xfce-3.2.0.jpg) | |
 | 01-OCT-1999 | Xfce-3.1.2   | [xfce-3.1.2.tar.gz](dist/xfce-3.1.2.tar.gz) | [0](screenshots/xfce-3.1.2-0.png) | [online help](help/3.1.2/help.html) |
 | 24-SEP-1999 | Xfce-3.1.1   | [xfce-3.1.1.tar.gz](dist/xfce-3.1.1.tar.gz) | [0](screenshots/xfce-3.1.1-0.png), [1](screenshots/xfce-3.1.1-1.png), [2](screenshots/xfce-3.1.1-2.png), [3](screenshots/xfce-3.1.1-3.png), [4](screenshots/xfce-3.1.1-4.png), [5](screenshots/xfce-3.1.1-5.png), [6](screenshots/xfce-3.1.1-6.png), [7](screenshots/xfce-3.1.1-7.png), [8](screenshots/xfce-3.1.1-8.png) | [online help](help/3.1.1/help.html) |
 | 04-SEP-1999 | Xfce-3.1.0   | [xfce-3.1.0.tar.gz](dist/xfce-3.1.0.tar.gz) | | [online help](help/3.1.0/help.html) |
@@ -86,5 +86,9 @@
 | DD-MMM-YYYY | XFCE-1.04   | Lost | | |
 
 # Articles about Xfce
-- Xfce: A lightweight desktop environment by Olivier Fourdan [ps](materials/fourdan.ps)/[pdf](materials/fourdan.pdf)
-- XFce: The Little Desktop That Could by Dennis E. Powell [Internet Archive](https://web.archive.org/web/20000816005858/http://www.linuxplanet.com/linuxplanet/reports/1931/1/)
+- Xfce: A lightweight desktop environment By Olivier Fourdan [ps](materials/fourdan.ps)/[pdf](materials/fourdan.pdf)
+- XFce: The Little Desktop That Could By Dennis E. Powell [Internet Archive](https://web.archive.org/web/20000816005858/http://www.linuxplanet.com/linuxplanet/reports/1931/1/)
+- XFce3 Initial press release [Internet Archive](https://web.archive.org/web/20000302024409/linuxpr.com/releases/155.html)
+- The Desktop less travelled [Internet Archive](https://web.archive.org/web/20001013095820/www.linuxworld.com/linuxworld/lw-1999-12/lw-12-alternative_1_p.html)
+- XFce3: Now 100% Free Software! By Norman M. Jacobowitz [Internet Archive](https://web.archive.org/web/19990826213727/linuxgazette.com/issue43/jacobowitz.xfce.html)
+- XFce By Dustin Puryear [Internet Archive] [page 1](https://web.archive.org/web/19991124080450/32bitsonline.com/article.php3?file=issues/199908/xfce/xfce&page=1)/[page 2](https://web.archive.org/web/20000201091455/http://www.32bitsonline.com/article.php3?file=issues/199908/xfce/xfce&page=2)
