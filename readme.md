@@ -28,7 +28,7 @@
 | 05-FEB-2001 | Xfce 3.7.1   | [xfce-3.7.1.tar.gz](dist/xfce-3.7.1.tar.gz) | | |
 | 28-JAN-2001 | Xfce 3.7.0   | [xfce-3.7.0.tar.gz](dist/xfce-3.7.0.tar.gz) | | |
 | 27-NOV-2000 | Xfce 3.6.3   | [xfce-3.6.3.tar.gz](dist/xfce-3.6.3.tar.gz), [xfce-3.6.3.tar.bz2](dist/xfce-3.6.3.tar.bz2) | | |
-| 26-NOV-2000 | Xfce 3.6.2   | [xfce-3.6.2.tar.gz](dist/xfce-3.6.2.tar.gz) | | |
+| 26-NOV-2000 | Xfce 3.6.2   | [xfce-3.6.2.tar.gz](dist/xfce-3.6.2.tar.gz) | [0](screenshots/xfce-3.6.2-0.png) | [online help](help/3.6.2/help.html) |
 | 19-NOV-2000 | Xfce 3.6.1   | [xfce-3.6.1.tar.gz](dist/xfce-3.6.1.tar.gz) | [0](screenshots/xfce-3.6.1-0.png) | [online help](help/3.6.1/help.html) |
 | 19-NOV-2000 | Xfce 3.6.0   | [xfce-3.6.0.tar.gz](dist/xfce-3.6.0.tar.gz) | [0](screenshots/xfce-3.6.0-0.jpg), [1](screenshots/xfce-3.6.0-1.png), [2](screenshots/xfce-3.6.0-2.png) | [online help](help/3.6.0/help.html) |
 | 01-OCT-2000 | Xfce 3.5.2   | [xfce-3.5.2.tar.gz](dist/xfce-3.5.2.tar.gz) | [0](screenshots/xfce-3.5.2-0.png), [1](screenshots/xfce-3.5.2-1.png) | The first appearance of the Xue mascot? (see tar backdrops/Xfcemice.jpg) |
@@ -94,4 +94,5 @@
 - XFce3 Initial press release [Internet Archive](https://web.archive.org/web/20000302024409/linuxpr.com/releases/155.html)
 - The Desktop less travelled [Internet Archive](https://web.archive.org/web/20001013095820/www.linuxworld.com/linuxworld/lw-1999-12/lw-12-alternative_1_p.html)
 - XFce3: Now 100% Free Software! By Norman M. Jacobowitz [Internet Archive](https://web.archive.org/web/19990826213727/linuxgazette.com/issue43/jacobowitz.xfce.html)
+- 10 Questions with Olivier Fourdan of Xfce [Linux Orbit](https://web.archive.org/web/20001017144724/http://www.linuxorbit.com/features/interview1.php3)
 - XFce By Dustin Puryear [Internet Archive] [page 1](https://web.archive.org/web/19991124080450/32bitsonline.com/article.php3?file=issues/199908/xfce/xfce&page=1)/[page 2](https://web.archive.org/web/20000201091455/http://www.32bitsonline.com/article.php3?file=issues/199908/xfce/xfce&page=2)
