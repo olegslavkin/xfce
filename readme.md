@@ -74,14 +74,14 @@
 | DD-MMM-YYYY | XFCE-1.27   | Lost | | |
 | DD-MMM-YYYY | XFCE-1.26   | Lost | | |
 | DD-MMM-YYYY | XFCE-1.25   | Lost | | |
-| 20-AUG-1997 | XFCE-1.24   | [xfce-1.2.4.tar.gz](dist/xfce-1.2.4.tar.gz) | [0](screenshots/xfce-1.2.4-0.png), [1](screenshots/xfce-1.2.4-1.png), [2](screenshots/xfce-1.2.4-2.png), [3](screenshots/xfce-1.2.4-3.png), [4](screenshots/xfce-1.2.4-4.png), [5](screenshots/xfce-1.2.4-5.png) | |
+| 20-AUG-1997 | XFCE-1.24   | [xfce-1.2.4.tar.gz](dist/xfce-1.2.4.tar.gz) | [0](screenshots/xfce-1.2.4-0.png), [1](screenshots/xfce-1.2.4-1.png) | [manual](help/1.2.4/MANUAL) |
 | DD-MMM-YYYY | XFCE-1.23   | Lost | | |
 | DD-MMM-YYYY | XFCE-1.22   | Lost | | |
 | DD-MMM-YYYY | XFCE-1.21   | Lost | | |
 | DD-MMM-YYYY | XFCE-1.20   | Lost | | |
-| 30-MAR-1997 | XFCE-1.11b  | [XFCE111b.tgz](dist/XFCE111b.tgz) | [0](xfce-1.11.png) | |
+| 30-MAR-1997 | XFCE-1.11b  | [XFCE111b.tgz](dist/XFCE111b.tgz) | [0](xfce-1.11.png) | [manual](help/1.11b/MANUAL) |
 | DD-MMM-YYYY | XFCE-1.11   | Lost | | |
-| 25-MAR-1997 | XFCE-1.10   | [XFCE110.tgz](dist/XFCE110.tgz) | [0](screenshots/xfce-1.10-0.png), [1](screenshots/xfce-1.10-1.png), [2](screenshots/xfce-1.10-2.png), [3](screenshots/xfce-1.10-3.png), [4](screenshots/xfce-1.10-4.png)| |
+| 25-MAR-1997 | XFCE-1.10   | [XFCE110.tgz](dist/XFCE110.tgz) | [0](screenshots/xfce-1.10-0.png), [1](screenshots/xfce-1.10-1.png), [2](screenshots/xfce-1.10-2.png), [3](screenshots/xfce-1.10-3.png), [4](screenshots/xfce-1.10-4.png)| [manual](help/1.10/MANUAL) |
 | DD-MMM-YYYY | XFCE-1.05b  | Lost | | |
 | DD-MMM-YYYY | XFCE-1.04   | Lost | | |
 
