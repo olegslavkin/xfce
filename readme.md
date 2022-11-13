@@ -26,7 +26,7 @@
 | 23-APR-2001 | Xfce 3.8.0   | [xfce-3.8.0.tar.bz2](dist/xfce-3.8.0.tar.bz2) | | |
 | 07-FEB-2001 | Xfce 3.7.2   | [xfce-3.7.2.tar.bz2](dist/xfce-3.7.2.tar.bz2)  | | |
 | 05-FEB-2001 | Xfce 3.7.1   | [xfce-3.7.1.tar.gz](dist/xfce-3.7.1.tar.gz) | | |
-| 28-JAN-2001 | Xfce 3.7.0   | [xfce-3.7.0.tar.gz](dist/xfce-3.7.0.tar.gz) | [0](screenshots/xfce-3.6.2-0.png), [1](screenshots/xfce-3.6.2-1.png), [2](screenshots/xfce-3.6.2-2.png), [3](screenshots/xfce-3.6.2-3.png), [4](screenshots/xfce-3.6.2-4.png), [5](screenshots/xfce-3.6.2-5.png), [6](screenshots/xfce-3.6.2-6.png) | [online help](help/3.7.0/help.html) |
+| 28-JAN-2001 | Xfce 3.7.0   | [xfce-3.7.0.tar.gz](dist/xfce-3.7.0.tar.gz) | [0](screenshots/xfce-3.7.0-0.png), [1](screenshots/xfce-3.7.0-1.png), [2](screenshots/xfce-3.7.0-2.png), [3](screenshots/xfce-3.7.0-3.png), [4](screenshots/xfce-3.7.0-4.png), [5](screenshots/xfce-3.7.0-5.png), [6](screenshots/xfce-3.7.0-6.png) | [online help](help/3.7.0/help.html) |
 | 27-NOV-2000 | Xfce 3.6.3   | [xfce-3.6.3.tar.gz](dist/xfce-3.6.3.tar.gz), [xfce-3.6.3.tar.bz2](dist/xfce-3.6.3.tar.bz2) | [0](screenshots/xfce-3.6.3-0.png) | [online help](help/3.6.3/help.html) |
 | 26-NOV-2000 | Xfce 3.6.2   | [xfce-3.6.2.tar.gz](dist/xfce-3.6.2.tar.gz) | [0](screenshots/xfce-3.6.2-0.png) | [online help](help/3.6.2/help.html) |
 | 19-NOV-2000 | Xfce 3.6.1   | [xfce-3.6.1.tar.gz](dist/xfce-3.6.1.tar.gz) | [0](screenshots/xfce-3.6.1-0.png) | [online help](help/3.6.1/help.html) |
