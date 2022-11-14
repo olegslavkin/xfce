@@ -21,7 +21,7 @@
 | DD-MMM-YYYY | Xfce 3.8.5   | [xfce-3.8.5.tar.bz2](dist/xfce-3.8.5.tar.bz2) | | + [github v3.8.5](https://github.com/olegslavkin/xfce3/tree/v3.8.5) |
 | DD-MMM-YYYY | Xfce 3.8.4   | [xfce-3.8.4.tar.gz](dist/xfce-3.8.4.tar.gz) | | |
 | 28-MAY-2001 | Xfce 3.8.3   | [xfce-3.8.3.tar.gz](dist/xfce-3.8.3.tar.gz) | | |
-| 14-MAY-2001 | Xfce 3.8.2   | [xfce-3.8.2.tar.gz](dist/xfce-3.8.2.tar.gz) | | |
+| 14-MAY-2001 | Xfce 3.8.2   | [xfce-3.8.2.tar.gz](dist/xfce-3.8.2.tar.gz) | [0](screenshots/xfce-3.8.2-0.png), [1](screenshots/xfce-3.8.2-1.png), [2](screenshots/xfce-3.8.2-2.png), [3](screenshots/xfce-3.8.2-3.png), [4](screenshots/xfce-3.8.2-4.png) | [online help](help/3.8.2/help.html) |
 | 29-APR-2001 | Xfce 3.8.1   | [xfce-3.8.1.tar.gz](dist/xfce-3.8.1.tar.gz) | [0](screenshots/xfce-3.8.1-0.png), [1](screenshots/xfce-3.8.1-1.png) | [online help](help/3.8.1/help.html) |
 | 23-APR-2001 | Xfce 3.8.0   | [xfce-3.8.0.tar.bz2](dist/xfce-3.8.0.tar.bz2) | [0](screenshots/xfce-3.8.0-0.png), [1](screenshots/xfce-3.8.0-1.png), [2](screenshots/xfce-3.8.0-2.png), [3](screenshots/xfce-3.8.0-3.png), [4](screenshots/xfce-3.8.0-4.png), [5](screenshots/xfce-3.8.0-5.png), [6](screenshots/xfce-3.8.0-6.png) | [online help](help/3.8.0/help.html) |
 | 07-FEB-2001 | Xfce 3.7.2   | [xfce-3.7.2.tar.bz2](dist/xfce-3.7.2.tar.bz2) | [0](screenshots/xfce-3.7.2-0.png) | [online help](help/3.7.2/help.html) |
@@ -58,10 +58,10 @@
 | 14-JUL-1999 | Xfce-3.0.0   | Lost | | |
 | 20-JUN-1999 | Xfce-3.0.0 Pre-release 2 | [xfce-3.0.0pre2.tar.gz](dist/xfce-3.0.0pre2.tar.gz) | [0](screenshots/xfce-3.0.0pre2-0.png), [1](screenshots/xfce-3.0.0pre2-1.png), [2](screenshots/xfce-3.0.0pre2-2.png), [3](screenshots/xfce-3.0.0pre2-3.png), [4](screenshots/xfce-3.0.0pre2-4.png) | [online help](help/3.0.0pre2/manual.html) |
 | 03-JUN-1999 | Xfce-3.0.0 Pre-release 1 | Lost (xfce-3.0.0pre1.tar.gz) | | |
-| DD-MMM-YYYY | XFce-2.4.0   | [xfce-2.4.0-1rh5.i386.rpm](dist/xfce-2.4.0-1rh5.i386.rpm) (binary for RH5.2) [xfce-common-2.4.0.tar.gz](dist/xfce-common-2.4.0.tar.gz) | [0](screenshots/xfce-2.4.0-0.png), [1](screenshots/xfce-2.4.0-1.png), [2](screenshots/xfce-2.4.0-2.png), [3](screenshots/xfce-2.4.0-3.png), [4](screenshots/xfce-2.4.0-4.png), [5](screenshots/xfce-2.4.0-5.png), [6](screenshots/xfce-2.4.0-6.png), [7](screenshots/xfce-2.4.0-7.png) | [online help](help/2.0.4/index.html) |
+| 17-MAR-1999 | XFce-2.4.0   | [xfce-2.4.0-1rh5.i386.rpm](dist/xfce-2.4.0-1rh5.i386.rpm) (binary for RH5.2) [xfce-common-2.4.0.tar.gz](dist/xfce-common-2.4.0.tar.gz) | [0](screenshots/xfce-2.4.0-0.png), [1](screenshots/xfce-2.4.0-1.png), [2](screenshots/xfce-2.4.0-2.png), [3](screenshots/xfce-2.4.0-3.png), [4](screenshots/xfce-2.4.0-4.png), [5](screenshots/xfce-2.4.0-5.png), [6](screenshots/xfce-2.4.0-6.png), [7](screenshots/xfce-2.4.0-7.png) | [online help](help/2.0.4/index.html) |
 | DD-MMM-YYYY | XFce-2.3.0   | Lost | | |
 | DD-MMM-YYYY | XFce-2.2.0   | Lost | | |
-| DD-MMM-YYYY | XFce-2.1.2   | Lost | [0](screenshots/xfce-2.1.2.jpg) | |
+| 02-NOV-1998 | XFce-2.1.2   | Lost | [0](screenshots/xfce-2.1.2.jpg) | |
 | DD-MMM-YYYY | XFce-2.1.1   | Lost | | |
 | DD-MMM-YYYY | XFce-2.1.0   | Lost | | |
 | DD-MMM-YYYY | XFce-2.0.4   | Lost | | |
@@ -69,7 +69,7 @@
 | DD-MMM-YYYY | XFce-2.0.2   | Lost | | |
 | 04-JUL-1998 | XFce-2.0.1   | [xfce-2.0.1.tar.gz](dist/xfce-2.0.1.tar.gz) | [0](screenshots/xfce-2.0.1-0.png), [1](screenshots/xfce-2.0.1-1.png), [2](screenshots/xfce-2.0.1-2.png), [3](screenshots/xfce-2.0.1-3.png), [4](screenshots/xfce-2.0.1-4.png), [5](screenshots/xfce-2.0.1-5.png) | [online help](help/2.0.1/index.html) |
 | DD-MMM-YYYY | XFce-2.0.0   | Lost | | |
-| DD-MMM-YYYY | XFCE-1.29   | Lost (xfce-1.2.9.tar.gz) | | unsite.unc.edu:X11/toolbars/xfce-1.2.9.tar.gz [info](http://ftp.math.sk/linux/journals/noviny/noviny-1998-06.pdf) |
+| DD-JUN-1998 | XFCE-1.29   | Lost (xfce-1.2.9.tar.gz) | | unsite.unc.edu:X11/toolbars/xfce-1.2.9.tar.gz [info](http://ftp.math.sk/linux/journals/noviny/noviny-1998-06.pdf) |
 | DD-MMM-YYYY | XFCE-1.28   | Lost | | |
 | DD-MMM-YYYY | XFCE-1.27   | Lost | | |
 | DD-MMM-YYYY | XFCE-1.26   | Lost | | |
