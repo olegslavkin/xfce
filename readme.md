@@ -20,7 +20,7 @@
 | 03-AUG-2001 | Xfce 3.8.6   | [xfce-3.8.6.tar.gz](dist/xfce-3.8.6.tar.gz) | | + [github v3.8.6](https://github.com/olegslavkin/xfce3/tree/v3.8.6) |
 | DD-MMM-YYYY | Xfce 3.8.5   | [xfce-3.8.5.tar.bz2](dist/xfce-3.8.5.tar.bz2) | | + [github v3.8.5](https://github.com/olegslavkin/xfce3/tree/v3.8.5) |
 | DD-MMM-YYYY | Xfce 3.8.4   | [xfce-3.8.4.tar.gz](dist/xfce-3.8.4.tar.gz) | | |
-| 28-MAY-2001 | Xfce 3.8.3   | [xfce-3.8.3.tar.gz](dist/xfce-3.8.3.tar.gz) | [0](screenshots/xfce-3.8.3-0.png) | online help](help/3.8.3/help.html) |
+| 28-MAY-2001 | Xfce 3.8.3   | [xfce-3.8.3.tar.gz](dist/xfce-3.8.3.tar.gz) | [0](screenshots/xfce-3.8.3-0.png) | [online help](help/3.8.3/help.html) |
 | 14-MAY-2001 | Xfce 3.8.2   | [xfce-3.8.2.tar.gz](dist/xfce-3.8.2.tar.gz) | [0](screenshots/xfce-3.8.2-0.png), [1](screenshots/xfce-3.8.2-1.png), [2](screenshots/xfce-3.8.2-2.png), [3](screenshots/xfce-3.8.2-3.png), [4](screenshots/xfce-3.8.2-4.png) | [online help](help/3.8.2/help.html) |
 | 29-APR-2001 | Xfce 3.8.1   | [xfce-3.8.1.tar.gz](dist/xfce-3.8.1.tar.gz) | [0](screenshots/xfce-3.8.1-0.png), [1](screenshots/xfce-3.8.1-1.png) | [online help](help/3.8.1/help.html) |
 | 23-APR-2001 | Xfce 3.8.0   | [xfce-3.8.0.tar.bz2](dist/xfce-3.8.0.tar.bz2) | [0](screenshots/xfce-3.8.0-0.png), [1](screenshots/xfce-3.8.0-1.png), [2](screenshots/xfce-3.8.0-2.png), [3](screenshots/xfce-3.8.0-3.png), [4](screenshots/xfce-3.8.0-4.png), [5](screenshots/xfce-3.8.0-5.png), [6](screenshots/xfce-3.8.0-6.png) | [online help](help/3.8.0/help.html) |
