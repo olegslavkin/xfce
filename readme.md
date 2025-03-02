@@ -73,9 +73,9 @@
 | DD-MMM-YYYY | XFCE-1.28   | Lost | | |
 | DD-MMM-YYYY | XFCE-1.27   | Lost | | |
 | DD-MMM-YYYY | XFCE-1.26   | Lost | | |
-| DD-MMM-YYYY | XFCE-1.25   | Lost | | |
+| 04-FEB-1998 | XFCE-1.25   | [xfce-1.2.5.tar.gz](dist/xfce-1.2.5.tar.gz) | | |
 | 20-AUG-1997 | XFCE-1.24   | [xfce-1.2.4.tar.gz](dist/xfce-1.2.4.tar.gz) | [0](screenshots/xfce-1.2.4-0.png), [1](screenshots/xfce-1.2.4-1.png) | [manual](help/1.2.4/MANUAL) |
-| DD-MMM-YYYY | XFCE-1.23   | Lost | | |
+| 22-JUN-1997 | XFCE-1.23   | [xfce-1.2.3.tar.gz](dist/xfce-1.2.3.tar.gz) | | |
 | DD-MMM-YYYY | XFCE-1.22   | Lost | | |
 | DD-MMM-YYYY | XFCE-1.21   | Lost | | |
 | DD-MMM-YYYY | XFCE-1.20   | Lost | | |
