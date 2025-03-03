@@ -88,7 +88,7 @@
 # Articles about Xfce
 - XFce 2.0 by Olivier Fourdan (fr) [Linux magazine France](http://chl.be/glmf/www.linuxmag-france.org/old/lm1/xfce.html)
 - XFCE 2.1.0 - Window/Backdrop Manager and Toolbar for X released By Olivier Fourdan [Linux Gazette](https://linuxgazette.net/issue33/lg_bytes33.html)
-- CDROM Cover Linux Kheops 97 - 3.3 with [screenshot XFce 1.2.5](materials/cdrom%20cover%20linux%20kheops%2097%20-%203.3.jpg)
+- CDROM Cover Linux Kheops 97 - 3.3 with [screenshot XFce 1.2.4](materials/cdrom%20cover%20linux%20kheops%2097%20-%203.3.jpg)
 - Xfce: A lightweight desktop environment By Olivier Fourdan [ps](materials/fourdan.ps)/[pdf](materials/fourdan.pdf)
 - XFce: The Little Desktop That Could By Dennis E. Powell [Internet Archive](https://web.archive.org/web/20000816005858/http://www.linuxplanet.com/linuxplanet/reports/1931/1/)
 - XFce3 Initial press release [Internet Archive](https://web.archive.org/web/20000302024409/linuxpr.com/releases/155.html)
