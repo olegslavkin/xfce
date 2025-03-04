@@ -58,7 +58,7 @@
 | 14-JUL-1999 | Xfce-3.0.0   | Lost | | |
 | 20-JUN-1999 | Xfce-3.0.0 Pre-release 2 | [xfce-3.0.0pre2.tar.gz](dist/xfce-3.0.0pre2.tar.gz) | [0](screenshots/xfce-3.0.0pre2-0.png), [1](screenshots/xfce-3.0.0pre2-1.png), [2](screenshots/xfce-3.0.0pre2-2.png), [3](screenshots/xfce-3.0.0pre2-3.png), [4](screenshots/xfce-3.0.0pre2-4.png) | [online help](help/3.0.0pre2/manual.html) |
 | 03-JUN-1999 | Xfce-3.0.0 Pre-release 1 | Lost (xfce-3.0.0pre1.tar.gz) | | |
-| 17-MAR-1999 | XFce-2.4.0   | [xfce-2.4.0-1rh5.i386.rpm](dist/xfce-2.4.0-1rh5.i386.rpm) (binary for RH5.2) [xfce-common-2.4.0.tar.gz](dist/xfce-common-2.4.0.tar.gz) | [0](screenshots/xfce-2.4.0-0.png), [1](screenshots/xfce-2.4.0-1.png), [2](screenshots/xfce-2.4.0-2.png), [3](screenshots/xfce-2.4.0-3.png), [4](screenshots/xfce-2.4.0-4.png), [5](screenshots/xfce-2.4.0-5.png), [6](screenshots/xfce-2.4.0-6.png), [7](screenshots/xfce-2.4.0-7.png) | [online help](help/2.0.4/index.html) |
+| 07-MAR-1999 | XFce-2.4.0   | [xfce-2.4.0-1rh5.i386.rpm](dist/xfce-2.4.0-1rh5.i386.rpm) (binary for RH5.2) <br/> [xfce-2.4.0.tar.gz](dist/xfce-2.4.0.tar.gz) <br/> [xfce-common-2.4.0.tar.gz](dist/xfce-common-2.4.0.tar.gz) | [0](screenshots/xfce-2.4.0-0.png), [1](screenshots/xfce-2.4.0-1.png), [2](screenshots/xfce-2.4.0-2.png), [3](screenshots/xfce-2.4.0-3.png), [4](screenshots/xfce-2.4.0-4.png), [5](screenshots/xfce-2.4.0-5.png), [6](screenshots/xfce-2.4.0-6.png), [7](screenshots/xfce-2.4.0-7.png) | [online help](help/2.0.4/index.html) |
 | DD-MMM-YYYY | XFce-2.3.0   | Lost | | |
 | DD-MMM-YYYY | XFce-2.2.0   | Lost | | |
 | 02-NOV-1998 | XFce-2.1.2   | Lost | [0](screenshots/xfce-2.1.2.jpg) | |
