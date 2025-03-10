@@ -78,3 +78,4 @@ exec xfwm
 ```shell
 startx
 ```
+![](screenshots/Xfce-3.8.5_Slackware7.1_86box.png)
