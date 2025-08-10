@@ -96,3 +96,6 @@
 - XFce3: Now 100% Free Software! By Norman M. Jacobowitz [Internet Archive](https://web.archive.org/web/19990826213727/linuxgazette.com/issue43/jacobowitz.xfce.html)
 - 10 Questions with Olivier Fourdan of Xfce [Linux Orbit](https://web.archive.org/web/20001017144724/http://www.linuxorbit.com/features/interview1.php3)
 - XFce By Dustin Puryear [Internet Archive] [page 1](https://web.archive.org/web/19991124080450/32bitsonline.com/article.php3?file=issues/199908/xfce/xfce&page=1)/[page 2](https://web.archive.org/web/20000201091455/http://www.32bitsonline.com/article.php3?file=issues/199908/xfce/xfce&page=2)
+
+# How to try
+Read short [manual](how-to-try.md).

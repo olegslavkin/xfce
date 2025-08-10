@@ -1,0 +1,2 @@
+86box/hda.vhd.xz filter=lfs diff=lfs merge=lfs -text
+86box/xfce.img.xz filter=lfs diff=lfs merge=lfs -text

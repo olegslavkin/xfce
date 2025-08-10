@@ -1,0 +1,51 @@
+Section "Files"
+    RgbPath	"/usr/X11R6/lib/X11/rgb"
+    FontPath	"/usr/X11R6/lib/X11/fonts/misc/"
+    FontPath	"/usr/X11R6/lib/X11/fonts/75dpi/:unscaled"
+    FontPath	"/usr/X11R6/lib/X11/fonts/75dpi/"
+EndSection
+
+Section "Keyboard"
+    Protocol	"Standard"
+    AutoRepeat	500 5
+EndSection
+
+Section "Pointer"
+    Protocol	"Microsoft"
+    Device	"/dev/mouse"
+    BaudRate	9600
+    SampleRate	150
+EndSection
+
+Section "Monitor"
+    Identifier	"Generic Monitor"
+    VendorName	"Unknown"
+    ModelName	"Unknown"
+    HorizSync   30-64
+    VertRefresh 50-130
+    Modeline    "800x600"  50  800  856  976 1040 600 637 643 666
+    Modeline    "1024x768" 65 1024 1032 1176 1344 768 771 777 806
+EndSection
+
+Section "Device"
+    Identifier	"Generic SVGA"
+    VendorName	"Unknown"
+    BoardName	"Unknown"
+    chipset     "clgd5426"
+    Option      "probe_clocks"
+    videoram    2048
+EndSection
+
+Section "Screen"
+    Driver	"svga"
+    Device	"Generic SVGA"
+    Monitor	"Generic Monitor"
+    DefaultColorDepth 8
+    Subsection "Display"
+        Depth	    8
+        Modes	    "1024x768" "800x600"
+        ViewPort    0 0
+        Virtual     1024 768
+    EndSubsection
+EndSection
+
