@@ -69,16 +69,16 @@
 | DD-MMM-YYYY | XFce-2.0.2   | Lost | | |
 | 04-JUL-1998 | XFce-2.0.1   | [xfce-2.0.1.tar.gz](dist/xfce-2.0.1.tar.gz) | [0](screenshots/xfce-2.0.1-0.png), [1](screenshots/xfce-2.0.1-1.png), [2](screenshots/xfce-2.0.1-2.png), [3](screenshots/xfce-2.0.1-3.png), [4](screenshots/xfce-2.0.1-4.png), [5](screenshots/xfce-2.0.1-5.png) | [online help](help/2.0.1/index.html) |
 | DD-MMM-YYYY | XFce-2.0.0   | Lost | | |
-| DD-JUN-1998 | XFCE-1.29   | Lost (xfce-1.2.9.tar.gz) | | unsite.unc.edu:X11/toolbars/xfce-1.2.9.tar.gz [info](http://ftp.math.sk/linux/journals/noviny/noviny-1998-06.pdf) |
-| DD-MMM-YYYY | XFCE-1.28   | Lost | | |
+| 09-MAY-1998 | XFCE-1.29   | [xfce-1.2.9.tar.gz](dist/xfce-1.2.9.tar.gz) | | unsite.unc.edu:X11/toolbars/xfce-1.2.9.tar.gz [info](http://ftp.math.sk/linux/journals/noviny/noviny-1998-06.pdf) |
+| 29-MAR-1998 | XFCE-1.28   | [xfce-1.2.8.tar.gz](dist/xfce-1.2.5.tar.gz) | | |
 | DD-MMM-YYYY | XFCE-1.27   | Lost | | |
 | DD-MMM-YYYY | XFCE-1.26   | Lost | | |
 | 04-FEB-1998 | XFCE-1.25   | [xfce-1.2.5.tar.gz](dist/xfce-1.2.5.tar.gz) | | |
 | 20-AUG-1997 | XFCE-1.24   | [xfce-1.2.4.tar.gz](dist/xfce-1.2.4.tar.gz) | [0](screenshots/xfce-1.2.4-0.png), [1](screenshots/xfce-1.2.4-1.png) | [manual](help/1.2.4/MANUAL) |
 | 22-JUN-1997 | XFCE-1.23   | [xfce-1.2.3.tar.gz](dist/xfce-1.2.3.tar.gz) | | |
 | DD-MMM-YYYY | XFCE-1.22   | Lost | | |
-| DD-MMM-YYYY | XFCE-1.21   | Lost | | |
-| DD-MMM-YYYY | XFCE-1.20   | Lost | | |
+| 04-JUN-1997 | XFCE-1.21   | [XFCE121.tgz](dist/XFCE121.tgz) | | |
+| 30-MAY-1997 | XFCE-1.20   | [XFCE120.tgz](dist/XFCE120.tgz) | | |
 | 30-MAR-1997 | XFCE-1.11b  | [XFCE111b.tgz](dist/XFCE111b.tgz) | [0](xfce-1.11.png) | [manual](help/1.11b/MANUAL) |
 | DD-MMM-YYYY | XFCE-1.11   | Lost | | |
 | 25-MAR-1997 | XFCE-1.10   | [XFCE110.tgz](dist/XFCE110.tgz) | [0](screenshots/xfce-1.10-0.png), [1](screenshots/xfce-1.10-1.png), [2](screenshots/xfce-1.10-2.png), [3](screenshots/xfce-1.10-3.png), [4](screenshots/xfce-1.10-4.png)| [manual](help/1.10/MANUAL) |
