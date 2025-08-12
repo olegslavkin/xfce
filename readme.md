@@ -64,13 +64,13 @@
 | 02-NOV-1998 | XFce-2.1.2   | Lost | [0](screenshots/xfce-2.1.2.jpg) | |
 | DD-MMM-YYYY | XFce-2.1.1   | Lost | | |
 | DD-MMM-YYYY | XFce-2.1.0   | Lost | | |
-| DD-MMM-YYYY | XFce-2.0.4   | Lost | | |
+| 18-AUG-1998 | XFce-2.0.4   | [xfce-2.0.4.tar.gz](dist/xfce-2.0.4.tar.gz) | | |
 | DD-MMM-YYYY | XFce-2.0.3   | Lost | | |
 | DD-MMM-YYYY | XFce-2.0.2   | Lost | | |
 | 04-JUL-1998 | XFce-2.0.1   | [xfce-2.0.1.tar.gz](dist/xfce-2.0.1.tar.gz) | [0](screenshots/xfce-2.0.1-0.png), [1](screenshots/xfce-2.0.1-1.png), [2](screenshots/xfce-2.0.1-2.png), [3](screenshots/xfce-2.0.1-3.png), [4](screenshots/xfce-2.0.1-4.png), [5](screenshots/xfce-2.0.1-5.png) | [online help](help/2.0.1/index.html) |
 | DD-MMM-YYYY | XFce-2.0.0   | Lost | | |
-| 09-MAY-1998 | XFCE-1.29   | [xfce-1.2.9.tar.gz](dist/xfce-1.2.9.tar.gz) | | unsite.unc.edu:X11/toolbars/xfce-1.2.9.tar.gz [info](http://ftp.math.sk/linux/journals/noviny/noviny-1998-06.pdf) |
-| 29-MAR-1998 | XFCE-1.28   | [xfce-1.2.8.tar.gz](dist/xfce-1.2.5.tar.gz) | | |
+| 09-MAY-1998 | XFCE-1.29   | [xfce-1.2.9.tar.gz](dist/xfce-1.2.9.tar.gz) | | sunsite.unc.edu:X11/toolbars/xfce-1.2.9.tar.gz [info](http://ftp.math.sk/linux/journals/noviny/noviny-1998-06.pdf) |
+| 29-MAR-1998 | XFCE-1.28   | [xfce-1.2.8.tar.gz](dist/xfce-1.2.8.tar.gz) | | |
 | DD-MMM-YYYY | XFCE-1.27   | Lost | | |
 | DD-MMM-YYYY | XFCE-1.26   | Lost | | |
 | 04-FEB-1998 | XFCE-1.25   | [xfce-1.2.5.tar.gz](dist/xfce-1.2.5.tar.gz) | | |
