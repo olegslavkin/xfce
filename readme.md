@@ -62,7 +62,7 @@
 | DD-MMM-YYYY | XFce-2.3.0   | Lost | | |
 | DD-MMM-YYYY | XFce-2.2.0   | Lost | | |
 | 02-NOV-1998 | XFce-2.1.2   | Lost | [0](screenshots/xfce-2.1.2.jpg) | |
-| DD-MMM-YYYY | XFce-2.1.1   | Lost | | |
+| 20-OCT-1998 | XFce-2.1.1   | [xfce-2.1.1.tar.gz](dist/xfce-2.1.1.tar.gz) | | |
 | DD-MMM-YYYY | XFce-2.1.0   | Lost | | |
 | 18-AUG-1998 | XFce-2.0.4   | [xfce-2.0.4.tar.gz](dist/xfce-2.0.4.tar.gz) | | |
 | DD-MMM-YYYY | XFce-2.0.3   | Lost | | |
